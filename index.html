@@ -1,0 +1,3890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=966c3f03-5798-49ef-85a0-f61f3d33d70d
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=966c3f03-5798-49ef-85a0-f61f3d33d70d
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=966c3f03-5798-49ef-85a0-f61f3d33d70d
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+<meta name="viewport"
+  content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style"
+  content="black-translucent">
+<meta name="theme-color" content="#241a4d">
+<title>Neshamah · נְשָׁמָה</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@400;500&display=swap">
+<style>
+:root{--card:rgba(255,255,255,.08);--line:rgba(255,255,255,.16);
+--amber:#f2c9a0;--lav:#c9b8f2;--ink:#f3eefa;--dim:#bfb3d9;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;color:var(--ink);
+font:16px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif;
+padding-bottom:110px;
+background:var(--sky) fixed;transition:background-color 2s;}
+/* skies: the background follows the real time of day */
+:root{--tekhelet:#8fb0e6;
+--sky:linear-gradient(180deg,#191238 0%,#241a4d 40%,#3d2358 70%,#6b3155 100%)}
+body[data-sky=dawn]{--sky:linear-gradient(180deg,#1b2446 0%,#2c3a66 42%,#62567a 74%,#a87f6c 100%)}
+body[data-sky=day]{--sky:linear-gradient(180deg,#1c2a4c 0%,#283f63 42%,#3a5676 74%,#5f7590 100%)}
+body[data-sky=dusk]{--sky:linear-gradient(180deg,#191238 0%,#241a4d 40%,#3d2358 70%,#6b3155 100%)}
+body[data-sky=night]{--sky:linear-gradient(180deg,#0b0918 0%,#130e27 42%,#1b1431 74%,#271a35 100%)}
+body[data-sky=shabbat]{--sky:linear-gradient(180deg,#26203c 0%,#373049 42%,#5e5060 74%,#a88d6c 100%);
+--amber:#f7dfba;--card:rgba(255,255,255,.10)}
+#pray .card{border-color:rgba(143,176,230,.26)}
+#pray .card h2{color:var(--tekhelet)}
+#pray .prvbtn.on{background:var(--tekhelet);border-color:var(--tekhelet);color:#14213a}
+#pray .sechdr{color:var(--tekhelet)}
+main{max-width:640px;margin:0 auto;padding:14px 16px 20px}
+header{text-align:center;padding:26px 16px 6px}
+h1{font-weight:600;font-size:26px;letter-spacing:.5px}
+h1 .he{font-family:Georgia,serif;color:var(--amber);
+font-size:30px}
+.tag{color:var(--dim);font-size:13.5px;margin-top:2px}
+section{display:none}
+section.on{display:block}
+.card{background:var(--card);border:1px solid var(--line);
+border-radius:18px;padding:16px;margin:12px 0;
+backdrop-filter:blur(6px)}
+.card h2{font-size:16px;color:var(--amber);margin-bottom:8px;
+font-weight:600}
+.card h3{font-size:14.5px;color:var(--lav);margin:10px 0 4px}
+p{margin:6px 0}
+.small{font-size:13px;color:var(--dim)}
+.he{font-family:Georgia,serif;font-size:21px;line-height:1.8;
+display:block;text-align:center;color:#fff}
+.tl{display:block;text-align:center;font-style:italic;
+color:var(--lav);font-size:14.5px;margin-top:4px}
+.tr{display:block;text-align:center;font-style:italic;
+color:var(--dim);font-size:13.5px;margin-top:4px}
+.src{display:block;font-size:11.5px;color:var(--dim);
+margin-top:6px}
+button{font:inherit;color:var(--ink);
+background:rgba(255,255,255,.12);
+border:1px solid var(--line);border-radius:12px;
+padding:10px 14px;margin:4px 4px 4px 0;cursor:pointer}
+button.on{background:var(--amber);color:#3a2140;
+border-color:var(--amber)}
+button.ghost{background:transparent}
+.toolbtn{display:block;width:100%;text-align:left;
+padding:12px;font-size:15px;margin:6px 0}
+input[type=range]{width:100%;accent-color:var(--amber)}
+textarea,input[type=text],select{width:100%;font:inherit;
+color:var(--ink);background:rgba(0,0,0,.25);
+border:1px solid var(--line);border-radius:10px;
+padding:8px;margin-top:6px}
+audio{width:100%;margin-top:6px;height:36px}
+details{border-top:1px solid var(--line);padding:10px 0}
+.pcard{border-top:1px solid var(--line);padding:10px 0 2px}
+.pcard h3{margin:0;font-size:16px}
+.pcard .ph{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.pcard .ph{flex-wrap:wrap}.pcard .ph>div:first-child{flex:1 1 150px;min-width:0}.pcard .ph>div:last-child{display:flex;gap:6px;flex-shrink:0}.pcard .ph button{margin:0}.pw ol{padding-left:18px;margin:6px 0}
+.pcard details{padding:7px 0}
+
+details summary{cursor:pointer;color:var(--lav);
+font-weight:600;list-style:none}
+details summary::before{content:"› ";color:var(--amber)}
+details[open] summary::before{content:"⌄ "}
+table.tbl{width:100%;border-collapse:collapse;
+font-size:13.5px;margin:8px 0}
+table.tbl td{border-top:1px solid var(--line);
+padding:7px 4px;vertical-align:top}
+.pbarwrap{height:6px;background:rgba(255,255,255,.12);
+border-radius:3px;margin:10px 0 4px;overflow:hidden}
+.pbar{height:100%;width:0;background:var(--amber);
+border-radius:3px;transition:width 1s linear}
+.dots{display:flex;gap:5px;margin:8px 0}
+.dots span{width:8px;height:8px;border-radius:50%;
+background:rgba(255,255,255,.22)}
+.dots span.on{background:var(--amber)}
+.chipgrid{display:flex;flex-wrap:wrap;margin:6px 0}
+nav{position:fixed;bottom:0;left:0;right:0;
+display:flex;justify-content:center;gap:2px;
+background:rgba(16,10,34,.85);backdrop-filter:blur(10px);
+border-top:1px solid var(--line);
+padding:8px 2px calc(8px + env(safe-area-inset-bottom))}
+nav button{flex:1;max-width:88px;background:none;
+border:none;border-radius:10px;padding:6px 1px;
+font-size:11px;color:var(--dim);margin:0}
+nav button svg{display:block;width:22px;height:22px;margin:0 auto 2px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+nav button.on{color:var(--amber);
+background:rgba(242,201,160,.12)}
+#breathwrap{display:flex;flex-direction:column;
+align-items:center;margin:8px 0}
+#circle-outer{width:250px;height:250px;display:flex;
+align-items:center;justify-content:center}
+#breath-circle{width:220px;height:220px;border-radius:50%;
+transform:scale(.34);
+background:radial-gradient(circle,#ffe9c9 0%,#f2c9a0 35%,
+rgba(242,201,160,.25) 70%,transparent 100%);
+box-shadow:0 0 60px rgba(242,201,160,.35)}
+#breath-word{font-size:19px;margin-top:10px;min-height:26px;
+text-align:center;color:#fff}
+#breath-he{font-family:Georgia,serif;font-size:24px;
+color:var(--amber);min-height:30px;text-align:center}
+#toast{position:fixed;left:50%;bottom:120px;
+transform:translateX(-50%);background:#2b1d4e;
+color:var(--ink);border:1px solid var(--line);
+padding:10px 16px;border-radius:12px;font-size:14px;
+opacity:0;transition:opacity .4s;pointer-events:none;
+z-index:30;max-width:85vw;text-align:center}
+.bars{display:flex;align-items:flex-end;gap:3px;
+height:64px;margin:8px 0}
+.bar{width:9px;display:flex;flex-direction:column;
+justify-content:flex-end}
+.bar .p{background:var(--amber);border-radius:3px 3px 0 0}
+.bar .a{background:var(--lav);opacity:.75;
+border-radius:3px 3px 0 0}
+.logline{border-top:1px solid var(--line);padding:8px 0;
+font-size:14px}
+#emo-wrap button{padding:6px 11px;font-size:13.5px;
+margin:3px 3px 3px 0}
+#emo-path{margin-top:4px}
+.flag{display:block;font-size:11.5px;color:var(--amber);opacity:.85;margin-top:4px}
+#player{position:fixed;inset:0;z-index:20;display:none;flex-direction:column;
+align-items:center;justify-content:center;text-align:center;
+padding:24px 20px calc(24px + env(safe-area-inset-bottom));
+background:radial-gradient(ellipse at 50% 35%,#3a2a6b 0%,#1d1440 55%,#120c29 100%)}
+#player.on{display:flex}
+#pl-title{color:var(--amber);font-size:15px;letter-spacing:.4px}
+#pl-ringwrap{position:relative;width:236px;height:236px;margin:16px 0 8px}
+#pl-ring{position:absolute;inset:0;transform:rotate(-90deg)}
+#pl-ring circle{fill:none;stroke-width:4}
+#pl-ring .bg{stroke:rgba(255,255,255,.12)}
+#pl-ring .fg{stroke:var(--amber);stroke-linecap:round;
+transition:stroke-dashoffset .3s linear}
+#pl-orb{position:absolute;inset:34px;border-radius:50%;
+background:radial-gradient(circle,#ffe9c9 0%,#f2c9a0 40%,
+rgba(242,201,160,.15) 75%,transparent 100%);
+animation:orb 8s ease-in-out infinite}
+#player.paused #pl-orb{animation-play-state:paused;opacity:.5}
+@keyframes orb{0%,100%{transform:scale(.62)}50%{transform:scale(.92)}}
+#pl-left{position:absolute;inset:0;display:flex;align-items:center;
+justify-content:center;font-size:32px;font-weight:600;color:#3a2140;
+font-variant-numeric:tabular-nums}
+#pl-steps{display:flex;gap:6px;justify-content:center;margin:6px 0}
+#pl-steps span{width:24px;height:4px;border-radius:2px;
+background:rgba(255,255,255,.18);overflow:hidden}
+#pl-steps i{display:block;height:100%;width:0;background:var(--amber)}
+#pl-step{font-size:13px;color:var(--dim);margin:4px 0}
+#pl-text{font-size:20px;line-height:1.45;max-width:28em;min-height:4.4em;
+color:#fff;margin-top:6px}
+#pl-hint{font-size:12.5px;color:var(--dim);margin-top:2px}
+#pl-why{font-size:12.5px;color:var(--dim);max-width:28em;margin-top:14px;
+opacity:.85}
+@media (prefers-reduced-motion:reduce){#pl-orb{animation:none;transform:scale(.8)}}
+.emo{border-left:4px solid var(--c,#999)}
+#emo-wrap button,#emo-grid button{padding:6px 11px;font-size:13.5px;margin:3px 3px 3px 0}
+#emo-grid{max-height:260px;overflow-y:auto}
+.fa-state{display:block;width:100%;text-align:left;padding:12px;font-size:15px}
+.fa-tool{display:block;width:100%;text-align:left;padding:14px;font-size:16px;
+margin:10px 0 2px;background:rgba(242,201,160,.16);border-color:rgba(242,201,160,.45)}
+.fa-why{font-size:12.5px;color:var(--dim);opacity:.8;margin:2px 4px 6px}
+#pray.no-he .he{display:none}
+#pray .pone{text-align:center;margin:4px 0 10px}
+.pline{margin:10px 0 14px}
+.he{font-family:"Noto Serif Hebrew","Taamey Frank CLM","Frank Ruehl CLM","Noto Serif Hebrew",
+"SBL Hebrew","David",Georgia,serif}
+#pl-text{white-space:pre-line}
+#pl-text.long{font-size:16.5px;line-height:1.5}
+#nowbar{position:fixed;left:0;right:0;z-index:25;display:none;
+bottom:calc(64px + env(safe-area-inset-bottom));
+background:rgba(16,10,34,.96);border-top:1px solid var(--line);
+padding:6px 12px 4px}
+#nowbar.on{display:block}
+#nowbar .row{display:flex;align-items:center;gap:8px;font-size:12.5px;
+color:var(--amber);max-width:640px;margin:0 auto}
+#nb-title{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#nowbar a{color:var(--dim);font-size:12px}
+#nowbar button{padding:2px 9px;margin:0;font-size:12px}
+#nb-frame{max-width:640px;margin:4px auto 0}
+#nb-frame iframe{display:block;width:100%;height:20px;border:0}
+body.nowplaying{padding-bottom:160px}
+body.nowplaying #player{padding-bottom:calc(120px + env(safe-area-inset-bottom))}
+.songbtn{font-size:14px;padding:8px 12px}
+/* motion: Calm-style wind-up (small backswing, then a slow glide) */
+:root{--wind:cubic-bezier(.5,-.32,.3,1);--soft:cubic-bezier(.3,0,.15,1)}
+section.on>*{animation:rise .85s var(--wind) both}
+section.on>*:nth-child(2){animation-delay:.07s}
+section.on>*:nth-child(3){animation-delay:.14s}
+section.on>*:nth-child(4){animation-delay:.21s}
+section.on>*:nth-child(5){animation-delay:.28s}
+section.on>*:nth-child(n+6){animation-delay:.34s}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes wind{from{opacity:0;transform:scale(.82)}to{opacity:1;transform:none}}
+button{transition:background-color .45s var(--soft),color .45s var(--soft),
+border-color .45s var(--soft),transform .35s var(--wind)}
+button:active{transform:scale(.96)}
+#player.on{animation:fade .6s var(--soft) both}
+#player.on #pl-ringwrap{animation:wind 1.1s var(--wind) both}
+#pl-text.swap{animation:rise .8s var(--wind) both}
+details[open]>*:not(summary){animation:rise .6s var(--wind) both}
+body::before{content:"";position:fixed;inset:-20%;z-index:-1;pointer-events:none;
+background:radial-gradient(circle at 50% 38%,rgba(242,201,160,.10),transparent 58%);
+animation:ambient 10s ease-in-out infinite}
+@keyframes ambient{0%,100%{transform:scale(.92);opacity:.55}40%{transform:scale(1.06);opacity:1}}
+@media (prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition:none!important}}
+.sechdr{text-align:center;font-size:14px;color:var(--dim);font-weight:500;margin:22px 0 4px;letter-spacing:.5px;text-transform:uppercase}
+#welcome{position:fixed;inset:0;z-index:40;display:flex;flex-direction:column;
+align-items:center;justify-content:center;text-align:center;padding:24px;
+background:radial-gradient(ellipse at 50% 40%,#3a2a6b 0%,#1d1440 55%,#120c29 100%);
+transition:opacity .9s var(--soft)}
+#welcome.out{opacity:0;pointer-events:none}
+#wl-orb{width:200px;height:200px;border-radius:50%;
+background:radial-gradient(circle,#ffe9c9 0%,#f2c9a0 40%,rgba(242,201,160,.15) 75%,transparent 100%);
+transform:scale(.5);animation:wlbreath 10s var(--soft) .6s 1 both}
+@keyframes wlbreath{0%{transform:scale(.5)}40%{transform:scale(1)}100%{transform:scale(.5)}}
+#wl-word{font-size:22px;color:#fff;margin-top:22px;min-height:30px;transition:opacity .6s}
+#wl-sub{font-size:14px;color:var(--amber);margin-top:6px;min-height:20px}
+#wl-skip{position:absolute;bottom:calc(28px + env(safe-area-inset-bottom));background:none;border:none;color:var(--dim);font-size:14px}
+.dj-now{border-color:var(--amber)!important}
+.dj-tag{font-size:11.5px;color:var(--amber);margin-left:6px}
+#dj-box textarea.big{min-height:220px}
+#dj-box textarea.gone{opacity:0;transition:opacity 1.2s var(--soft)}
+#backup-nudge{border-color:rgba(242,201,160,.45)}
+#emo-line{min-height:24px;font-style:italic;color:#fff;
+margin:8px 0 4px}
+.btnlink{display:inline-block;padding:10px 14px;margin:4px 6px 4px 0;border-radius:12px;border:1px solid var(--dim);color:inherit;text-decoration:none}
+</style>
+</head>
+<body>
+
+<header>
+  <h1><span class="he">נְשָׁמָה</span> Neshamah</h1>
+  <div class="tag">breath · prayer · rest · pocket sanctuary
+  · v2.20</div>
+</header>
+
+<main>
+
+<!-- ============ HOME ============ -->
+<section id="home" class="on">
+  <div id="backup-slot"></div>
+  <div class="card" style="text-align:center">
+    <div class="he" style="font-size:18px">וְעָשׂוּ לִי מִקְדָּשׁ
+    וְשָׁכַנְתִּי בְּתוֹכָם</div>
+    <div class="tr">"Make Me a sanctuary, that I may dwell
+    within them." Exodus 25:8</div>
+    <p class="small">This is your mishkan, a small sanctuary
+    that goes where you go.</p>
+    <button id="btn-onebreath">▶  Begin with breath · 1 min</button>
+    <p class="small">The gate to everything here is breath. Start
+    here if you don't know where to start.</p>
+  </div>
+  <div class="card">
+    <h2 id="greeting">Shalom</h2>
+    <p class="small" id="ci-last">No check-ins yet. The first
+    one takes 20 seconds.</p>
+  </div>
+  <div class="card">
+    <div id="shabbat-ci"></div>
+    <h2>How is your body and mind right now?</h2>
+    <p class="small">There are no wrong answers. This just
+    routes you to what fits.</p>
+    <div id="ci-state">
+      <button class="statebtn" data-s="wired">⚡ Wired &amp;
+      tense</button>
+      <button class="statebtn" data-s="heavy">🌑 Heavy &amp;
+      shut down</button>
+      <button class="statebtn" data-s="mixed">🌗 Both at
+      once</button>
+      <button class="statebtn" data-s="settled">🌿 Settled</button>
+      <button class="statebtn" data-s="feelings">🌊 Strong
+      feelings</button>
+    </div>
+    <h3>Right now I'm noticing <span class="small">(pick any, or none)</span></h3>
+    <div id="ci-flags" class="chipgrid">
+      <button class="flagbtn" data-f="grief">🤍 Grief</button>
+      <button class="flagbtn" data-f="dissoc">🌫️ Dissociation / unreal</button>
+      <button class="flagbtn" data-f="pain">🔥 Pain</button>
+      <button class="flagbtn" data-f="anx">🌀 Anxiety</button>
+      <button class="flagbtn" data-f="sleep">🌙 Can't sleep</button>
+    </div>
+    <details><summary>Add pain and anxiety numbers or a note (optional)</summary>
+    <h3>Pain</h3>
+    <input type="range" id="ci-pain" min="0" max="10" value="0">
+    <span class="small" id="painval">0</span>
+    <h3>Anxiety</h3>
+    <input type="range" id="ci-anx" min="0" max="10" value="0">
+    <span class="small" id="anxval">0</span>
+    <input type="checkbox" id="ci-unreal" hidden>
+    <textarea id="ci-note" rows="2"
+      placeholder="anything worth noting (optional)"></textarea>
+    </details>
+    <button id="ci-save">Record this check-in</button>
+  </div>
+  <div class="card" id="ci-recs" style="display:none">
+    <h2>For right now, you might…</h2>
+    <div id="ci-recbtns"></div>
+    <p class="small">Nothing here is mandatory. Skip anything.
+    Rest counts as practice.</p>
+  </div>
+  <div class="card" id="people-card">
+    <h2>Reach a person</h2>
+    <a class="btnlink" href="sms:988">💬 Text 988</a>
+    <a class="btnlink" href="https://myhealthonline.sutterhealth.org/MHO/app/communication-center" target="_blank" rel="noopener">✉ Message my doctor</a>
+    <div id="people-list"></div>
+    <details><summary>Add someone to text</summary>
+      <input id="pp-name" placeholder="name">
+      <input id="pp-num" type="tel" placeholder="phone number">
+      <button id="pp-add" class="ghost">Add</button>
+    </details>
+  </div>
+  <h2 style="text-align:center;font-size:14px;color:var(--dim);font-weight:500;margin:22px 0 4px;letter-spacing:.5px">YOUR HISTORY</h2>
+  <div class="card">
+    <h2>Grounding &amp; feelings</h2>
+    <div id="plogList"></div>
+  </div>
+  <div class="card">
+    <h2>Check-in history</h2>
+    <div class="bars" id="trendbars"></div>
+    <p class="small">Last 14 check-ins:
+    <span style="color:var(--amber)">amber = pain</span>,
+    <span style="color:var(--lav)">lavender = anxiety</span>.
+    A dot means "felt unreal."</p>
+    <div id="loglist"></div>
+  </div>
+  <div class="card">
+    <h2>Share with your team</h2>
+    <button id="btn-copy">Copy 14-entry summary for an
+    appointment</button>
+    <button id="btn-csv">Download CSV</button>
+    <button id="btn-backup">Save a full backup</button>
+    <button id="btn-restore" class="ghost">Restore a backup</button>
+    <input type="file" id="restorefile" accept="application/json,.json"
+      style="display:none">
+    <button id="btn-clear" class="ghost">Clear check-ins</button>
+    <p class="small">Everything stays on this device (browser
+    storage). Nothing syncs, nothing uploads. A backup file holds
+    check-ins, ladders and voice memos. Save one now and then.</p>
+  </div>
+  <div class="card">
+    <details><summary>Why Neshamah</summary>
+      <p class="small"><b>Breath.</b> God breathed life into the first
+      human, and Hebrew's three words for soul are all breath. Breath
+      works on many levels here: slow breathing for the body, prayer
+      and song carried on the breath, writing as the breath of life on
+      the page, sleep as handing the neshamah back to God for the
+      night, and grounding as coming back to nefesh and ruach, being
+      alive and present.</p>
+      <p class="small"><b>The tea.</b> When my rabbi's wife is sick, he
+      makes her tea. Science can explain how the water heated: the
+      flame, the energy, the vapor. But he only put the kettle on
+      because he loves her. Without the flame, or without the love,
+      that water would not be hot. Both are true, and neither cancels
+      the other. Is it prayer or science that helps the pain? Yes.</p>
+      <p class="small"><b>People of the Book.</b> Writing, speaking,
+      and singing: journaling, prayer, and song.</p>
+      <p class="small">Free, private, no streaks or scores.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ============ BREATHE ============ -->
+<section id="breathe">
+  <div class="card">
+    <h2>Why "Neshamah"?</h2>
+    <p class="small">Torah says God blew the breath of life into
+    the first human, and Hebrew has three words for soul, all
+    of them breath: <em>nefesh</em> (the living self),
+    <em>ruach</em> (the wind moving through you), and
+    <em>neshamah</em> (the breath-soul, entrusted into God's hand
+    at night and returned each morning).</p>
+    <span class="src">Genesis 2:7 · The Torah: A Modern
+    Commentary, rev. ed. (Plaut)</span>
+  </div>
+  <div class="card">
+    <h2>Breathe</h2>
+    <p class="small" id="br-note">Eyes open is fine. If breathing
+    ever feels like too much, stop and use the Ground tab
+    instead. The default patterns never hold your breath.</p>
+    <div>
+      <button class="patbtn" data-p="slow">Slow exhale 4–6</button>
+      <button class="patbtn" data-p="sigh">Physiological
+      sigh</button>
+      <button class="patbtn" data-p="coherent">Coherent 5–5</button>
+      <button class="patbtn" data-p="shema">Shema breath</button>
+      <button class="patbtn" data-p="box">Box (holds)</button>
+    </div>
+    <button id="btn-haptic" class="ghost"></button>
+    <p class="small" id="pat-desc">Slow exhale: the out-breath
+    longer than the in-breath. This is the gentlest one.</p>
+  </div>
+  <div class="card" id="breathwrap">
+    <div id="circle-outer"><div id="breath-circle"></div></div>
+    <div id="breath-word">choose a pattern, then press start</div>
+    <div id="breath-he"></div>
+    <div class="small" id="breath-cycles"></div>
+    <div class="pbarwrap" style="width:80%"><div class="pbar" id="br-bar"></div></div>
+    <div class="small">Length:
+      <button class="lenbtn" data-m="1">1 min</button>
+      <button class="lenbtn on" data-m="3">3</button>
+      <button class="lenbtn" data-m="5">5</button>
+      <button class="lenbtn" data-m="10">10</button>
+      <button class="lenbtn" data-m="0">open</button>
+    </div>
+    <div style="margin-top:8px">
+      <button id="btn-br-start">Start</button>
+      <button id="btn-br-pause" class="ghost">Pause</button>
+      <button id="btn-br-stop" class="ghost">Stop</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>For pain</h2>
+    <p class="small">Even Rabbi Yochanan, a healer, needed someone
+    to hold out a hand when he fell ill: "a prisoner cannot free
+    himself" (Berakhot 5b). These are hands to hold. Your care
+    team's plan comes first.</p>
+    <button class="fa-tool" id="pain-sef">▶  Sefirot body scan · 11 min</button>
+    <p class="fa-why"><b>How:</b> a slow-exhale body scan, from
+    MBSR, which has good research support for chronic pain.
+    <b>Why:</b> the Zohar maps the ten sefirot onto the body:
+    your body as a map of the Divine.</p>
+    <button class="fa-tool" id="pain-track">▶  Somatic tracking · 5 min</button>
+    <p class="fa-why"><b>How:</b> meeting pain with curiosity and
+    safety instead of alarm, from Pain Reprocessing Therapy. Best
+    for pain your doctors don't link to tissue damage, so ask your
+    team whether it fits you.</p>
+    <button class="fa-tool" id="pain-pend">▶  Pendulation · 4 min</button>
+    <p class="fa-why"><b>How:</b> moving attention between a place
+    that feels okay and the edge of the pain, from Somatic
+    Experiencing. You choose how close to go, every time.</p>
+    <details><summary>About the sefirot map: what's old, what's new</summary>
+      <p class="small"><b>Old and Jewish:</b> the body map comes from
+      <em>Tikkunei Zohar</em> (Castile, c. 1300), in the passage
+      known as Patach Eliyahu, still recited in Sephardic and Hasidic
+      communities: "Chesed is the right arm, Gevurah the left arm,
+      Tiferet the torso, Netzach and Hod the two legs, Yesod the end
+      of the body, Malchut the mouth… Chochmah the brain, Binah the
+      heart, and with it the heart understands." Its root is Job
+      19:26, "from my flesh I will see God." Breath as a path to God
+      goes back to Abraham Abulafia (13th century), and the Talmud
+      teaches that the Shechinah rests above the head of the sick
+      (Shabbat 12b).</p>
+      <p class="small"><b>New:</b> moving attention through the body
+      region by region comes from modern mindfulness research. This
+      practice is a bridge: the science answers how, the tradition
+      answers why.</p>
+      <p class="small"><b>Not this:</b> "Qabalah" with a Q (Golden
+      Dawn, Crowley), sefirot-equals-chakras charts, and Christian
+      Cabala, which used the sefirot to argue for the Trinity and is
+      still recycled on messianic sites.</p>
+      <span class="src">Tikkunei Zohar 17a (via Sefaria) · Job 19:26
+      · Shabbat 12b · Berakhot 5b · further reading: Arthur Green,
+      Ehyeh; Tirzah Firestone, Wounds into Wisdom</span>
+    </details>
+  </div>
+</section>
+
+<!-- ============ PRAY ============ -->
+<section id="pray">
+  <div class="card">
+    <h2>About these texts</h2>
+    <p class="small">The Hebrew is the liturgical text. The
+    transliterations and English translations were written
+    for this app — they are not copied from any siddur or
+    commentary. The books listed under each prayer are where
+    to compare and verify. <span style="color:var(--amber)">⚑</span>
+    marks wording still waiting for your check against
+    Mishkan T'filah.</p>
+    <div style="margin-top:6px">
+      <button class="prvbtn" data-k="he">Hebrew</button>
+      <button class="prvbtn" data-k="tl">Phonetic</button>
+      <button class="prvbtn" data-k="en">English</button>
+    </div>
+    <p class="small">Choose which rows open by themselves on each prayer
+    (Hebrew can be hidden). You can always open any row by tapping
+    it. Your choice is remembered. Any prayer can be prayed one line
+    per breath.</p>
+  </div>
+  <div class="card" id="brachot-card">
+    <h2>Brachot — bless what you notice</h2>
+    <p class="small">Something stopped you — a butterfly, a rainbow,
+    the wind? Tap it and its blessing appears. Pause one breath with
+    the moment first.</p>
+    <p class="fa-why"><b>How:</b> gratitude practice. In studies
+    (Emmons &amp; McCullough, 2003, and later reviews) noticing and
+    naming good moments modestly improves well-being; effects on
+    anxiety and depression are small but real. Lingering a breath
+    on the moment — savoring — helps it land. <b>Why:</b> Rabbi Meir
+    taught saying a hundred blessings a day (Menachot 43b). A bracha
+    turns noticing into relationship.</p>
+    <div id="bc-count" class="small"></div>
+    <div class="pbarwrap"><div class="pbar" id="bc-bar"></div></div>
+    <div id="bc-seen" class="chipgrid"></div>
+    <input type="text" id="bc-own"
+      placeholder="something else — in your own words">
+    <button id="bc-own-go" class="ghost">Bless this</button>
+    <div id="bc-show"></div>
+  </div>
+
+  <div class="card">
+    <h2>Sung by Cantor Mark Childs</h2>
+    <p class="small">From the cantor of Congregation B'nai B'rith,
+    Santa Barbara, shared freely on his SoundCloud. Tap a song and it
+    keeps playing while you move around the app or start a practice.
+    Songs stream, so they need internet.</p>
+    <div id="songlist"></div>
+    <a class="src" href="https://soundcloud.com/cantor-mark-childs"
+      target="_blank" rel="noopener">All of his recordings on SoundCloud ›</a>
+  </div>
+
+  <div id="prayers"></div>
+
+  <div class="card">
+    <h2>Niggun — hum a wordless melody</h2>
+    <p class="small">A niggun is a melody without words — built,
+    on purpose, to get past the thinking mind. Humming is also
+    the body's own settling instrument: a soft sound on a long
+    out-breath.</p>
+    <p>Hum anything — a melody you love, or just one warm note,
+    out as long as it wants to go. Or hum along with the
+    drone:</p>
+    <button id="btn-drone">▶ drone</button>
+    <span class="small" id="drone-status"></span>
+    <div id="niggun-songs"></div>
+    <span class="src">Hasidic practice, not liturgy — kept
+    here as a body-settling tool</span>
+  </div>
+
+  <div class="card">
+    <h2>Hitbodedut — your own words</h2>
+    <p class="small">The Hasidic practice of speaking to God
+    out loud, unscripted, in your own language. The tradition
+    calls the right mindset <em>kavanah</em> — and teaches
+    that the heart of prayer is the introspection it provides.
+    Any language you understand counts. Move if it helps;
+    people have always swayed while praying. Your own words
+    are liturgy too.</p>
+    <p class="small"><em>What is true for me right now is… ·
+    I am carrying… · What I need is… · I am grateful for… ·
+    Please…</em></p>
+    <button id="btn-hit">3 quiet minutes</button>
+    <span class="small" id="hit-status"></span>
+    <span class="src">Hasidic practice (Reb Nachman of
+    Bratslav) — your own words as liturgy</span>
+  </div>
+</section>
+
+<!-- ============ GROUND ============ -->
+<section id="ground">
+  <div class="card" style="text-align:center">
+    <h2>You are here</h2>
+    <div id="timecheck" style="font-size:19px;margin:6px 0"></div>
+    <p class="small">Nothing needs to be solved this second.</p>
+  </div>
+
+  <div class="card">
+    <h2>Ground with me</h2>
+    <p class="small">No journal, nothing to memorize. It asks,
+    you tap. Skip anything; there are no wrong answers.</p>
+    <div id="gflow"></div>
+  </div>
+
+  <div class="card">
+    <h2>Somatic first aid</h2>
+    <p class="small">What's happening right now? Tap it — the
+    tools appear, best first. Tap a tool and it starts.</p>
+    <div id="fa-states"></div>
+    <div id="fa-tools"></div>
+  </div>
+
+  <div class="card">
+    <h2>Name it to tame it</h2>
+    <p class="small">Sometimes the only word you can find is the
+    precise one — start there and the wheel shows what it
+    funnels down to. Or start from the big feeling and narrow.
+    Pick as many as are true.</p>
+    <div id="emo-modes"></div>
+    <input type="text" id="emo-q" autocomplete="off"
+      placeholder="type a feeling, or browse the words below">
+    <div id="emo-grid" class="chipgrid"></div>
+    <div id="emo-line"></div>
+    <div id="emo-path"></div>
+    <div id="emo-tame" style="display:none">
+      <h3>Where do you notice it?</h3>
+      <div id="emo-body" class="chipgrid"></div>
+      <h3>How strong, right now?</h3>
+      <input type="range" id="emo-int" min="0" max="10" value="5">
+      <span class="small" id="emo-intv">5</span>
+      <div style="margin-top:8px">
+        <button id="btn-emo-save">Save to my log</button>
+        <button id="btn-emo-breath" class="ghost">A breath for this</button>
+        <button id="btn-emo-note" class="ghost">Add to check-in note</button>
+        <button id="btn-emo-clear" class="ghost">Clear</button>
+      </div>
+    </div>
+    <p class="small" style="margin-top:8px">Wheel from your
+    program's handout: six core feelings, 36 middle, 72 outer.
+    Naming a feeling (affect labeling) has been shown to quiet
+    the brain's alarm response.</p>
+  </div>
+
+  <div class="card">
+    <h2>Where your eyes go</h2>
+    <p class="small">A gentle visual-field practice, inspired
+    by brainspotting — the pocket version; the full thing
+    happens in the room with your therapist. You set the pace
+    with the button; the dots show where you are.</p>
+    <div class="dots" id="eyes-dots"></div>
+    <p id="eyes-text"
+    style="min-height:76px;margin:10px 0;font-size:16.5px">
+    Find a comfortable gaze. Press begin when you're ready.</p>
+    <div class="small" id="eyes-prog"></div>
+    <button id="btn-eyes-next">Begin</button>
+    <button id="btn-eyes-restart" class="ghost">Restart</button>
+    <p class="small" style="margin-top:8px">If looking around
+    increases unreality, stop and use temperature or feet
+    instead. That's not quitting — that's knowing your nervous
+    system.</p>
+  </div>
+
+  <div class="card">
+    <h2>Reference — the map and the full framework</h2>
+    <p class="small">For reading when you're steady. The tools
+    above are for using.</p>
+    <details><summary>The map — three states, plus blended</summary>
+    <p>🌿 <strong>Settled</strong> (ventral vagal) — emotions
+    can be tolerated, learning possible, can ride the wave.</p>
+    <p>⚡ <strong>Wired</strong> (sympathetic) — anxiety, panic,
+    flooding, hypervigilance, pain louder, racing thoughts,
+    can't sleep.</p>
+    <p>🌗 <strong>Both at once</strong> (blended freeze) —
+    trapped charge: high arousal and shutdown in the same body.
+    Wired and heavy together.</p>
+    <p>🌑 <strong>Heavy</strong> (dorsal vagal) — numb, far
+    away, "I feel nothing," can't think or feel, memory
+    fuzzy.</p>
+    <p class="small">None of these is a failure. Each one is
+    your system protecting you. The map just helps you choose
+    what helps.</p>
+    </details>
+    <details><summary>1 · ORIENT — where am I?</summary>
+      <p>Look around and remind yourself: Where am I? What day
+      is it? What time is it? What am I doing right now? What
+      do I see around me? What is different about here and now
+      compared with previous medical experiences?</p>
+      <p class="small">Be as descriptive as you can, and gently
+      remind yourself: you are here, right now.</p>
+    </details>
+    <details><summary>2 · GROUND — connect with what's around
+    you</summary>
+      <h3>Look</h3>
+      <p>· Name 5 things you can see. · Describe one object in
+      detail. · Find objects of different colors or shapes.</p>
+      <h3>Listen</h3>
+      <p>· Name 3 sounds you can hear. · Notice the closest
+      sound and the farthest sound.</p>
+      <h3>Feel</h3>
+      <p>· Press your feet into the floor. · Notice the chair
+      supporting you. · Press your hands together. · Hold
+      something textured or cool. · Push gently against
+      a wall.</p>
+      <h3>Move</h3>
+      <p>· Take a slow walk. · Stretch. · Roll your shoulders.
+      · Shift weight from one foot to the other.</p>
+      <p class="small">You do not have to focus intensely on
+      your body. If focusing inward makes you feel more
+      disconnected or anxious, return your attention to the
+      environment around you.</p>
+    </details>
+    <details><summary>3 · DIFFERENTIATE — what is happening
+    now?</summary>
+      <p>Ask: <em>"Is this something happening right now,
+      something that happened before, or something I'm afraid
+      could happen?"</em></p>
+      <p>Then: What do I actually know right now? What am I
+      worried might happen? Is there something I need to do
+      medically — or do I need to regulate while I figure out
+      the next step?</p>
+      <p><strong>A physical symptom can be real AND my nervous
+      system can also be reacting to what I've experienced
+      before.</strong> (This part is confusing, and can really
+      suck.)</p>
+      <p class="small">You do not have to choose between taking
+      your body seriously and taking care of your nervous
+      system.</p>
+    </details>
+    <details><summary>4 · CHOOSE — what can I do next?</summary>
+      <p>What is within my control right now? What is the next
+      appropriate step? Do I need to contact my medical provider
+      or follow my existing medical plan? Would grounding,
+      movement, or talking to someone help?</p>
+      <p>Try: <em>"I don't have to figure out everything right
+      now. I can focus on the next step."</em></p>
+    </details>
+    <details><summary>Cold water on the face (dive
+    reflex)</summary>
+      <p>Hard-wired survival reflex: cold on the face drops
+      the heart rate and shifts the body into a mode
+      physiologically incompatible with panic. Not a metaphor —
+      a direct parasympathetic override.</p>
+      <p>· Fill a bowl with cold water (ice if available), or
+      run cold tap water.</p>
+      <p>· Submerge your face — forehead, eyes, cheeks — for
+      15–30 seconds. Or hold a cold cloth firmly over eyes
+      and cheeks.</p>
+      <p>· Come up, breathe normally, notice the shift.</p>
+      <p class="small">This is the emergency brake — for when
+      anxiety has escalated to panic and other tools feel
+      inaccessible. Home use, not public. And as always with
+      your chest symptoms: your care team's plan comes first,
+      always.</p>
+    </details>
+    <details><summary>Slow intentional movement</summary>
+      <p>Anxiety fixes the body — held breath, braced
+      shoulders, rigid jaw. Slow movement reintroduces flow.</p>
+      <p>· Find where you feel the most tension. Move that
+      area at <strong>half</strong> the speed you think you
+      should — slower is more regulating.</p>
+      <p>· Breathe into the sensation. Let the movement spread
+      to neighboring areas — neck, spine, hips.</p>
+      <p>· After 3–5 minutes, pause and notice the difference
+      between where you started and where you are now.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ============ SLEEP ============ -->
+<section id="sleep">
+  <div class="card">
+    <h2>Soundscape</h2>
+    <div>
+      <button class="sndbtn" data-s="crickets">🦗 Crickets</button>
+      <button class="sndbtn" data-s="night">🌌 Night blend</button>
+      <button class="sndbtn" data-s="ocean">🌊 Ocean</button>
+      <button class="sndbtn" data-s="rain">🌧️ Rain</button>
+      <button class="sndbtn" data-s="fan">💨 Fan</button>
+      <button id="btn-snd-stop" class="ghost">■ stop</button>
+    </div>
+    <h3>Volume</h3>
+    <input type="range" id="vol" min="0" max="100" value="60">
+    <p class="small">The crickets are synthesized live
+    (simulated, not sampled — impressionist crickets). For the
+    real thing, load any audio file you own:</p>
+    <input type="file" id="customfile" accept="audio/*">
+  </div>
+  <div class="card">
+    <h2>Sleep timer</h2>
+    <select id="sleeptimer">
+      <option value="0">off</option>
+      <option value="15">15 min</option>
+      <option value="30">30 min</option>
+      <option value="45">45 min</option>
+      <option value="60">60 min</option>
+    </select>
+    <span class="small" id="st-countdown"></span>
+  </div>
+  <div class="card">
+    <h2>Gentle body scan</h2>
+    <p class="small">About 8 minutes. Nothing is tensed,
+    nothing is required. The bar and countdown show it's
+    moving — you never have to wonder.</p>
+    <p id="scan-text"
+    style="min-height:48px;margin:10px 0;font-size:16.5px">
+    Press begin when you're settled.</p>
+    <div class="pbarwrap">
+      <div class="pbar" id="scan-bar"></div>
+    </div>
+    <div class="small" id="scan-prog"></div>
+    <button id="btn-scan-start">Begin</button>
+    <button id="btn-scan-pause" class="ghost">Pause</button>
+    <button id="btn-scan-stop" class="ghost">Stop</button>
+  </div>
+  <div class="card">
+    <h2>Before sleep</h2>
+    <p>The Bedtime Shema and Hashkiveinu live in the Pray
+    tab — they were designed for exactly this hour. Crickets
+    on, canopy of peace over you, spirit entrusted.</p>
+    <div id="sleep-songs"></div>
+  </div>
+</section>
+
+<!-- ============ JOURNAL ============ -->
+<section id="journal">
+  <div class="card">
+    <h2>Daily journal</h2>
+    <p class="small">Small, honest pages. The one that fits this time
+    of day is marked. Everything saves to your history on this
+    device.</p>
+    <div id="dj-list"></div>
+    <div id="dj-box"></div>
+  </div>
+  <div class="card">
+    <h2>The needs ladder — a journaling walk</h2>
+    <p class="small">Five rungs. Type, record a voice memo, or
+    both — whatever the rung asks for. Nothing is required:
+    one honest line on one rung is a complete practice. Saved
+    on this device, like your check-ins. Voice memos need the
+    live site and mic permission.</p>
+  </div>
+  <div class="card">
+    <h3>1 · Body</h3>
+    <p>What is my body asking for right now?</p>
+    <p class="small">Food · water · rest · movement · comfort ·
+    meds if they're due.</p>
+    <textarea id="lad-t-0" rows="2"
+      placeholder="one thing my body needs…"></textarea>
+    <button id="lad-r-0">🎙 voice memo</button>
+    <div id="lad-s-0"></div>
+  </div>
+  <div class="card">
+    <h3>2 · Safety</h3>
+    <p>Where do I feel safe — and where unsettled?</p>
+    <p class="small">A routine, a corner, a grounding that
+    works.</p>
+    <textarea id="lad-t-1" rows="2"
+      placeholder="what helps me feel safer…"></textarea>
+    <button id="lad-r-1">🎙 voice memo</button>
+    <div id="lad-s-1"></div>
+  </div>
+  <div class="card">
+    <h3>3 · Connection</h3>
+    <p>Who could I reach out to? Who sees and understands
+    me?</p>
+    <p class="small">Even just a text counts.</p>
+    <textarea id="lad-t-2" rows="2"
+      placeholder="one connection I want to nurture…"></textarea>
+    <button id="lad-r-2">🎙 voice memo</button>
+    <div id="lad-s-2"></div>
+  </div>
+  <div class="card">
+    <h3>4 · Myself</h3>
+    <p>What am I proud of that others might miss?</p>
+    <p class="small">Strengths that have carried you
+    recently.</p>
+    <textarea id="lad-t-3" rows="2"
+      placeholder="one thing to give myself credit for…"></textarea>
+    <button id="lad-r-3">🎙 voice memo</button>
+    <div id="lad-s-3"></div>
+  </div>
+  <div class="card">
+    <h3>5 · Meaning</h3>
+    <p>What matters most to me right now?</p>
+    <p class="small">One small action toward it — tiny counts.
+    Tiny is the point.</p>
+    <textarea id="lad-t-4" rows="2"
+      placeholder="one small step toward what matters…"></textarea>
+    <button id="lad-r-4">🎙 voice memo</button>
+    <div id="lad-s-4"></div>
+  </div>
+  <div class="card">
+    <button id="btn-lad-save">Save this ladder</button>
+    <p class="small">There is no "right" rung to be on. Run it
+    bottom to top — the bottom rungs are cheap to check and
+    easy to forget.</p>
+  </div>
+  <div class="card" id="grief-card">
+    <h2>Grief</h2>
+    <p class="small">Grief isn't only for death. A body, health, work,
+    a future you planned, who you used to be — those losses are real,
+    even when no one sits shiva for them.</p>
+    <p class="fa-why"><b>How:</b> writing about loss (Pennebaker's
+    expressive writing) helps many people a little — stop if it
+    floods you. Grief comes in waves; turning toward it and turning
+    back toward life are both healthy (the dual process model).
+    <b>Why:</b> Judaism gives mourning a shape and time — shiva,
+    sh'loshim, Kaddish, Yizkor. Mourning is a mitzvah, not a
+    weakness.</p>
+    <button id="grief-pray" class="ghost">Psalm 23 · Kaddish ›</button>
+    <div id="grief-flow"></div>
+  </div>
+
+  <div class="card">
+    <h2>Parts &amp; modes check-in</h2>
+    <p class="small">Following your IFS worksheet and your Negative
+    Core Beliefs group (schema modes). Use whichever words fit.
+    Answer what you can; skip the rest.</p>
+    <p class="fa-why"><b>How:</b> Internal Family Systems (Richard
+    Schwartz). Research is early; one trial in rheumatoid arthritis
+    found less pain and depression. <b>Why:</b> "the soul You placed
+    within me is pure" (Elohai N'shamah). IFS calls it Self — the
+    part of you that was never damaged.</p>
+    <div id="parts-flow"></div>
+  </div>
+  <div class="card">
+    <h2>Your saved ladders</h2>
+    <div id="ladlist"></div>
+  </div>
+</section>
+
+
+
+</main>
+
+<nav>
+  <button data-t="home" class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M6 10v10h12V10"/></svg>Today</button>
+  <button data-t="breathe"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h11a3 3 0 1 0-3-3"/><path d="M3 12h15a3 3 0 1 1-3 3"/><path d="M3 16h7"/></svg>Breathe</button>
+  <button data-t="pray"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c2 3 3 4.5 3 6.5a3 3 0 0 1-6 0C9 7.5 10 6 12 3z"/><path d="M9 14h6v7H9z"/></svg>Pray</button>
+  <button data-t="ground"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18"/><path d="M5 20c0-5 3-9 7-9s7 4 7 9"/></svg>Ground</button>
+  <button data-t="sleep"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>Rest</button>
+  <button data-t="journal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/></svg>Journal</button>
+</nav>
+
+<div id="player" role="dialog" aria-modal="true" aria-labelledby="pl-title">
+  <div id="pl-title"></div>
+  <div id="pl-ringwrap">
+    <svg id="pl-ring" viewBox="0 0 100 100" aria-hidden="true">
+      <circle class="bg" cx="50" cy="50" r="46"/>
+      <circle class="fg" id="pl-fg" cx="50" cy="50" r="46"
+        stroke-dasharray="289.03" stroke-dashoffset="289.03"/>
+    </svg>
+    <div id="pl-orb"></div>
+    <div id="pl-left" aria-live="off"></div>
+  </div>
+  <div id="pl-hint">the light keeps breathing while it runs — follow it if you like</div>
+  <div id="pl-steps"></div>
+  <div id="pl-step"></div>
+  <div id="pl-text" aria-live="polite"></div>
+  <div style="margin-top:12px">
+    <button id="pl-pause">Pause</button>
+    <button id="pl-next" class="ghost">Next ›</button>
+    <button id="pl-music" class="ghost"></button>
+    <button id="pl-end" class="ghost">End</button>
+  </div>
+  <div id="pl-why"></div>
+</div>
+
+<div id="nowbar">
+  <div class="row">
+    <span id="nb-title"></span>
+    <a id="nb-link" target="_blank" rel="noopener">open</a>
+    <button id="nb-close" class="ghost" aria-label="stop song">✕</button>
+  </div>
+  <div id="nb-frame"></div>
+</div>
+
+<div id="welcome" style="display:none" aria-label="One breath before you begin">
+  <div id="wl-orb"></div>
+  <div id="wl-word">Let's take one breath.</div>
+  <div id="wl-sub"></div>
+  <button id="wl-skip">skip</button>
+</div>
+
+<div id="toast"></div>
+
+<script src="prayers.js"></script>
+<script src="practices.js"></script>
+<script>
+"use strict";
+var $=function(s){return document.querySelector(s)};
+var $$=function(s){
+  return Array.prototype.slice.call(
+    document.querySelectorAll(s));
+};
+function toast(m){
+  var t=$("#toast");
+  t.textContent=m;
+  t.style.opacity=1;
+  setTimeout(function(){t.style.opacity=0;},2600);
+}
+function esc(s){
+  return s.replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;");
+}
+
+/* ---------- navigation ---------- */
+$$("nav button").forEach(function(b){
+  b.onclick=function(){switchTab(b.dataset.t);};
+});
+function switchTab(t){
+  $$("section").forEach(function(s){
+    s.classList.toggle("on",s.id===t);
+  });
+  $$("nav button").forEach(function(b){
+    b.classList.toggle("on",b.dataset.t===t);
+  });
+  window.scrollTo(0,0);
+}
+
+/* ---------- audio engine ---------- */
+var AE={ctx:null,master:null,nodes:[],timers:[],
+ensure:function(){
+  if(!this.ctx){
+    var AC=window.AudioContext||window.webkitAudioContext;
+    this.ctx=new AC();
+    this.master=this.ctx.createGain();
+    this.master.gain.value=$("#vol").value/100;
+    this.master.connect(this.ctx.destination);
+  }
+  if(this.ctx.state==="suspended"){this.ctx.resume();}
+},
+noiseBuf:function(sec,brown){
+  var c=this.ctx,n=Math.floor(c.sampleRate*sec);
+  var b=c.createBuffer(1,n,c.sampleRate);
+  var d=b.getChannelData(0),last=0,w,i;
+  for(i=0;i<n;i++){
+    w=Math.random()*2-1;
+    if(brown){last=(last+0.02*w)/1.02;d[i]=last*3.5;}
+    else{d[i]=w;}
+  }
+  return b;
+},
+loopNoise:function(brown){
+  var s=this.ctx.createBufferSource();
+  s.buffer=this.noiseBuf(4,brown);
+  s.loop=true;s.start();
+  this.nodes.push(s);
+  return s;
+},
+lfo:function(freq,depth,target){
+  var o=this.ctx.createOscillator(),g=this.ctx.createGain();
+  o.frequency.value=freq;g.gain.value=depth;
+  o.connect(g);g.connect(target);o.start();
+  this.nodes.push(o);
+  return o;
+},
+bell:function(vol){
+  this.ensure();
+  var c=this.ctx,t=c.currentTime,base=523.25,vol2=vol||0.5;
+  [[1,1],[2.756,0.4],[5.404,0.18],[8.93,0.06]].forEach(
+  function(pr){
+    var o=c.createOscillator(),g=c.createGain();
+    o.frequency.value=base*pr[0];
+    g.gain.setValueAtTime(pr[1]*vol2,t);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+4);
+    o.connect(g);g.connect(AE.master);
+    o.start(t);o.stop(t+4.2);
+  });
+},
+blip:function(){
+  this.ensure();
+  var c=this.ctx,t=c.currentTime,o=c.createOscillator(),
+  g=c.createGain();
+  o.frequency.value=660;
+  g.gain.setValueAtTime(0.12,t);
+  g.gain.exponentialRampToValueAtTime(0.0001,t+0.25);
+  o.connect(g);g.connect(this.master);
+  o.start(t);o.stop(t+0.3);
+},
+stopAll:function(){
+  this.timers.forEach(clearTimeout);
+  this.timers=[];
+  this.nodes.forEach(function(n){
+    try{if(n.stop){n.stop();}}catch(e){}
+  });
+  this.nodes=[];
+}};
+
+var snd="none",customAudio=null;
+function stopSound(){
+  AE.stopAll();
+  if(customAudio){customAudio.pause();}
+  snd="none";
+  $$(".sndbtn").forEach(function(b){
+    b.classList.remove("on");
+  });
+}
+function chirp(t,dur,freq,pan){
+  var c=AE.ctx,o=c.createOscillator(),am=c.createGain();
+  var lfo=c.createOscillator(),lg=c.createGain(),
+  env=c.createGain();
+  var p=c.createStereoPanner?c.createStereoPanner():
+  c.createGain();
+  o.frequency.value=freq;
+  am.gain.value=0.5;
+  lfo.frequency.value=34;lg.gain.value=0.5;
+  lfo.connect(lg);lg.connect(am.gain);
+  env.gain.setValueAtTime(0,t);
+  env.gain.linearRampToValueAtTime(0.09,t+0.02);
+  env.gain.setValueAtTime(0.09,t+dur-0.05);
+  env.gain.linearRampToValueAtTime(0,t+dur);
+  if(p.pan){p.pan.value=pan;}
+  o.connect(am);am.connect(env);env.connect(p);
+  p.connect(AE.master);
+  o.start(t);o.stop(t+dur+0.1);
+  lfo.start(t);lfo.stop(t+dur+0.1);
+}
+function cricketsLoop(){
+  if(snd!=="crickets"&&snd!=="night"){return;}
+  var c=AE.ctx,group=2+Math.floor(Math.random()*3);
+  var pan=Math.random()*1.2-0.6;
+  var f=4100+Math.random()*600,i,t;
+  for(i=0;i<group;i++){
+    t=c.currentTime+i*(0.45+Math.random()*0.2);
+    chirp(t,0.22+Math.random()*0.25,
+      f+Math.random()*100,pan);
+  }
+  var wait=(group*0.55+1.5+Math.random()*3.5)*1000;
+  AE.timers.push(setTimeout(cricketsLoop,wait));
+}
+function startSound(kind){
+  stopSound();AE.ensure();snd=kind;
+  var src,f,g;
+  if(kind==="ocean"){
+    src=AE.loopNoise(true);
+    f=AE.ctx.createBiquadFilter();
+    f.type="lowpass";f.frequency.value=420;
+    g=AE.ctx.createGain();g.gain.value=0.5;
+    AE.lfo(0.07,0.35,g.gain);
+    src.connect(f);f.connect(g);g.connect(AE.master);
+  }
+  else if(kind==="rain"){
+    src=AE.loopNoise(false);
+    f=AE.ctx.createBiquadFilter();
+    f.type="bandpass";f.frequency.value=1800;
+    f.Q.value=0.6;
+    g=AE.ctx.createGain();g.gain.value=0.25;
+    src.connect(f);f.connect(g);g.connect(AE.master);
+  }
+  else if(kind==="fan"){
+    src=AE.loopNoise(false);
+    f=AE.ctx.createBiquadFilter();
+    f.type="lowpass";f.frequency.value=900;
+    g=AE.ctx.createGain();g.gain.value=0.3;
+    src.connect(f);f.connect(g);g.connect(AE.master);
+  }
+  else if(kind==="night"){
+    src=AE.loopNoise(true);
+    f=AE.ctx.createBiquadFilter();
+    f.type="lowpass";f.frequency.value=280;
+    g=AE.ctx.createGain();g.gain.value=0.18;
+    AE.lfo(0.05,0.08,g.gain);
+    src.connect(f);f.connect(g);g.connect(AE.master);
+    AE.timers.push(setTimeout(cricketsLoop,400));
+  }
+  else if(kind==="crickets"){
+    AE.timers.push(setTimeout(cricketsLoop,100));
+  }
+  $$(".sndbtn").forEach(function(b){
+    b.classList.toggle("on",b.dataset.s===kind);
+  });
+}
+$$(".sndbtn").forEach(function(b){
+  b.onclick=function(){startSound(b.dataset.s);};
+});
+$("#btn-snd-stop").onclick=stopSound;
+$("#vol").oninput=function(){
+  var v=this.value/100;
+  if(AE.master){AE.master.gain.value=v;}
+  if(customAudio){customAudio.volume=v;}
+};
+$("#customfile").onchange=function(){
+  if(!this.files[0]){return;}
+  stopSound();
+  customAudio=new Audio(URL.createObjectURL(this.files[0]));
+  customAudio.loop=true;
+  customAudio.volume=$("#vol").value/100;
+  customAudio.play();
+  toast("playing your file — loops until stopped");
+};
+
+/* drone + hitbodedut */
+var droneOn=false,droneNodes=[];
+function droneToggle(){
+  AE.ensure();
+  if(droneOn){
+    droneNodes.forEach(function(n){
+      try{n.stop();}catch(e){}
+    });
+    droneNodes=[];droneOn=false;
+    $("#drone-status").textContent="";
+    $("#btn-drone").textContent="▶ drone";
+    return;
+  }
+  droneOn=true;
+  var c=AE.ctx;
+  [[110,0.1],[164.81,0.06],[110.7,0.08]].forEach(
+  function(pr){
+    var o=c.createOscillator(),g=c.createGain();
+    o.frequency.value=pr[0];g.gain.value=pr[1];
+    o.connect(g);g.connect(AE.master);
+    o.start();droneNodes.push(o);
+  });
+  $("#drone-status").textContent=
+    "humming with you — tap again to stop";
+  $("#btn-drone").textContent="■ stop drone";
+}
+$("#btn-drone").onclick=droneToggle;
+var hitIv=null;
+$("#btn-hit").onclick=function(){
+  AE.ensure();
+  if(hitIv){clearInterval(hitIv);hitIv=null;}
+  var left=180;
+  $("#hit-status").textContent="3:00 — say what's true";
+  hitIv=setInterval(function(){
+    left--;
+    var m=Math.floor(left/60),s=("0"+(left%60)).slice(-2);
+    $("#hit-status").textContent=m+":"+s;
+    if(left<=0){
+      clearInterval(hitIv);hitIv=null;
+      AE.bell(0.5);
+      $("#hit-status").textContent="amen. selah.";
+    }
+  },1000);
+};
+
+/* sleep timer */
+var stIv=null;
+$("#sleeptimer").onchange=function(){
+  if(stIv){clearInterval(stIv);stIv=null;}
+  var mins=parseInt(this.value,10);
+  if(!mins){
+    $("#st-countdown").textContent="";
+    return;
+  }
+  var left=mins*60;
+  $("#st-countdown").textContent=left+"s left";
+  stIv=setInterval(function(){
+    left--;
+    var m=Math.floor(left/60),s=("0"+(left%60)).slice(-2);
+    $("#st-countdown").textContent=m+":"+s+" left";
+    if(left<=0){
+      clearInterval(stIv);stIv=null;
+      if(AE.ctx){
+        var now=AE.ctx.currentTime;
+        try{
+          AE.master.gain.cancelScheduledValues(now);
+          AE.master.gain.setValueAtTime(
+            AE.master.gain.value,now);
+          AE.master.gain.linearRampToValueAtTime(
+            0.0001,now+8);
+        }catch(e){}
+      }
+      setTimeout(function(){
+        stopSound();
+        if(AE.master){
+          AE.master.gain.value=$("#vol").value/100;
+        }
+      },8500);
+      toast("sound off. shalom.");
+      $("#sleeptimer").value="0";
+      $("#st-countdown").textContent="";
+    }
+  },1000);
+};
+
+/* ---------- breathing ---------- */
+var PATTERNS={
+slow:{name:"Slow exhale 4–6",
+  desc:"The out-breath longer than the in-breath. "+
+  "The gentlest pattern — a good default.",
+  ph:[{w:"Breathe in",s:4,a:0.34,b:1},
+      {w:"Breathe out",s:6,a:1,b:0.34}]},
+sigh:{name:"Physiological sigh",
+  desc:"A small double-inhale and a very long exhale. "+
+  "Fastest-acting tool for a racing moment.",
+  ph:[{w:"Inhale",s:2.8,a:0.3,b:0.85},
+      {w:"top-up sip",s:1.1,a:0.85,b:1},
+      {w:"let it all the way out",s:6,a:1,b:0.3}]},
+coherent:{name:"Coherent 5–5",
+  desc:"Even in and out at five seconds each. Steady, "+
+  "neutral, easy to sustain.",
+  ph:[{w:"Breathe in",s:5,a:0.34,b:1},
+      {w:"Breathe out",s:5,a:1,b:0.34}]},
+shema:{name:"Shema breath",
+  desc:"Breathe in on Adonai, out on Echad, One. "+
+  "Prayer and breath in one motion.",
+  ph:[{w:"Adonai",s:4,a:0.34,b:1,he:"יְיָ"},
+      {w:"Echad, One",s:6,a:1,b:0.34,he:"אֶחָד"}]},
+box:{name:"Box 4·4·4·4",
+  desc:"Includes short holds. If holds ever feel like "+
+  "the chest episodes, skip this one — it's optional "+
+  "on purpose.",
+  ph:[{w:"In",s:4,a:0.34,b:1},
+      {w:"Hold — soft",s:4,a:1,b:1},
+      {w:"Out",s:4,a:1,b:0.34},
+      {w:"Hold — empty",s:4,a:0.34,b:0.34}]}};
+var br={pat:null,idx:0,t0:0,cycles:0,running:false,paused:false,
+raf:null,len:3,s0:0,pT:0,lastSec:-1};
+function selectPattern(p){
+  br.pat=PATTERNS[p];
+  $("#pat-desc").textContent=br.pat.desc;
+  $$(".patbtn").forEach(function(b){
+    b.classList.toggle("on",b.dataset.p===p);
+  });
+  stopBreath(true);
+  $("#breath-word").textContent=br.pat.name;
+}
+$$(".patbtn").forEach(function(b){
+  b.onclick=function(){selectPattern(b.dataset.p);};
+});
+function setLen(m){
+  br.len=m;
+  $$(".lenbtn").forEach(function(x){
+    x.classList.toggle("on",parseFloat(x.dataset.m)===m);
+  });
+}
+$$(".lenbtn").forEach(function(b){
+  b.onclick=function(){setLen(parseFloat(b.dataset.m));};
+});
+function brWord(){
+  var ph=br.pat.ph[br.idx];
+  if(br.running){buzz(15);}
+  $("#breath-word").textContent=ph.w;
+  $("#breath-he").textContent=ph.he||"";
+}
+function startBreath(){
+  if(!br.pat){toast("choose a pattern first");return;}
+  AE.ensure();
+  var now=performance.now();
+  if(br.paused){
+    var d=now-br.pT;br.t0+=d;br.s0+=d;br.paused=false;
+  }else if(!br.running){
+    br.idx=0;br.cycles=0;br.t0=now;br.s0=now;br.lastSec=-1;
+  }else{return;}
+  br.running=true;
+  $("#btn-br-start").textContent="Start";
+  brWord();wakeOn("br");brLoop();
+}
+function brStatus(el){
+  var sec=Math.floor(el);
+  if(sec===br.lastSec){return;}
+  br.lastSec=sec;
+  var c=br.cycles+(br.cycles===1?" breath":" breaths");
+  if(br.len){
+    var left=Math.max(0,br.len*60-el);
+    $("#breath-cycles").textContent=
+      mmss(Math.ceil(left))+" left · "+c;
+    $("#br-bar").style.width=
+      Math.min(100,el/(br.len*60)*100)+"%";
+  }else{
+    $("#breath-cycles").textContent=mmss(sec)+" · "+c;
+  }
+}
+function brLoop(){
+  if(!br.running){return;}
+  var now=performance.now();
+  var el=(now-br.t0)/1000;
+  var ph=br.pat.ph[br.idx];
+  if(el>=ph.s){
+    br.idx++;
+    if(br.idx>=br.pat.ph.length){
+      br.idx=0;br.cycles++;
+      if(br.len&&(now-br.s0)/1000>=br.len*60){brDone();return;}
+    }
+    br.t0=now;el=0;
+    ph=br.pat.ph[br.idx];
+    brWord();
+  }
+  var p=el/ph.s;
+  var ease=0.5-0.5*Math.cos(Math.PI*p);
+  var sc=ph.a+(ph.b-ph.a)*ease;
+  $("#breath-circle").style.transform="scale("+sc+")";
+  brStatus((now-br.s0)/1000);
+  br.raf=requestAnimationFrame(brLoop);
+}
+function brDone(){
+  var n=br.cycles;
+  stopBreath(true);
+  AE.bell(0.45);
+  $("#breath-word").textContent="Complete — "+n+
+    " breaths. Notice how you are now.";
+}
+$("#btn-br-start").onclick=startBreath;
+$("#btn-br-pause").onclick=function(){
+  if(!br.running){return;}
+  br.running=false;br.paused=true;br.pT=performance.now();
+  cancelAnimationFrame(br.raf);
+  $("#btn-br-start").textContent="Resume";
+  $("#breath-word").textContent="paused — tap Resume";
+  wakeOff("br");
+};
+$("#btn-br-stop").onclick=function(){stopBreath(false);};
+function stopBreath(silent){
+  br.running=false;br.paused=false;
+  if(br.raf){cancelAnimationFrame(br.raf);}
+  $("#breath-circle").style.transform="scale(0.34)";
+  var msg=br.pat?br.pat.name:
+    "choose a pattern, then press start";
+  $("#breath-word").textContent=msg;
+  $("#breath-he").textContent="";
+  $("#breath-cycles").textContent="";
+  $("#br-bar").style.width="0%";
+  $("#btn-br-start").textContent="Start";
+  wakeOff("br");
+}
+
+/* ---------- screen wake lock ---------- */
+var WL={s:null,own:{}};
+function wlReq(){
+  if(WL.s||!("wakeLock" in navigator)){return;}
+  navigator.wakeLock.request("screen").then(function(x){
+    WL.s=x;
+    x.addEventListener("release",function(){WL.s=null;});
+  }).catch(function(){});
+}
+function wakeOn(k){WL.own[k]=1;wlReq();}
+function wakeOff(k){
+  delete WL.own[k];
+  if(!Object.keys(WL.own).length&&WL.s){
+    try{WL.s.release();}catch(e){}
+    WL.s=null;
+  }
+}
+document.addEventListener("visibilitychange",function(){
+  if(document.visibilityState==="visible"&&
+    Object.keys(WL.own).length){wlReq();}
+});
+function mmss(n){
+  n=Math.max(0,Math.round(n));
+  return Math.floor(n/60)+":"+("0"+(n%60)).slice(-2);
+}
+function setTxt(sel,v){
+  var e=sel?$(sel):null;
+  if(e){e.textContent=v;}
+}
+
+/* ---------- practice player + guided sequences ---------- */
+var SEQTITLE={scan:"Gentle body scan",reset:"The 60-second reset",
+shake:"Shaking practice",bfly:"Butterfly hug",
+feet:"Feet grounding"};
+var SEQWHY={
+scan:"Body scans come from Mindfulness-Based Stress Reduction, "+
+"which has good research support for chronic pain and stress.",
+reset:"Orienting to the room tells the brain: I am here, it is "+
+"now. From your care team's derealization plan.",
+shake:"Shaking aims to discharge the muscle bracing of a stress "+
+"response. Research is early (small TRE studies) — stop if it "+
+"feels like too much.",
+bfly:"Slow left-right tapping, from EMDR self-care. Evidence for "+
+"tapping alone is modest; it is gentle and quiet.",
+feet:"Moving attention outward to the floor and the room — useful "+
+"when looking inward makes things feel less real."};
+var SEQ={tag:null,seq:null,i:-1,stepEnd:0,stepDur:0,paused:false,
+pLeft:0,tick:null,txt:null,prog:null,done:"",barSel:null,
+total:0,before:0,lbl:""};
+function plOpen(title){
+  $("#pl-title").textContent=title;
+  $("#pl-why").textContent=SEQWHY[SEQ.tag]||"";
+  var st=$("#pl-steps");st.innerHTML="";
+  SEQ.seq.forEach(function(){
+    var sp=document.createElement("span");
+    sp.appendChild(document.createElement("i"));
+    st.appendChild(sp);
+  });
+  $("#pl-pause").style.display="";
+  $("#pl-next").style.display="";
+  $("#pl-pause").textContent="Pause";
+  $("#pl-end").textContent="End";
+  $("#pl-hint").style.visibility="visible";
+  $("#player").classList.remove("paused");
+  $("#player").classList.add("on");
+  document.body.style.overflow="hidden";
+}
+function plClose(){
+  $("#player").classList.remove("on");
+  document.body.style.overflow="";
+}
+function seqStart(tag,seq,txt,prog,done,bar){
+  var pm0=$("#pl-music");if(pm0){pm0.style.display="";}
+  seqStopAll();AE.ensure();
+  SEQ.tag=tag;
+  SEQ.seq=seq.map(function(x){
+    return (typeof x==="string")?[x,36]:x;
+  });
+  SEQ.txt=txt;SEQ.prog=prog;SEQ.done=done;
+  SEQ.barSel=(bar&&$(bar))?bar:null;SEQ.i=-1;SEQ.paused=false;
+  SEQ.total=SEQ.seq.reduce(function(a,x){return a+x[1];},0);
+  plOpen(SEQTITLE[tag]||"Practice");
+  wakeOn("seq");
+  seqStep(Date.now());
+  SEQ.tick=setInterval(seqTick,250);
+}
+function seqStep(base){
+  SEQ.i++;
+  if(SEQ.i>=SEQ.seq.length){seqFinish();return;}
+  var x=SEQ.seq[SEQ.i];
+  SEQ.stepDur=x[1];
+  SEQ.stepEnd=base+x[1]*1000;
+  SEQ.before=0;
+  for(var k=0;k<SEQ.i;k++){SEQ.before+=SEQ.seq[k][1];}
+  SEQ.lbl=(SEQ.i===SEQ.seq.length-1)?"last step":
+    "step "+(SEQ.i+1)+" of "+SEQ.seq.length;
+  $("#pl-text").textContent=x[0];
+  $("#pl-text").classList.toggle("long",x[0].length>140);
+  var ptx=$("#pl-text");ptx.classList.remove("swap");
+  void ptx.offsetWidth;ptx.classList.add("swap");
+  if(SEQ.i>0){buzz(25);}
+  setTxt(SEQ.txt,x[0]);
+  $$("#pl-steps i").forEach(function(e,j){
+    if(j<SEQ.i){e.style.width="100%";}
+  });
+  seqTick();
+}
+function seqLeft(){
+  return SEQ.paused?SEQ.pLeft:Math.max(0,SEQ.stepEnd-Date.now());
+}
+function seqTick(){
+  if(!SEQ.tag){return;}
+  var left=seqLeft();
+  if(!SEQ.paused&&left<=0){
+    if(document.visibilityState==="visible"){AE.blip();}
+    seqStep(SEQ.stepEnd);return;
+  }
+  var secs=Math.ceil(left/1000);
+  var sf=1-left/(SEQ.stepDur*1000);
+  var done=SEQ.before+SEQ.stepDur*sf;
+  var tf=done/SEQ.total;
+  $("#pl-left").textContent=secs;
+  $("#pl-step").textContent=SEQ.lbl+" · "+
+    (SEQ.paused?"paused":mmss(SEQ.total-done)+" left in all");
+  $("#pl-fg").style.strokeDashoffset=(289.03*(1-tf)).toFixed(1);
+  var seg=$$("#pl-steps i")[SEQ.i];
+  if(seg){seg.style.width=(sf*100).toFixed(1)+"%";}
+  setTxt(SEQ.prog,SEQ.lbl+" · "+(SEQ.paused?"paused":secs+"s left"));
+  if(SEQ.barSel){$(SEQ.barSel).style.width=(tf*100)+"%";}
+}
+function seqPause(){
+  if(!SEQ.tag){return;}
+  if(SEQ.paused){
+    SEQ.paused=false;
+    SEQ.stepEnd=Date.now()+SEQ.pLeft;
+    $("#player").classList.remove("paused");
+    $("#pl-pause").textContent="Pause";
+    wakeOn("seq");
+  }else{
+    SEQ.pLeft=seqLeft();
+    SEQ.paused=true;
+    $("#player").classList.add("paused");
+    $("#pl-pause").textContent="Resume";
+    wakeOff("seq");
+  }
+  seqTick();
+}
+function seqFinish(){
+  if(SEQ.tick){clearInterval(SEQ.tick);SEQ.tick=null;}
+  AE.bell(0.5);buzz([30,90,30]);
+  $("#pl-fg").style.strokeDashoffset="0";
+  $$("#pl-steps i").forEach(function(e){e.style.width="100%";});
+  $("#pl-left").textContent="✓";
+  $("#pl-text").textContent=SEQ.done;
+  $("#pl-step").textContent="complete";
+  $("#pl-hint").style.visibility="hidden";
+  $("#pl-pause").style.display="none";
+  $("#pl-next").style.display="none";
+  $("#pl-end").textContent="Close";
+  setTxt(SEQ.txt,SEQ.done);setTxt(SEQ.prog,"");
+  if(SEQ.barSel){
+    var bar=$(SEQ.barSel);
+    setTimeout(function(){bar.style.width="0%";},1500);
+  }
+  wakeOff("seq");
+  SEQ.tag=null;SEQ.i=-1;SEQ.barSel=null;
+}
+function seqStopAll(){
+  if(SEQ.tick){clearInterval(SEQ.tick);SEQ.tick=null;}
+  if(SEQ.barSel){
+    try{$(SEQ.barSel).style.width="0%";}catch(e){}
+  }
+  SEQ.tag=null;SEQ.i=-1;SEQ.barSel=null;SEQ.paused=false;
+  wakeOff("seq");
+  plClose();
+}
+function seqReset(tag,txtEl,progEl,def){
+  if(SEQ.tag===tag){seqStopAll();}
+  setTxt(txtEl,def);
+  setTxt(progEl,"");
+}
+$("#pl-pause").onclick=seqPause;
+$("#pl-next").onclick=function(){
+  if(!SEQ.tag){return;}
+  if(SEQ.paused){seqPause();}
+  seqStep(Date.now());
+};
+$("#pl-end").onclick=function(){
+  var running=!!SEQ.tag,t=SEQ.txt,p=SEQ.prog;
+  seqStopAll();
+  if(running){setTxt(t,"Press begin.");setTxt(p,"");}
+};
+
+/* body scan */
+var SCAN=[
+"Settle in. Eyes open or closed — either is right.",
+"Feel the weight of your body being held. "+
+"Chair, bed, floor. Held is the whole job.",
+"Let your breath do whatever it is doing. "+
+"Nothing to fix.",
+"Forehead and eyes. Let them be heavy.",
+"Jaw. Lips parted, teeth apart. Let the tongue rest loose.",
+"Shoulders. Let them drop a fraction. That's enough.",
+"Arms and hands. Warm or cool — just notice, "+
+"don't change.",
+"Chest. If feelings live here, let them ride the "+
+"breath like boats.",
+"Belly. Softening — if softening is possible today. "+
+"If not, leave it be.",
+"Hips and legs. Heavy. Held.",
+"Feet. Their contact with whatever is underneath you.",
+"If pain is loud somewhere — you may skip it. "+
+"Find one spot that is neutral, even small, and rest "+
+"your attention there.",
+"You are allowed to be exactly as you are. Rest."];
+$("#btn-scan-start").onclick=function(){
+  seqStart("scan",SCAN,"#scan-text","#scan-prog",
+    "Amen. Selah.","#scan-bar");
+};
+$("#btn-scan-pause").onclick=seqPause;
+$("#btn-scan-stop").onclick=function(){
+  seqReset("scan","#scan-text","#scan-prog",
+    "Press begin when you're settled.");
+};
+
+/* 60-second reset */
+var RESET=[
+["LOOK — name 3 things you can see.",15],
+["LISTEN — name 2 things you can hear.",10],
+["FEEL — press your feet into the floor. "+
+"Feel it press back.",10],
+["ORIENT — say it out loud: my name is Jamie. "+
+"I am here. It is today.",15],
+["CHOOSE — one small next thing. Just one.",10]];
+
+/* shaking practice */
+var SHAKE=[
+["Stand. Feet hip-width, knees soft. "+
+"Start with your hands — let them shake.",45],
+["Let it travel — hands, arms, shoulders.",60],
+["Whole body. Loose, involuntary — "+
+"release, not effort.",75],
+["Stop. Stand still. Feel the aftermath — "+
+"the hum, the warmth.",45],
+["Notice what changed.",6]];
+
+/* butterfly hug */
+var BFLY=[
+["Cross your arms over your chest — hands rest on "+
+"your shoulders.",20],
+["Begin tapping — left, right, left, right. Slow as "+
+"a heartbeat, about one tap per second.",60],
+["Keep tapping. One tap per second. Nothing else to "+
+"do — the tapping is the whole job.",45],
+["Stop tapping. Rest your hands. Let whatever "+
+"shifted be there.",20],
+["Notice: what is even 5% different from when you "+
+"began?",6]];
+
+/* visual field explorer */
+var EYES=[
+"ORIENT — Notice the room around you. "+
+"Take one slow breath. You are here.",
+"EXPLORE — Slowly let your eyes wander the whole "+
+"visual field: up… down… left… right… There is no "+
+"right direction. Up may brush thoughts and activation; "+
+"down may bring settling and body-awareness; the sides "+
+"may touch memory or emotion. Your experience is the map.",
+"NOTICE — Find one spot that feels interesting, "+
+"activating, neutral, or calming. Any spot at all.",
+"RESOURCE — Now find a spot that feels 5% more okay. "+
+"Five percent is a win. Let your eyes rest there and "+
+"take two slow breaths.",
+"INTEGRATE — Come back to center. One more breath. "+
+"Curiosity. Compassion. Choice."];
+var eyesI=-1;
+function eyesDots(){
+  var d=$("#eyes-dots");d.innerHTML="";
+  EYES.forEach(function(x,i){
+    var s=document.createElement("span");
+    if(eyesI>-1&&i<=eyesI){s.className="on";}
+    d.appendChild(s);
+  });
+}
+function eyesReset(){
+  eyesI=-1;
+  $("#eyes-text").textContent=
+    "Find a comfortable gaze. Press begin when you're ready.";
+  $("#eyes-prog").textContent="";
+  $("#btn-eyes-next").textContent="Begin";
+  eyesDots();
+}
+$("#btn-eyes-next").onclick=function(){
+  AE.ensure();
+  eyesI++;
+  if(eyesI>=EYES.length){
+    $("#eyes-text").textContent=
+      "Curiosity. Compassion. Choice. — that's the whole "+
+      "practice. Come back any time.";
+    $("#eyes-prog").textContent="";
+    $("#btn-eyes-next").textContent="Begin";
+    eyesI=-1;
+    eyesDots();
+    return;
+  }
+  $("#eyes-text").textContent=EYES[eyesI];
+  var lbl=(eyesI===EYES.length-1)?"last one":
+    "step "+(eyesI+1)+" of "+EYES.length;
+  $("#eyes-prog").textContent=lbl;
+  $("#btn-eyes-next").textContent="Next";
+  eyesDots();
+};
+$("#btn-eyes-restart").onclick=eyesReset;
+
+/* ---------- guided grounding ---------- */
+var GLOC={
+couch:["blanket","cushions","remote","lamp","tv","window",
+"a book"],
+desk:["monitor","keyboard","mouse","coffee mug","chair",
+"window","desk edge"],
+bed:["pillow","blanket","sheet","lamp","ceiling","phone",
+"a picture on the wall"],
+car:["steering wheel","seatbelt","dashboard","mirror",
+"seat against my back","window view"],
+walk:["the sky","trees","sidewalk underfoot","buildings",
+"people passing","a sign","the air on my face"],
+kitchen:["the counter","the sink","the fridge hum","a mug or cup",
+"the stove","a window","something that smells good"],
+"sitting outside":["the sky","a tree or plant","air on my skin","birds",
+"the ground under me","a cloud","sun or shade"],
+patio:["the chair under me","plants or pots","the sky","a table",
+"a breeze","birds","sun or shade"],
+deck:["boards underfoot","the railing","the sky","trees","a breeze",
+"the chair under me","the view"],
+temple:["the ark","the ner tamid","the bimah","a siddur in my hands",
+"the windows","the seat under me","people nearby"],
+"doctor's waiting room":["the chair under me","a clock","a window",
+"the check-in desk","the floor","magazines","my own hands"],
+bathroom:["the sink","cool tile","a towel","the mirror","running water",
+"the smell of soap"],
+"shower or bath":["warm water on my skin","the sound of water","steam",
+"the smell of soap","the tile","my feet on the floor"],
+"on the floor":["the floor holding me","the ceiling","a rug",
+"furniture legs","the light","my breath"],
+beach:["the sound of waves","sand underfoot","the horizon","gulls",
+"salt air","sun on my skin","a shell or stone"],
+garden:["leaves","the smell of soil","a flower","bees or birds","the sky",
+"the ground under me"],
+"therapy or group":["faces on screen or in the room","my chair",
+"a window","my water","my own hands","the floor"],
+"hospital or infusion chair":["the chair or bed under me","a blanket",
+"the IV pole","monitor sounds","a window","a kind voice","my own hands"],
+"a store or a line":["the floor under my feet","colors on the shelves",
+"a cart or basket handle","music overhead","people moving","a sign"],
+"someone else's home":["the seat under me","photos on the wall",
+"a window","a familiar face","the floor","the smell of the place"],
+other:["a door","a window","a light","the floor","a wall",
+"my own hands","one thing I love"]};
+var GFLOW=[
+{k:"where",t:"Orient — where are you?",multi:false,
+ chips:["couch","desk","bed","kitchen","car","out for a walk",
+ "sitting outside","patio","deck","temple","doctor's waiting room"],
+ more:["bathroom","shower or bath","on the floor","beach","garden",
+ "therapy or group","hospital or infusion chair","a store or a line",
+ "someone else's home"],
+ custom:"somewhere else — where?"},
+{k:"look",t:"Look — what's around you?",multi:true,min:3,
+ dyn:true,custom:"something else you can see"},
+{k:"listen",t:"Listen — what can you hear?",multi:true,
+ min:2,
+ chips:["a hum (fridge, fan, computer)","traffic",
+ "birds","voices nearby","music or tv","a clock",
+ "the quiet itself"],
+ custom:"another sound"},
+{k:"feel",t:"Feel — what's touching you?",multi:true,
+ min:2,
+ chips:["feet on the floor","the chair holding me",
+ "fabric on my skin","phone in my hand",
+ "warmth somewhere","cool air somewhere"],
+ custom:"another feeling"},
+{k:"diff",t:"Differentiate — is this…",multi:false,
+ chips:["happening right now","something from before",
+ "something I'm afraid could happen"],
+ note:"A symptom can be real AND your nervous system can "+
+ "be reacting to the past. You don't have to choose "+ 
+ "between taking your body seriously and taking care of "+
+ "your nerves.",custom:"or in your own words"},
+{k:"choose",t:"Choose — one small next thing",multi:false,
+ chips:["use a tool in this app","reach out to someone",
+ "rest and regather","contact my care team"],
+ custom:"your own next step"}];
+var G={i:-1,sel:{},where:null};
+function nowLine(){
+  var d=new Date();
+  var ds=d.toLocaleDateString(undefined,
+    {weekday:"long",month:"long",day:"numeric"});
+  var ts=d.toLocaleTimeString(undefined,
+    {hour:"numeric",minute:"2-digit"});
+  return "It is "+ds+" · "+ts+".";
+}
+function prevSel(st){
+  var p=G.sel[st.k];return (p&&p.chips)?p.chips:[];
+}
+function gReset(){
+  G={i:-1,sel:{},where:null};
+  var f=$("#gflow");
+  f.innerHTML="<p class=\"small\">Six steps, more or less. "+
+    "Skip anything. Nothing needs to be perfect.</p>";
+  var b=document.createElement("button");
+  b.textContent="Begin";
+  b.onclick=function(){gAdvance();};
+  f.appendChild(b);
+}
+function gAdvance(){
+  G.i++;
+  if(G.i>=GFLOW.length){gDone();return;}
+  gRenderStep();
+}
+function gCollect(){
+  var out={chips:[],custom:""};
+  $$("#gflow button.gchip").forEach(function(b){
+    if(b.classList.contains("on")){
+      out.chips.push(b.textContent);
+    }
+  });
+  var ci=$("#gcustom");
+  if(ci&&ci.value.trim()){out.custom=ci.value.trim();}
+  return out;
+}
+function gCount(st){
+  var n=0;
+  $$("#gflow button.gchip").forEach(function(b){
+    if(b.classList.contains("on")){n++;}
+  });
+  var ci=$("#gcustom");
+  if(ci&&ci.value.trim()){n++;}
+  var el=$("#gcount");
+  if(!el){return;}
+  if(st.min){
+    el.textContent=(n>=st.min)?
+      n+" noticed — that's enough. Continue when ready.":
+      n+" noticed · gentle, no rush — "+st.min+
+      " is plenty.";
+  }else{
+    el.textContent=n?"chosen":"";
+  }
+}
+function gRenderStep(){
+  var st=GFLOW[G.i],f=$("#gflow");
+  f.innerHTML="";
+  var dots=document.createElement("div");
+  dots.className="dots";
+  GFLOW.forEach(function(x,j){
+    var sp=document.createElement("span");
+    if(j===G.i){sp.className="on";}
+    dots.appendChild(sp);
+  });
+  f.appendChild(dots);
+  var h=document.createElement("h3");
+  h.textContent="Step "+(G.i+1)+" of "+GFLOW.length+
+    " · "+st.t;
+  f.appendChild(h);
+  if(st.k==="where"){
+    var tl=document.createElement("p");
+    tl.className="small";
+    tl.textContent=nowLine()+" Nothing to fix — just say.";
+    f.appendChild(tl);
+  }
+  if(st.note){
+    var nn=document.createElement("p");
+    nn.className="small";
+    nn.textContent=st.note;
+    f.appendChild(nn);
+  }
+  var grid=document.createElement("div");
+  grid.className="chipgrid";
+  var chips=st.dyn?(GLOC[G.where]||GLOC.other):st.chips;
+  if(st.more&&(G.more||(prevSel(st).some(function(c){
+    return st.more.indexOf(c)>-1;})))){chips=chips.concat(st.more);G.more=1;}
+  var prev=G.sel[st.k]||{chips:[],custom:""};
+  chips.forEach(function(c){
+    var b=document.createElement("button");
+    b.className="gchip";
+    b.textContent=c;
+    if(prev.chips.indexOf(c)>-1){
+      b.classList.add("on");
+    }
+    b.onclick=function(){
+      if(!st.multi){
+        $$("#gflow button.gchip").forEach(function(x){
+          x.classList.remove("on");
+        });
+      }
+      b.classList.toggle("on");
+      if(st.k==="where"){
+        G.where=(c==="out for a walk")?"walk":c;
+      }
+      gCount(st);
+    };
+    grid.appendChild(b);
+  });
+  f.appendChild(grid);
+  if(st.more&&!G.more){
+    var mb=document.createElement("button");
+    mb.className="ghost";mb.textContent="more places ›";
+    mb.onclick=function(){
+      G.sel[st.k]=gCollect();G.more=1;gRenderStep();
+    };
+    f.appendChild(mb);
+  }
+  if(st.custom){
+    var ci=document.createElement("input");
+    ci.type="text";ci.id="gcustom";
+    ci.placeholder=st.custom;
+    ci.value=prev.custom||"";
+    ci.oninput=function(){gCount(st);};
+    f.appendChild(ci);
+  }
+  var cnt=document.createElement("p");
+  cnt.className="small";cnt.id="gcount";
+  f.appendChild(cnt);
+  gCount(st);
+  var back=document.createElement("button");
+  back.className="ghost";
+  back.textContent=(G.i===0)?"Cancel":"‹ back";
+  back.onclick=function(){
+    G.sel[GFLOW[G.i].k]=gCollect();
+    if(G.i===0){gReset();}
+    else{G.i--;gRenderStep();}
+  };
+  f.appendChild(back);
+  var skip=document.createElement("button");
+  skip.className="ghost";skip.textContent="skip";
+  skip.onclick=function(){
+    G.sel[GFLOW[G.i].k]=null;
+    gAdvance();
+  };
+  f.appendChild(skip);
+  var go=document.createElement("button");
+  go.textContent=(G.i===GFLOW.length-1)?"Finish":"Continue";
+  go.onclick=function(){
+    G.sel[GFLOW[G.i].k]=gCollect();
+    gAdvance();
+  };
+  f.appendChild(go);
+}
+function gDone(){
+  var f=$("#gflow");f.innerHTML="";
+  var s=G.sel;
+  function first(k,fb){
+    var x=s[k];
+    if(x&&x.chips&&x.chips.length){
+      return x.chips.join(", ");
+    }
+    if(x&&x.custom){return x.custom;}
+    return fb;
+  }
+  var noticed=[first("look",""),first("listen",""),
+    first("feel","")].filter(Boolean).join(" · ");
+  var h=document.createElement("h3");
+  h.textContent="You oriented. You noticed. You chose.";
+  f.appendChild(h);
+  var rows=[
+  ["You are:",first("where","somewhere")],
+  ["You noticed:",noticed||"enough"],
+  ["This is:",first("diff","a moment passing")],
+  ["Your next thing:",first("choose","rest")]];
+  rows.forEach(function(r){
+    var p=document.createElement("p");
+    p.textContent=r[0]+" "+r[1];
+    f.appendChild(p);
+  });
+  var p2=document.createElement("p");
+  p2.className="small";
+  p2.textContent="You are here. You can notice what is "+
+    "happening. You have choices. Nothing needs solving "+
+    "this second.";
+  f.appendChild(p2);
+  AE.bell(0.5);
+  var sv=document.createElement("button");
+  sv.textContent="Save to my log";
+  sv.onclick=function(){
+    plogAdd("ground","at "+rows[0][1]+" · noticed "+rows[1][1]+
+      " · "+rows[2][1]+" · next: "+rows[3][1]);
+    sv.disabled=true;sv.textContent="✓ saved";
+  };
+  f.appendChild(sv);
+  var b=document.createElement("button");
+  b.className="ghost";
+  b.textContent="Begin again";
+  b.onclick=function(){gReset();};
+  f.appendChild(b);
+}
+
+/* ---------- somatic first aid ---------- */
+SEQTITLE.cold="Cold water — dive reflex";
+SEQTITLE.slow="Slow movement";
+SEQWHY.cold="Cold on the face triggers the dive reflex, which slows "+
+"the heart. Home use. Your care team's plan for chest symptoms "+
+"comes first.";
+SEQWHY.slow="Anxiety and pain both brace the body. Moving at half "+
+"speed brings flow back. Move only what is willing today.";
+var FAST={};
+var COLD=[
+["Cold water or a cold cloth ready. Not home? Hold something "+
+"cool — or skip this one.",15],
+["Cold on your face — forehead, eyes, cheeks. Hold it there.",20],
+["Come up. Breathe normally. Notice the shift.",15]];
+var SLOW=[
+["Find where you feel the most tension.",20],
+["Move that area at half the speed you think you should.",50],
+["Breathe into the sensation. Let the movement spread — neck, "+
+"spine, hips.",60],
+["Even slower. Slower is more regulating.",40],
+["Pause. Notice the difference from where you started.",15]];
+var WHY={
+sigh:"Double inhale, long exhale — the out-breath is the brake. "+
+"Cyclic sighing eased anxiety more than mindfulness in a 2023 "+
+"Stanford trial.",
+slowbr:"Exhale longer than inhale. Slow breathing (about six "+
+"breaths a minute) reliably lowers arousal.",
+emo:"Putting a feeling into words quiets the alarm response.",
+ground:"Questions instead of instructions — just tap what's true.",
+eyes:"Orienting with your eyes, at your own pace."};
+var FA=[
+{l:"⚡ Panic — heart racing, spiraling",t:[
+ ["Physiological sigh · 1 min","sigh"],
+ ["Cold water on the face · 50 sec","cold"],
+ ["60-second reset","reset"]]},
+{l:"🌪️ Chronic stress — tension that's settled in",t:[
+ ["Guided shaking · 4 min","shake"],
+ ["Slow movement · 3 min","slow"],
+ ["Gentle body scan · 8 min","scan"]]},
+{l:"🌊 Dysregulated — a 7 that needs to be a 4",t:[
+ ["Butterfly hug · 2 min","bfly"],
+ ["Slow exhale breathing · 3 min","slowbr"],
+ ["Name it to tame it","emo"]]},
+{l:"🌑 Shut down — numb, far away, foggy",t:[
+ ["Ground with me","ground"],
+ ["Feet grounding · 80 sec","feet"],
+ ["Where your eyes go","eyes"]]},
+{l:"🏢 In public — needs to be subtle",t:[
+ ["Feet grounding · 80 sec","feet"],
+ ["Physiological sigh · 1 min","sigh"],
+ ["Butterfly hug · 2 min","bfly"]]}];
+FAST.cold=function(){
+  seqStart("cold",COLD,null,null,"Done. Your heart had a chance to slow.");
+};
+FAST.slow=function(){
+  seqStart("slow",SLOW,null,null,"Notice where you are now, compared with where you began.");
+};
+FAST.scan=function(){
+  seqStart("scan",SCAN,"#scan-text","#scan-prog","Amen. Selah.","#scan-bar");
+};
+FAST.slowbr=function(){
+  switchTab("breathe");selectPattern("slow");setLen(3);startBreath();
+};
+var faSel=-1;
+function faRender(){
+  var st=$("#fa-states");st.innerHTML="";
+  FA.forEach(function(x,i){
+    var b=document.createElement("button");
+    b.className="fa-state"+(i===faSel?" on":"");
+    b.textContent=x.l;
+    b.onclick=function(){faSel=(faSel===i)?-1:i;faRender();};
+    st.appendChild(b);
+    if(i!==faSel){return;}
+    x.t.forEach(function(tl){
+      var tb=document.createElement("button");
+      tb.className="fa-tool";tb.textContent="▶  "+tl[0];
+      tb.onclick=function(){STARTERS[tl[1]]();};
+      st.appendChild(tb);
+      var w=document.createElement("p");
+      w.className="fa-why";
+      w.textContent=WHY[tl[1]]||SEQWHY[tl[1]]||"";
+      st.appendChild(w);
+    });
+  });
+}
+
+/* ---------- feelings wheel (program handout) ---------- */
+var WHEEL=[
+{c:"anger",col:"#e89a9a",m:[["hurt","embarrassed","devastated"],
+["threatened","insecure","jealous"],["hateful","resentful","violated"],
+["mad","furious","enraged"],["aggressive","provoked","hostile"],
+["frustrated","infuriated","irritated"],
+["distant","withdrawn","suspicious"],
+["critical","skeptical","sarcastic"]]},
+{c:"disgust",col:"#b9a3d9",m:[["disapproval","judgmental","loathing"],
+["disappointed","repugnant","revolted"],
+["awful","revulsion","detestable"],["avoidance","aversion","hesitant"]]},
+{c:"sad",col:"#8fb3e0",m:[["guilty","remorseful","ashamed"],
+["abandoned","ignored","victimized"],
+["despair","powerless","vulnerable"],["depressed","inferior","empty"],
+["lonely","abandoned","isolated"],["bored","apathetic","indifferent"]]},
+{c:"happy",col:"#f0d27a",m:[["optimistic","inspired","open"],
+["intimate","playful","sensitive"],["peaceful","hopeful","loving"],
+["powerful","provocative","courageous"],
+["accepted","respected","fulfilled"],["proud","important","confident"],
+["interested","amused","inquisitive"],["joyful","ecstatic","liberated"]]},
+{c:"surprise",col:"#8fd6d6",m:[["excited","energetic","eager"],
+["amazed","awe","astonished"],["confused","perplexed","disillusioned"],
+["startled","dismayed","shocked"]]},
+{c:"fear",col:"#8fcf9f",m:[["scared","terrified","frightened"],
+["anxious","overwhelmed","worried"],["insecure","inadequate","inferior"],
+["submissive","worthless","insignificant"],
+["rejected","inadequate","alienated"],
+["humiliated","disrespected","ridiculed"]]}];
+var IDX={};
+function idxAdd(w,p,ci){
+  IDX[w]=IDX[w]||[];
+  var key=p.join(">");
+  if(!IDX[w].some(function(x){return x.p.join(">")===key;})){
+    IDX[w].push({p:p,ci:ci});
+  }
+}
+WHEEL.forEach(function(x,ci){
+  idxAdd(x.c,[x.c],ci);
+  x.m.forEach(function(m){
+    idxAdd(m[0],[m[0],x.c],ci);
+    idxAdd(m[1],[m[1],m[0],x.c],ci);
+    idxAdd(m[2],[m[2],m[0],x.c],ci);
+  });
+});
+var WORDS=Object.keys(IDX).sort();
+var BODY=["chest","throat","stomach","shoulders","jaw","head",
+"hands","back","nowhere I can find"];
+var WS={mode:"out",core:null},picked=[],bodyOn=[];
+function emoChip(w,ghost){
+  var b=document.createElement("button");
+  b.className="emo"+(ghost?" ghost":"")+
+    (picked.indexOf(w)>-1?" on":"");
+  b.style.setProperty("--c",WHEEL[IDX[w][0].ci].col);
+  b.textContent=w;
+  b.onclick=function(){
+    var i=picked.indexOf(w);
+    if(i>-1){picked.splice(i,1);}else{picked.push(w);}
+    b.classList.toggle("on",picked.indexOf(w)>-1);
+    emoSummary();
+  };
+  return b;
+}
+function emoModes(){
+  var m=$("#emo-modes");m.innerHTML="";
+  [["out","Start from the exact word"],
+   ["in","Start from the big feeling"]].forEach(function(x){
+    var b=document.createElement("button");
+    b.textContent=x[1];
+    b.className=WS.mode===x[0]?"on":"ghost";
+    b.onclick=function(){WS.mode=x[0];WS.core=null;emoRender();};
+    m.appendChild(b);
+  });
+}
+function emoGrid(){
+  var g=$("#emo-grid");g.innerHTML="";
+  if(WS.mode==="out"){
+    var q=$("#emo-q").value.trim().toLowerCase();
+    var list=WORDS.filter(function(w){return !q||w.indexOf(q)>-1;});
+    list.forEach(function(w){g.appendChild(emoChip(w));});
+    if(!list.length){
+      g.innerHTML='<p class="small">Not on this wheel — that\'s '+
+        'okay. Try a nearby word, or browse by big feeling.</p>';
+    }
+    return;
+  }
+  if(WS.core===null){
+    WHEEL.forEach(function(x,i){
+      var b=emoChip(x.c);
+      b.onclick=function(){WS.core=i;emoRender();};
+      b.textContent=x.c+" ›";
+      g.appendChild(b);
+    });
+    return;
+  }
+  var back=document.createElement("button");
+  back.className="ghost";back.textContent="‹ all six";
+  back.onclick=function(){WS.core=null;emoRender();};
+  g.appendChild(back);
+  var x=WHEEL[WS.core];
+  g.appendChild(emoChip(x.c));
+  x.m.forEach(function(m){
+    var row=document.createElement("div");
+    row.style.width="100%";
+    row.appendChild(emoChip(m[0]));
+    row.appendChild(emoChip(m[1],true));
+    row.appendChild(emoChip(m[2],true));
+    g.appendChild(row);
+  });
+}
+function emoPaths(w){
+  return IDX[w].map(function(x){return x.p.join(" → ");});
+}
+function emoSummary(){
+  $("#emo-line").textContent=picked.length?
+    "Right now I feel: "+picked.join(", ")+".":"";
+  var pt=$("#emo-path");pt.innerHTML="";
+  var cores=[];
+  picked.forEach(function(w){
+    emoPaths(w).forEach(function(p){
+      var d=document.createElement("div");
+      d.className="small";d.textContent="· "+p;
+      pt.appendChild(d);
+    });
+    IDX[w].forEach(function(x){
+      var c=WHEEL[x.ci].c;
+      if(cores.indexOf(c)<0){cores.push(c);}
+    });
+  });
+  if(cores.length){
+    var u=document.createElement("p");
+    u.style.color="var(--amber)";
+    u.textContent="Underneath: "+cores.join(", ")+".";
+    pt.appendChild(u);
+  }
+  $("#emo-tame").style.display=picked.length?"block":"none";
+}
+function emoBody(){
+  var g=$("#emo-body");g.innerHTML="";
+  BODY.forEach(function(w){
+    var b=document.createElement("button");
+    b.textContent=w;
+    b.className=bodyOn.indexOf(w)>-1?"on":"ghost";
+    b.onclick=function(){
+      var i=bodyOn.indexOf(w);
+      if(i>-1){bodyOn.splice(i,1);}else{bodyOn.push(w);}
+      emoBody();
+    };
+    g.appendChild(b);
+  });
+}
+function emoRender(){
+  emoModes();
+  $("#emo-q").style.display=WS.mode==="out"?"":"none";
+  emoGrid();emoSummary();emoBody();
+}
+function emoText(){
+  return picked.join(", ")+
+    (bodyOn.length?" · in my "+bodyOn.join(", "):"")+
+    " · strength "+$("#emo-int").value;
+}
+function emoClear(){
+  picked.length=0;bodyOn.length=0;WS.core=null;
+  $("#emo-q").value="";$("#emo-int").value=5;
+  $("#emo-intv").textContent="5";
+  emoRender();
+}
+$("#emo-q").oninput=emoGrid;
+$("#emo-int").oninput=function(){$("#emo-intv").textContent=this.value;};
+$("#btn-emo-save").onclick=function(){
+  plogAdd("feel",emoText());
+  toast("named and saved. that's the taming.");
+  emoClear();
+};
+$("#btn-emo-note").onclick=function(){
+  var n=$("#ci-note");
+  n.value=(n.value?n.value+"; ":"")+"feeling: "+emoText();
+  toast("added to your next check-in note");
+};
+$("#btn-emo-breath").onclick=function(){STARTERS.slowbr();};
+$("#btn-emo-clear").onclick=function(){emoClear();toast("cleared");};
+
+/* ---------- practice log (grounding + feelings) ---------- */
+var PLBL={feel:"named",parts:"parts",ground:"grounded",grief:"grief",
+bracha:"bracha",pages:"morning pages",expressive:"expressive writing",
+evening:"evening download",sleep:"sleep",note:"note"};
+var PLOGKEY="neshamah_practice",plog=[];
+try{plog=JSON.parse(localStorage.getItem(PLOGKEY)||"[]");}
+catch(e){plog=[];}
+function plogSave(){
+  try{localStorage.setItem(PLOGKEY,JSON.stringify(plog));}catch(e){}
+}
+function plogAdd(k,txt){
+  plog.unshift({t:new Date().toISOString(),k:k,txt:txt});
+  if(plog.length>400){plog.length=400;}
+  plogSave();renderPlog();
+}
+function renderPlog(){
+  var l=$("#plogList");if(!l){return;}
+  l.innerHTML="";
+  if(!plog.length){
+    l.innerHTML='<p class="small">Grounding walks and named '+
+      'feelings, blessings and journal entries you save show up here.</p>';
+    return;
+  }
+  plog.slice(0,30).forEach(function(e){
+    var d=document.createElement("div");
+    d.className="logline";
+    d.textContent=fmt(e.t)+" — "+
+      (PLBL[e.k]||e.k)+": "+(e.txt.length>240?e.txt.slice(0,240)+"…":e.txt);
+    l.appendChild(d);
+  });
+}
+
+/* ---------- check-in + log ---------- */
+var LOGKEY="neshamah_log",log=[];
+try{log=JSON.parse(localStorage.getItem(LOGKEY)||"[]");}
+catch(e){log=[];}
+function saveLog(){
+  localStorage.setItem(LOGKEY,JSON.stringify(log));
+}
+var curState=null;
+$$(".statebtn").forEach(function(b){
+  b.onclick=function(){
+    curState=b.dataset.s;
+    $$(".statebtn").forEach(function(x){
+      x.classList.toggle("on",x===b);
+    });
+  };
+});
+$("#ci-pain").oninput=function(){
+  $("#painval").textContent=this.value;
+};
+$("#ci-anx").oninput=function(){
+  $("#anxval").textContent=this.value;
+};
+/* ---- multi-select "noticing" flags (v2.14) ---- */
+var FLAGS={};
+var FLAGLBL={grief:"🤍 grief",dissoc:"🌫️ dissociation",pain:"🔥 pain",
+  anx:"🌀 anxiety",sleep:"🌙 can't sleep"};
+$$(".flagbtn").forEach(function(b){
+  b.onclick=function(){
+    var f=b.dataset.f;
+    if(FLAGS[f]){delete FLAGS[f];}else{FLAGS[f]=1;}
+    b.classList.toggle("on",!!FLAGS[f]);
+    $("#ci-unreal").checked=!!FLAGS.dissoc;
+  };
+});
+function ciLbl(e){
+  var a=[];if(e.s){a.push(STATELBL[e.s]||e.s);}
+  (e.f||[]).forEach(function(x){a.push(FLAGLBL[x]||x);});
+  return a.join(", ");
+}
+function flagList(){
+  return ["dissoc","pain","anx","sleep","grief"].filter(function(f){
+    return FLAGS[f];});
+}
+/* Body first, then meaning: dissoc > pain > anx > sleep > grief */
+function pickPractices(fl){
+  var P=(window.PRACTICES||[]).filter(function(p){
+    if(p.avoid&&p.avoid.some(function(a){return fl.indexOf(a)>=0;})){return false;}
+    if(fl.indexOf("dissoc")>=0&&(p.eyesClosed||p.mins>6)){return false;}
+    if(fl.indexOf("pain")>=0&&p.standing){return false;}
+    if(fl.indexOf("sleep")<0&&p.tab==="sleep"&&fl.length){
+      var h=new Date().getHours();if(h>=6&&h<19){return false;}}
+    return true;
+  });
+  function score(p){
+    var c=fl.filter(function(f){return p.tags.indexOf(f)>=0;}).length;
+    return c*10-(p.mins||3)/10;
+  }
+  var LEAD={dissoc:"ground",pain:"breathe",anx:"breathe",sleep:"sleep",grief:"pray"};
+  function fscore(p,f){return score(p)+(f==="dissoc"&&p.id==="present-moment"?50:0)+(p.tab===LEAD[f]?30:0);}
+  var out=[];
+  fl.forEach(function(f){
+    var best=P.filter(function(p){
+      return p.tags.indexOf(f)>=0&&out.indexOf(p)<0;})
+      .sort(function(a,b){return fscore(b,f)-fscore(a,f);})[0];
+    if(best){out.push(best);}
+  });
+  P.filter(function(p){return out.indexOf(p)<0&&score(p)>5;})
+    .sort(function(a,b){return score(b)-score(a);})
+    .forEach(function(p){out.push(p);});
+  return out;
+}
+function runPractice(p){
+  SEQTITLE[p.id]=p.title;
+  SEQWHY[p.id]=p.how+(p.why?"  ✡ "+p.why:"");
+  seqStart(p.id,p.steps,null,null,
+    "Done. Notice one thing that is a little different, or not. Both are fine.");
+  var pm=$("#pl-music");if(pm){pm.style.display=["breathing-the-name","divine-name-exhale"].indexOf(p.id)>=0?"none":"";}
+}
+function runCombo(list){
+  var steps=[];
+  list.forEach(function(p){
+    p.steps.forEach(function(x,j){
+      steps.push([(j===0?p.title+" — ":"")+x[0],x[1]]);});
+  });
+  SEQTITLE.combo=list.map(function(p){return p.title;}).join(" → ");
+  SEQWHY.combo="Body first, then meaning. You can end at any step.";
+  seqStart("combo",steps,null,null,
+    "Complete. Rest counts as practice too.");
+}
+var RECS={
+grief:[
+  {l:"Grief journal — a few gentle questions",t:"journal",s:"griefj"},
+  {l:"Psalm 23 and the Mourner's Kaddish",t:"pray",s:"griefp"},
+  {l:"♪ Psalm 23 — Cantor Childs",t:"pray",s:"ps23song"},
+  {l:"Sefirot body scan — Binah, the heart, has room for grief",
+   t:"breathe",s:"sef"}],
+wired:[
+  {l:"Physiological sigh",t:"breathe",p:"sigh"},
+  {l:"60-second reset",t:"ground",s:"reset"},
+  {l:"Cold water on the face — if you're home",
+   t:"ground"},
+  {l:"Slow exhale 4–6",t:"breathe",p:"slow"}],
+heavy:[
+  {l:"Gentle up-regulation — warmth, sway, voice",
+   t:"ground"},
+  {l:"Somatic shaking — if your body wants to",
+   t:"ground",s:"shake"},
+  {l:"Hum a niggun",t:"pray"},
+  {l:"Coherent breathing — only if it feels like relief",
+   t:"breathe",p:"coherent"}],
+mixed:[
+  {l:"60-second reset — your team's sequence",
+   t:"ground",s:"reset"},
+  {l:"Then: slow exhale 4–6",t:"breathe",p:"slow"},
+  {l:"Differentiate: now, before, or afraid?",
+   t:"ground",s:"ground"}],
+settled:[
+  {l:"Shema — breath & line",t:"pray"},
+  {l:"Where your eyes go — find the 5% spot",
+   t:"ground",s:"eyes"},
+  {l:"Shema breath — in on Adonai, out on Echad",
+   t:"breathe",p:"shema"},
+  {l:"Niggun — hum along with the drone",t:"pray"}],
+feelings:[
+  {l:"Name it to tame it — the wheel",t:"ground",s:"emo"},
+  {l:"Physiological sigh",t:"breathe",p:"sigh"},
+  {l:"Priestly Blessing — self-blessing",t:"pray"},
+  {l:"Hitbodedut: your own words",t:"pray"}]};
+
+var STARTERS={
+reset:function(){
+  seqStart("reset",RESET,"#reset-text","#reset-prog",
+    "You did it. I am here. I can notice what is "+
+    "happening. I have choices.");
+},
+shake:function(){
+  seqStart("shake",SHAKE,"#shake-text","#shake-prog",
+    "That was your body completing a stress cycle. "+
+    "Water, and something gentle next.");
+},
+bfly:function(){
+  seqStart("bfly",BFLY,"#bfly-text","#bfly-prog",
+    "That's the hug. It works below words — come "+
+    "back any time.");
+},
+ground:function(){
+  gReset();gAdvance();
+  $("#gflow").scrollIntoView({behavior:"smooth",
+    block:"center"});
+},
+eyes:function(){
+  eyesReset();
+  var c=$("#eyes-text");
+  if(c){c.scrollIntoView({behavior:"smooth",
+    block:"center"});}
+},
+emo:function(){
+  var c=$("#emo-wrap");
+  if(c){c.scrollIntoView({behavior:"smooth",
+    block:"center"});}
+}};
+$("#ci-save").onclick=function(){
+  if(!curState&&!flagList().length){
+    toast("pick a state or something you're noticing — any is fine");
+    return;
+  }
+  log.unshift({
+    t:new Date().toISOString(),
+    s:curState,
+    p:$("#ci-pain").value,
+    a:$("#ci-anx").value,
+    u:$("#ci-unreal").checked,
+    f:flagList(),
+    n:$("#ci-note").value.trim(),
+    c:!!($("#ci-candles")&&$("#ci-candles").checked)
+  });
+  if(log.length>400){log.length=400;}
+  saveLog();
+  renderLog();
+  renderRecs();
+  $("#ci-note").value="";
+  toast("recorded. be gentle with yourself.");
+};
+function renderRecs(){
+  var box=$("#ci-recs"),btns=$("#ci-recbtns");
+  btns.innerHTML="";
+  box.style.display="block";
+  var fl=flagList();
+  if(fl.length&&window.PRACTICES){
+    var picks=pickPractices(fl),top=picks.slice(0,3);
+    if(top.length>1){
+      var mins=top.reduce(function(a,p){return a+(p.mins||0);},0);
+      var cb=document.createElement("button");
+      cb.textContent="▶ Do these in order ("+Math.round(mins)+" min)";
+      cb.onclick=function(){runCombo(top);};
+      btns.appendChild(cb);
+    }
+    function pbtn(p){
+      var b=document.createElement("button");
+      b.className="ghost";
+      b.textContent=p.title+" · "+Math.max(1,Math.round(p.mins))+" min";
+      b.onclick=function(){runPractice(p);};
+      return b;
+    }
+    top.forEach(function(p){btns.appendChild(pbtn(p));});
+    if(picks.length>3){
+      var more=document.createElement("details");
+      var sm=document.createElement("summary");
+      sm.className="small";sm.textContent="more options ("+(picks.length-3)+")";
+      more.appendChild(sm);
+      picks.slice(3).forEach(function(p){more.appendChild(pbtn(p));});
+      btns.appendChild(more);
+    }
+    return;
+  }
+  var recs=(curState&&RECS[curState]?
+    RECS[curState].slice():[]);
+  if($("#ci-unreal").checked){
+    recs.unshift({l:"Start with the 60-second reset",
+      t:"ground",s:"reset"});
+  }
+  recs.forEach(function(r){
+    var b=document.createElement("button");
+    b.textContent=r.l;
+    b.onclick=function(){
+      switchTab(r.t);
+      setTimeout(function(){
+        if(r.p){selectPattern(r.p);startBreath();}
+        if(r.s&&STARTERS[r.s]){STARTERS[r.s]();}
+      },250);
+    };
+    btns.appendChild(b);
+  });
+}
+function fmt(iso){
+  var d=new Date(iso);
+  var ds=d.toLocaleDateString(undefined,
+    {month:"short",day:"numeric"});
+  var ts=d.toLocaleTimeString(undefined,
+    {hour:"numeric",minute:"2-digit"});
+  return ds+" "+ts;
+}
+var STATELBL={wired:"⚡ wired",heavy:"🌑 heavy",
+  mixed:"🌗 mixed",settled:"🌿 settled",
+  feelings:"🌊 feelings",grief:"🤍 grieving"};
+function renderLog(){
+  var list=$("#loglist");
+  list.innerHTML="";
+  log.slice(0,30).forEach(function(e){
+    var d=document.createElement("div");
+    d.className="logline";
+    d.textContent=fmt(e.t)+" — "+ciLbl(e)+
+      " · pain "+e.p+" · anxiety "+e.a+
+      (e.u?" · unreal":"")+(e.c?" · 🕯️ candles":"")+(e.n?" · "+e.n:"");
+    list.appendChild(d);
+  });
+  var bars=$("#trendbars");
+  bars.innerHTML="";
+  log.slice(0,14).reverse().forEach(function(e){
+    var b=document.createElement("div");
+    b.className="bar";
+    b.innerHTML='<div class="p" style="height:'+
+      (e.p*6)+'px"></div><div class="a" style="height:'+
+      (e.a*6)+'px"></div>';
+    b.title=fmt(e.t);
+    bars.appendChild(b);
+  });
+  var last=$("#ci-last");
+  if(log.length){
+    last.textContent="Last check-in: "+fmt(log[0].t)+
+      " — "+ciLbl(log[0])+
+      (log[0].u?", felt unreal":"")+".";
+  }else{
+    last.textContent="No check-ins yet. The first one "+
+      "takes 20 seconds.";
+  }
+}
+$("#btn-copy").onclick=function(){
+  var lines=["Neshamah check-in summary — last "+
+    Math.min(14,log.length)+" entries:"];
+  log.slice(0,14).forEach(function(e){
+    lines.push(fmt(e.t)+" | "+ciLbl(e)+
+      " | pain "+e.p+" | anxiety "+e.a+
+      (e.u?" | felt unreal":"")+
+      (e.n?" | note: "+e.n:""));
+  });
+  if(log.length===0){lines.push("(no check-ins yet)");}
+  if(plog.length){
+    lines.push("");
+    lines.push("Grounding and feelings named — last "+
+      Math.min(14,plog.length)+":");
+    plog.slice(0,14).forEach(function(e){
+      lines.push(fmt(e.t)+" | "+(PLBL[e.k]||e.k)+
+        " | "+e.txt);
+    });
+  }
+  var txt=lines.join("\n");
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(function(){
+      toast("copied — paste it into the visit");
+    },function(){fallback(txt);});
+  }else{fallback(txt);}
+  function fallback(t){
+    var ta=document.createElement("textarea");
+    ta.value=t;
+    document.body.appendChild(ta);
+    ta.select();
+    try{
+      document.execCommand("copy");
+      toast("copied — paste it into the visit");
+    }catch(e){toast("couldn't copy automatically");}
+    document.body.removeChild(ta);
+  }
+};
+$("#btn-csv").onclick=function(){
+  var rows=["time,state,pain,anxiety,unreal,note"];
+  log.forEach(function(e){
+    var note='"'+(e.n||"").replace(/"/g,"'")+'"';
+    rows.push([e.t,e.s,e.p,e.a,e.u,note].join(","));
+  });
+  var a=document.createElement("a");
+  a.href="data:text/csv;charset=utf-8,"+
+    encodeURIComponent(rows.join("\n"));
+  a.download="neshamah-log.csv";
+  a.click();
+};
+$("#btn-clear").onclick=function(){
+  if(confirm("Clear all check-in data from this device?")){
+    log=[];saveLog();renderLog();toast("cleared");
+  }
+};
+
+/* ---------- voice memo storage (IndexedDB) ---------- */
+var MDB={db:null};
+function mdb(){
+  return new Promise(function(res,rej){
+    if(MDB.db){res(MDB.db);return;}
+    if(!window.indexedDB){rej(new Error("no idb"));return;}
+    var rq=indexedDB.open("neshamah",1);
+    rq.onupgradeneeded=function(){
+      rq.result.createObjectStore("memos");
+    };
+    rq.onsuccess=function(){MDB.db=rq.result;res(MDB.db);};
+    rq.onerror=function(){rej(rq.error);};
+  });
+}
+function memoPut(blob){
+  var id="m"+Date.now()+Math.random().toString(36).slice(2,6);
+  return mdb().then(function(db){
+    return new Promise(function(res,rej){
+      var tx=db.transaction("memos","readwrite");
+      tx.objectStore("memos").put(blob,id);
+      tx.oncomplete=function(){res(id);};
+      tx.onerror=function(){rej(tx.error);};
+    });
+  });
+}
+function memoGet(id){
+  return mdb().then(function(db){
+    return new Promise(function(res,rej){
+      var r=db.transaction("memos").objectStore("memos").get(id);
+      r.onsuccess=function(){res(r.result);};
+      r.onerror=function(){rej(r.error);};
+    });
+  });
+}
+function memoDel(id){
+  return mdb().then(function(db){
+    db.transaction("memos","readwrite")
+      .objectStore("memos").delete(id);
+  }).catch(function(){});
+}
+function memoAudio(ref){
+  var au=document.createElement("audio");
+  au.controls=true;
+  if(!ref){return au;}
+  if(ref.indexOf("data:")===0){au.src=ref;}
+  else{
+    memoGet(ref).then(function(b){
+      if(b){au.src=URL.createObjectURL(b);}
+    }).catch(function(){});
+  }
+  return au;
+}
+if(navigator.storage&&navigator.storage.persist){
+  navigator.storage.persist().catch(function(){});
+}
+
+/* ---------- journal: needs ladder ---------- */
+var RUNGS=[
+{k:"Body",e:"lad-0"},
+{k:"Safety",e:"lad-1"},
+{k:"Connection",e:"lad-2"},
+{k:"Myself",e:"lad-3"},
+{k:"Meaning",e:"lad-4"}];
+var LADKEY="neshamah_ladders";
+var LAD={draft:{}};
+var REC={mr:null,iv:null,i:null,stream:null};
+function updRecBtns(){
+  RUNGS.forEach(function(r,i){
+    var b=$("#lad-r-"+i);
+    if(!b){return;}
+    b.textContent=(REC.i===i)?
+      "■ stop memo":"🎙 voice memo";
+    b.classList.toggle("on",REC.i===i);
+  });
+}
+function stopRec(){
+  if(REC.iv){clearInterval(REC.iv);REC.iv=null;}
+  if(REC.mr&&REC.mr.state!=="inactive"){
+    REC.mr.stop();
+  }else if(REC.stream){
+    REC.stream.getTracks().forEach(function(t){t.stop();});
+    REC.i=null;REC.stream=null;
+  }
+  updRecBtns();
+}
+function recToggle(i){
+  if(REC.i===i){stopRec();return;}
+  if(REC.i!==null){stopRec();}
+  if(!navigator.mediaDevices||!window.MediaRecorder){
+    $("#lad-s-"+i).textContent=
+      "voice needs the live site — type instead";
+    return;
+  }
+  navigator.mediaDevices.getUserMedia({audio:true})
+  .then(function(stream){
+    REC.i=i;REC.stream=stream;
+    var chunks=[],left=90;
+    var mr=new MediaRecorder(stream);
+    REC.mr=mr;
+    mr.ondataavailable=function(e){
+      if(e.data&&e.data.size){chunks.push(e.data);}
+    };
+    mr.onstop=function(){
+      stream.getTracks().forEach(function(t){t.stop();});
+      var blob=new Blob(chunks,{type:mr.mimeType||"audio/webm"});
+      var st=$("#lad-s-"+i);
+      memoPut(blob).then(function(id){
+        LAD.draft[i].aud=id;
+        st.textContent="";
+        st.appendChild(memoAudio(id));
+        var ok=document.createElement("div");
+        ok.className="small";
+        ok.textContent="✓ memo kept on this device";
+        st.appendChild(ok);
+      }).catch(function(){
+        var fr=new FileReader();
+        fr.onload=function(){
+          LAD.draft[i].aud=fr.result;
+          st.textContent="";
+          st.appendChild(memoAudio(fr.result));
+        };
+        fr.readAsDataURL(blob);
+      });
+      REC.i=null;REC.mr=null;REC.stream=null;
+      updRecBtns();
+    };
+    var st=$("#lad-s-"+i);
+    st.textContent="● recording — 90s left";
+    REC.iv=setInterval(function(){
+      left--;
+      st.textContent="● recording — "+left+"s left";
+      if(left<=0){stopRec();}
+    },1000);
+    mr.start();
+    updRecBtns();
+  })
+  .catch(function(){
+    $("#lad-s-"+i).textContent=
+      "mic unavailable — just type instead";
+  });
+}
+RUNGS.forEach(function(r,i){
+  LAD.draft[i]={txt:"",aud:null};
+  $("#lad-t-"+i).oninput=function(){
+    LAD.draft[i].txt=this.value;
+  };
+  $("#lad-r-"+i).onclick=function(){recToggle(i);};
+});
+function renderLads(){
+  var list=$("#ladlist");list.innerHTML="";
+  var lads=[];
+  try{
+    lads=JSON.parse(localStorage.getItem(LADKEY)||"[]");
+  }catch(e){lads=[];}
+  if(!lads.length){
+    list.innerHTML="<p class=\"small\">Nothing saved yet — "+
+      "the first ladder can be one line on one rung.</p>";
+    return;
+  }
+  lads.forEach(function(e,idx){
+    var d=document.createElement("details");
+    var s=document.createElement("summary");
+    s.textContent=fmt(e.t)+" — "+e.r.length+" rung"+
+      (e.r.length===1?"":"s");
+    d.appendChild(s);
+    e.r.forEach(function(x){
+      var p=document.createElement("p");
+      p.innerHTML="<strong>"+x.k+"</strong>"+
+        (x.txt?" — "+esc(x.txt):" — (voice memo)");
+      d.appendChild(p);
+      if(x.aud){d.appendChild(memoAudio(x.aud));}
+    });
+    var del=document.createElement("button");
+    del.className="ghost";del.textContent="delete";
+    del.onclick=function(){
+      (lads[idx].r||[]).forEach(function(x){
+        if(x.aud&&x.aud.indexOf("data:")!==0){memoDel(x.aud);}
+      });
+      lads.splice(idx,1);
+      try{
+        localStorage.setItem(LADKEY,JSON.stringify(lads));
+      }catch(e2){}
+      renderLads();
+    };
+    d.appendChild(del);
+    list.appendChild(d);
+  });
+}
+$("#btn-lad-save").onclick=function(){
+  var entry={t:new Date().toISOString(),r:[]};
+  var any=false;
+  RUNGS.forEach(function(r,i){
+    var d=LAD.draft[i];
+    if(d.txt||d.aud){
+      any=true;
+      entry.r.push({k:r.k,txt:d.txt,aud:d.aud});
+    }
+  });
+  if(!any){
+    toast("write or record one rung — one line counts");
+    return;
+  }
+  var lads=[];
+  try{
+    lads=JSON.parse(localStorage.getItem(LADKEY)||"[]");
+  }catch(e){lads=[];}
+  lads.unshift(entry);
+  var ok=true;
+  try{
+    localStorage.setItem(LADKEY,JSON.stringify(lads));
+  }catch(e){
+    ok=false;
+    entry.r.forEach(function(x){x.aud=null;});
+    lads[0]=entry;
+    try{
+      localStorage.setItem(LADKEY,JSON.stringify(lads));
+      toast("memos too big to store — kept your words");
+    }catch(e2){toast("storage full — clear some in Log");}
+  }
+  if(ok){toast("ladder saved — on this device");}
+  RUNGS.forEach(function(r,i){
+    LAD.draft[i]={txt:"",aud:null};
+    $("#lad-t-"+i).value="";
+    $("#lad-s-"+i).textContent="";
+  });
+  renderLads();
+};
+
+/* ---------- backup / restore ---------- */
+function blobToData(b){
+  return new Promise(function(res){
+    var fr=new FileReader();
+    fr.onload=function(){res(fr.result);};
+    fr.readAsDataURL(b);
+  });
+}
+function readLads(){
+  try{return JSON.parse(localStorage.getItem(LADKEY)||"[]");}
+  catch(e){return [];}
+}
+$("#btn-backup").onclick=function(){
+  var lads=readLads(),jobs=[];
+  lads.forEach(function(e){
+    (e.r||[]).forEach(function(x){
+      if(x.aud&&x.aud.indexOf("data:")!==0){
+        jobs.push(memoGet(x.aud).then(function(b){
+          return b?blobToData(b):null;
+        }).then(function(d){x.aud=d;})
+        .catch(function(){x.aud=null;}));
+      }
+    });
+  });
+  Promise.all(jobs).then(function(){
+    var data={app:"neshamah",v:1,saved:new Date().toISOString(),
+      log:log,ladders:lads,practice:plog};
+    var a=document.createElement("a");
+    a.href=URL.createObjectURL(new Blob([JSON.stringify(data)],
+      {type:"application/json"}));
+    a.download="neshamah-backup-"+
+      new Date().toISOString().slice(0,10)+".json";
+    document.body.appendChild(a);a.click();a.remove();
+    toast("backup saved to your downloads");
+    try{localStorage.setItem("neshamah_lastbackup",String(Date.now()));}catch(e){}
+    var bs=$("#backup-slot");if(bs){bs.innerHTML="";}
+  });
+};
+$("#btn-restore").onclick=function(){$("#restorefile").click();};
+$("#restorefile").onchange=function(){
+  var f=this.files[0];this.value="";
+  if(!f){return;}
+  f.text().then(function(t){
+    var d=JSON.parse(t);
+    if(d.app!=="neshamah"){throw new Error("not ours");}
+    if(!confirm("Restore this backup? It merges with what is "+
+      "here — nothing gets deleted.")){return;}
+    var seen={};
+    log.forEach(function(e){seen[e.t]=1;});
+    (d.log||[]).forEach(function(e){if(!seen[e.t]){log.push(e);}});
+    log.sort(function(a,b){return a.t<b.t?1:-1;});
+    saveLog();renderLog();
+    var ps={};
+    plog.forEach(function(e){ps[e.t]=1;});
+    (d.practice||[]).forEach(function(e){if(!ps[e.t]){plog.push(e);}});
+    plog.sort(function(a,b){return a.t<b.t?1:-1;});
+    plogSave();renderPlog();
+    var lads=readLads(),ls={},jobs=[];
+    lads.forEach(function(e){ls[e.t]=1;});
+    (d.ladders||[]).forEach(function(e){
+      if(ls[e.t]){return;}
+      (e.r||[]).forEach(function(x){
+        if(x.aud&&x.aud.indexOf("data:")===0){
+          jobs.push(fetch(x.aud).then(function(r){return r.blob();})
+            .then(memoPut).then(function(id){x.aud=id;})
+            .catch(function(){}));
+        }
+      });
+      lads.push(e);
+    });
+    return Promise.all(jobs).then(function(){
+      lads.sort(function(a,b){return a.t<b.t?1:-1;});
+      localStorage.setItem(LADKEY,JSON.stringify(lads));
+      renderLads();toast("restored");
+    });
+  }).catch(function(){
+    toast("that file doesn't look like a Neshamah backup");
+  });
+};
+
+/* ---------- somatic first-aid tools ---------- */
+var FEET=[
+["Press both feet into the floor. Feel it press back.",15],
+["Notice your heels… the balls of your feet… your toes.",20],
+["Shift your weight slowly — a little left… a little right.",20],
+["Look up. Name one thing you can see.",15],
+["Feet still pressing. You are here. It is now.",10]];
+STARTERS.feet=function(){
+  seqStart("feet",FEET,null,null,"Feet on the ground. Here, now.");
+};
+STARTERS.sigh=function(){
+  switchTab("breathe");
+  selectPattern("sigh");setLen(1);startBreath();
+};
+
+STARTERS.griefj=function(){
+  var c=$("#grief-card");if(c){c.scrollIntoView({behavior:"smooth"});}
+};
+STARTERS.griefp=function(){
+  switchTab("pray");
+  setTimeout(function(){
+    var c=$("#grief-prayers");if(c){c.scrollIntoView({behavior:"smooth"});}
+  },350);
+};
+STARTERS.ps23song=function(){
+  var x=SONGS.filter(function(y){return y.s==="psalm-23-1";})[0];
+  if(x){songPlay(x);}
+};
+
+/* ---------- offline ---------- */
+if("serviceWorker" in navigator&&location.protocol==="https:"){
+  navigator.serviceWorker.register("sw.js").catch(function(){});
+}
+
+/* ---------- songs: Cantor Mark Childs (SoundCloud embeds) ---------- */
+var SC="https://soundcloud.com/cantor-mark-childs/";
+var SONGS=[
+{s:"3-refaeinu-by-bob-remstein",t:"R'fa-einu",c:"Remstein",g:"Healing",p:["refaeinu","uplifting-pain"]},
+{s:"heal-us-now-sher-3",t:"Heal Us Now",c:"Sher",g:"Healing",p:["refaeinu"]},
+{s:"mi-shebeirach-friedman-3",t:"Mi Shebeirach",c:"Friedman",g:"Healing",
+ n:"The prayer for healing of body and spirit.",p:["mi-sheberach-self"]},
+{s:"mi-shebeirach-ray-2",t:"Mi Shebeirach",c:"Ray",g:"Healing",p:["mi-sheberach-self"]},
+{s:"yedid-nefesh-zweig-1",t:"Yedid Nefesh",c:"Zweig",g:"Healing",p:["elna"],
+ n:"A love song of the soul by the 16th-century Safed kabbalist "+
+ "Elazar Azikri. Its verse \"El na r'fa na lah\" borrows Moses' "+
+ "prayer for Miriam."},
+{s:"elohai-neshama-sanger-2",t:"Elohai N'shamah",c:"Sanger",g:"Breath & soul",p:["elohai","modeh-ani-handwash"]},
+{s:"the-soul-that-you-have-given-me-by-rob-raede",t:"The Soul That You Have Given Me",c:"Raede",
+ g:"Breath & soul",p:["elohai"],n:"Elohai N'shamah, in English."},
+{s:"hallelujah-lewandowski-1",t:"Halleluyah",c:"Lewandowski",g:"Breath & soul",p:["kolhan"],
+ n:"Psalm 150 — it ends with kol han'shamah, every breath."},
+{s:"shema-sulzer-2",t:"Sh'ma",c:"Sulzer",g:"Breath & soul",p:["shema","bedtime","bedtime-shema"]},
+{s:"ana-bcho-ach-hamama-11",t:"Ana B'choach",c:"Hamama",g:"Breath & soul",p:["sef"],
+ n:"A kabbalistic prayer of seven lines, traditionally linked to "+
+ "the seven lower sefirot."},
+{s:"4-hashkiveinu-by-craig-taubman",t:"Hashkiveinu",c:"Taubman",g:"Night",p:["hashkiveinu","sleep","bedtime-shema","calm-place"]},
+{s:"adon-olam-sephardic",t:"Adon Olam",c:"Sephardic melody",g:"Night",p:["bedtime","sleep"],
+ n:"Ends with b'yado afkid ruchi — into God's hand I entrust my spirit."},
+{s:"psalm-23-1",t:"Psalm 23",c:"",g:"Night",p:["ps23","psalms-moment"]},
+{s:"candle-blessing-binder-13",t:"Candle Blessing",c:"Binder",g:"Shabbat",p:["shabbat"]},
+{s:"oseh-shalom-klepper",t:"Oseh Shalom",c:"Klepper",g:"Peace",p:["oseh","silent-personal-prayer"]},
+{s:"shalom-rav-steinberg",t:"Shalom Rav",c:"Steinberg",g:"Peace"},
+{s:"niggun-medley-1",t:"Niggun medley",c:"",g:"Wordless — for meditation",p:["niggun","hum-niggun"]},
+{s:"niggun-chassidic-14",t:"Niggun",c:"Chassidic",g:"Wordless — for meditation",p:["niggun","hum-niggun"]}];
+var NOW=null;
+function songName(x){return x.t+(x.c?" — "+x.c:"");}
+function songPlay(x){
+  NOW=x;
+  $("#nb-title").textContent="♪ "+songName(x)+" · Cantor Mark Childs";
+  $("#nb-link").href=SC+x.s;
+  var f=$("#nb-frame");f.innerHTML="";
+  var fr=document.createElement("iframe");
+  fr.allow="autoplay";fr.title=songName(x);
+  fr.src="https://w.soundcloud.com/player/?url="+
+    encodeURIComponent(SC+x.s)+"&color=%23f2c9a0&auto_play=true"+
+    "&hide_related=true&show_comments=false&show_user=false"+
+    "&show_reposts=false&show_teaser=false&visual=false";
+  f.appendChild(fr);
+  $("#nowbar").classList.add("on");
+  document.body.classList.add("nowplaying");
+  plMusicLbl();
+  if(navigator.onLine===false){toast("songs need internet — you seem offline");}
+}
+function songStop(){
+  NOW=null;$("#nb-frame").innerHTML="";
+  $("#nowbar").classList.remove("on");
+  document.body.classList.remove("nowplaying");
+  plMusicLbl();
+}
+function songBtn(x,label){
+  var b=document.createElement("button");
+  b.className="ghost songbtn";
+  b.textContent="♪ "+(label||songName(x));
+  b.onclick=function(){songPlay(x);};
+  return b;
+}
+function songsFor(id){
+  return SONGS.filter(function(x){return (x.p||[]).indexOf(id)>-1;});
+}
+function plMusicLbl(){
+  var b=$("#pl-music");if(!b){return;}
+  b.textContent=NOW?"♪ stop song":"♪ soft niggun in the background";
+}
+function songsRender(){
+  var w=$("#songlist");w.innerHTML="";
+  var gs=[];
+  SONGS.forEach(function(x){if(gs.indexOf(x.g)<0){gs.push(x.g);}});
+  gs.forEach(function(g){
+    var h=document.createElement("h3");h.textContent=g;w.appendChild(h);
+    SONGS.filter(function(x){return x.g===g;}).forEach(function(x){
+      w.appendChild(songBtn(x));
+      if(x.n){
+        var p=document.createElement("p");p.className="fa-why";
+        p.textContent=x.n;w.appendChild(p);
+      }
+    });
+  });
+  [["sleep","#sleep-songs"],["niggun","#niggun-songs"]].forEach(function(z){
+    var box=$(z[1]);if(!box){return;}
+    songsFor(z[0]).forEach(function(x){box.appendChild(songBtn(x));});
+  });
+  var sw=$("#pain-sef");
+  if(sw&&sw.nextElementSibling){
+    songsFor("sef").forEach(function(x){
+      var b=songBtn(x,"Ana B'choach in the background, Cantor Childs");
+      sw.nextElementSibling.insertAdjacentElement("afterend",b);
+    });
+  }
+}
+$("#nb-close").onclick=songStop;
+$("#pl-music").onclick=function(){
+  if(NOW){songStop();}else{songPlay(songsFor("niggun")[0]);}
+};
+
+/* ---------- prayers (data in prayers.js) ---------- */
+var PRV={he:1,tl:0,en:0};
+try{
+  var pv=JSON.parse(localStorage.getItem("neshamah_prview2")||"null");
+  if(pv){PRV=pv;}
+}catch(e){}
+/* he = show Hebrew; tl / en = open that row by default */
+function prViewApply(){
+  var w=$("#pray");if(!w){return;}
+  w.classList.toggle("no-he",!PRV.he);
+  $$(".prvbtn").forEach(function(b){
+    b.classList.toggle("on",!!PRV[b.dataset.k]);
+  });
+  $$("#pray details.prd").forEach(function(d){
+    d.open=!!PRV[d.dataset.k];
+  });
+}
+$$(".prvbtn").forEach(function(b){
+  b.onclick=function(){
+    var k=b.dataset.k;
+    PRV[k]=PRV[k]?0:1;
+    if(!PRV.he&&k==="he"){PRV.he=1;}
+    try{localStorage.setItem("neshamah_prview2",JSON.stringify(PRV));}
+    catch(e){}
+    prViewApply();
+  };
+});
+function prLines(box,lines,keys){
+  keys=keys||["he","tl","en"];
+  box.innerHTML="";
+  lines.forEach(function(l){
+    var d=document.createElement("div");d.className="pline";
+    [["he","he"],["tl","tl"],["en","tr"]].forEach(function(x){
+      if(keys.indexOf(x[0])<0){return;}
+      var sp=document.createElement("span");
+      sp.className=x[1];sp.textContent=l[x[0]];
+      if(x[0]==="he"){sp.lang="he";sp.dir="rtl";}
+      d.appendChild(sp);
+    });
+    box.appendChild(d);
+  });
+}
+function prBreath(p,lines){
+  SEQTITLE.pray=p.title;
+  SEQWHY.pray="One line per slow breath — read it as you breathe "+
+    "in, let it settle as you breathe out. Skip ahead or end any time.";
+  var wantEn=PRV.en||!PRV.tl;
+  seqStart("pray",lines.map(function(l){
+    var t=[l.he];
+    if(PRV.tl){t.push(l.tl);}
+    if(wantEn){t.push(l.en);}
+    return [t.join("\n"),10];
+  }),null,null,"Amen.");
+}
+function prOne(n){
+  n=n||"";
+  var m=n.match(/^.*?[.!?](?=\s|$)/),s=m?m[0]:n;
+  return s.length>150?s.slice(0,147).replace(/\s+\S*$/,"")+"…":s;
+}
+function prRow(label,key){
+  var d=document.createElement("details");d.className="prd";
+  d.dataset.k=key;
+  var sm=document.createElement("summary");sm.textContent=label;
+  d.appendChild(sm);
+  var bx=document.createElement("div");d.appendChild(bx);
+  d._box=bx;return d;
+}
+function prRender(){
+  var w=$("#prayers");if(!w){return;}
+  if(!window.PRAYERS){
+    w.innerHTML='<div class="card"><p class="small">The prayer '+
+      'texts did not load — check that prayers.js is next to '+
+      'index.html.</p></div>';
+    return;
+  }
+  w.innerHTML="";
+  PRAYERS.prayers.concat([{hdr:"When grieving"}],PRAYERS.grief||[])
+  .forEach(function(p){
+    if(p.hdr){
+      var hh=document.createElement("h2");hh.className="sechdr";
+      hh.id="grief-prayers";hh.textContent=p.hdr;w.appendChild(hh);
+      return;
+    }
+    var c=document.createElement("div");c.className="card";
+    var h=document.createElement("h2");h.textContent=p.title;
+    c.appendChild(h);
+    var box=document.createElement("div");
+    c.appendChild(box);
+    var one=document.createElement("p");
+    one.className="small pone";one.textContent=prOne(p.note);
+    c.appendChild(one);
+    var dT=prRow("Transliteration","tl"),dE=prRow("English","en");
+    var alt=false;
+    function fill(lines){
+      prLines(box,lines,["he"]);
+      prLines(dT._box,lines,["tl"]);
+      prLines(dE._box,lines,["en"]);
+    }
+    fill(p.lines);
+    var pb=document.createElement("button");
+    pb.textContent="Pray it with breath";
+    pb.onclick=function(){prBreath(p,alt?p.alt.lines:p.lines);};
+    c.appendChild(pb);
+    songsFor(p.id).forEach(function(x){
+      c.appendChild(songBtn(x,"Listen"+(x.c?" — "+x.c:"")));
+    });
+    if(p.alt){
+      var ab=document.createElement("button");
+      ab.className="ghost";
+      ab.textContent="Form "+p.alt.label;
+      ab.onclick=function(){
+        alt=!alt;
+        fill(alt?p.alt.lines:p.lines);
+        ab.textContent=alt?"The Torah's form":"Form "+p.alt.label;
+      };
+      c.appendChild(ab);
+    }
+    c.appendChild(dT);c.appendChild(dE);
+    var ds=document.createElement("details");
+    var ss=document.createElement("summary");
+    ss.textContent="Sources & notes ⚑";ds.appendChild(ss);
+    (p.changes||[]).forEach(function(ch){
+      var q=document.createElement("p");q.className="small";
+      q.textContent=(ch.k==="reform"?"Reform: ":ch.k==="gender"?
+        "Gender: ":"Note: ")+ch.t;
+      ds.appendChild(q);
+    });
+    var f=document.createElement("span");f.className="flag";
+    f.textContent="⚑ "+(p.verify||
+      "Awaiting your check against Mishkan T'filah.");
+    ds.appendChild(f);
+    var sr=document.createElement("span");sr.className="src";
+    sr.textContent="Hebrew: "+p.src+" (via Sefaria) · Phonetic & "+
+      "English: original · Compare: "+p.cmp;
+    ds.appendChild(sr);
+    c.appendChild(ds);
+    var dw=document.createElement("details");
+    var ws=document.createElement("summary");
+    ws.textContent="Why this matters";dw.appendChild(ws);
+    var wp=document.createElement("p");wp.className="small";
+    wp.textContent=p.note;dw.appendChild(wp);
+    c.appendChild(dw);
+    w.appendChild(c);
+  });
+  prViewApply();
+}
+
+/* ---------- pain practices ---------- */
+function sef(he,name,aram,how,why,sec){
+  return [he+" · "+name+"\n"+aram+"\n\nHow: "+how+"\nWhy: "+why,sec];
+}
+var SEF=[
+["Arrive. Let the out-breath be a little longer than the in-breath — "+
+"about four in, six out.\n\nHow: a longer exhale slows the heart.\n"+
+"Why: n'shamah, breath, is the soul's own word.",40],
+sef("כֶּתֶר","Keter — the crown","קרקפתא דתפלי",
+"notice the top of your head: warmth, tingling, or nothing at all.",
+"Keter is the will before thought. Nothing to do here.",50),
+sef("חָכְמָה","Chochmah — the brain","מוחא חכמה",
+"soften the forehead and the eyes. Let thoughts pass like weather.",
+"wisdom as the first spark, before it becomes words.",60),
+sef("בִּינָה","Binah — the heart","בינה לבא ובה הלב מבין",
+"a hand on your heart, if you like. Feel the chest rise under it.",
+"the Zohar puts understanding in the heart. If grief is here, it is "+
+"allowed to be here. Binah is called the mother: she holds what we "+
+"cannot.",90),
+sef("חֶסֶד","Chesed — the right arm","חסד דרועא ימינא",
+"feel the right arm from shoulder to fingertips. Let the hand open.",
+"love that flows outward without measuring.",60),
+sef("גְּבוּרָה","Gevurah — the left arm","גבורה דרועא שמאלא",
+"feel the left arm. Close the hand gently, then release.",
+"strength and limits. Boundaries are holy too.",60),
+sef("תִּפְאֶרֶת","Tiferet — the torso","תפארת גופא",
+"feel breath move the ribs and belly. If pain lives here, rest at its "+
+"edge, not in it.","where love and limits meet — compassion, at the "+
+"center, where ruach moves.",75),
+sef("נֶצַח · הוֹד","Netzach & Hod — the legs","נצח והוד תרין שוקין",
+"feel the weight of both legs, the backs of the thighs, the feet.",
+"endurance and gratitude: the two that carry you.",60),
+sef("יְסוֹד","Yesod — the base","יסוד סיומא דגופא",
+"feel the pelvis and whatever is under you. Let it hold you.",
+"the foundation that gathers everything above it.",50),
+sef("מַלְכוּת","Malchut — the mouth","מלכות פה",
+"let the breath leave as a soft hum, or the word shalom, three times.",
+"Malchut is the Shechinah, the Presence that rests beside the sick. "+
+"Your voice is how the inside reaches the world.",60),
+["Whatever came, came — pain, grief, God close or far. All of it "+
+"allowed. Rest here as long as you like.",40]];
+var TRACK=[
+["Get comfortable. Breathe out a little longer than you breathe in.",30],
+["Find the pain — not to fix it, just to locate it.",30],
+["Look at it with curiosity, like a scientist. Tight, warm, buzzing, "+
+"sharp, dull? Does it have edges?",60],
+["Notice it change, even slightly. Sensations shift moment to moment.",45],
+["A message of safety: this is a sensation. My brain is on alert, "+
+"and I am safe right now.",45],
+["If fear or frustration rises, notice that too — then come back to "+
+"curiosity.",45],
+["Widen your attention to the whole body, and the room around you.",40],
+["Done. Nothing had to change for this to count.",15]];
+var PEND=[
+["Find a place in your body that feels neutral or okay — hands, "+
+"earlobes, the back of the head. Anywhere.",40],
+["Rest your attention there. Let it be ordinary.",40],
+["Now briefly touch the edge of the pain. Just the edge, a few "+
+"seconds.",20],
+["Come back to the okay place. Let it fill in again.",40],
+["Once more: touch the edge, lightly.",20],
+["And back to the okay place. Stay as long as you like.",45],
+["Notice: you could visit the hard place and come back.",15]];
+SEQTITLE.sef="Sefirot body scan";
+SEQTITLE.track="Somatic tracking";
+SEQTITLE.pend="Pendulation";
+SEQWHY.sef="Body map: Tikkunei Zohar 17a (Patach Eliyahu). Scan "+
+"method: MBSR. Skip any region; resting at the edge of pain counts.";
+SEQWHY.track="From Pain Reprocessing Therapy: in a 2022 trial (Ashar "+
+"et al., JAMA Psychiatry) about two-thirds of people with chronic "+
+"back pain were pain-free or nearly so afterward. Ask your team "+
+"whether it fits your pain.";
+SEQWHY.pend="From Somatic Experiencing (Peter Levine). Research is "+
+"early; it is gentle, and you are always in charge of how close.";
+STARTERS.sef=function(){seqStart("sef",SEF,null,null,"Amen. Selah.");};
+STARTERS.track=function(){seqStart("track",TRACK,null,null,
+  "Curiosity instead of alarm — that is the practice.");};
+STARTERS.pend=function(){seqStart("pend",PEND,null,null,
+  "You went to the edge and came back. That is a skill.");};
+$("#pain-sef").onclick=STARTERS.sef;
+$("#pain-track").onclick=STARTERS.track;
+$("#pain-pend").onclick=STARTERS.pend;
+
+/* ---------- journaling forms (parts/modes, grief) ---------- */
+var PQ=[
+{k:"kind",q:"What kind of part or mode is here?",chips:[
+"exile — carries hurt","manager — tries to prevent hurt",
+"firefighter — puts out the fire","vulnerable child","angry child",
+"detached protector","compliant surrenderer","perfectionist overachiever",
+"punitive or demanding parent","not sure"]},
+{k:"name",q:"What would you call it?",ph:"a name or label"},
+{k:"shows",q:"How does it show up — thoughts, feelings, body, actions?"},
+{k:"trig",q:"What tends to bring it out?"},
+{k:"job",q:"What is it trying to do for you, or protect you from?"},
+{k:"belief",q:"What core belief does it carry? (\"I'm too much,\" \"I have to earn love\"…)"},
+{k:"fear",q:"What is it afraid would happen if it stopped?"},
+{k:"toward",q:"How do you feel toward it right now?",multi:true,
+ chips:["curious","compassionate","calm","courageous","clear",
+ "confident","creative","connected","something else"],
+ note:"That feeling may be another part. You can ask it, kindly, to "+
+ "step back a little — only if it's willing."},
+{k:"adult",q:"What might your Healthy Adult — your wisest, kindest self — say to it?"},
+{k:"need",q:"What does it need from you right now?"}];
+var GQ=[
+{k:"loss",q:"What is this grief for?",multi:true,chips:["a person","a pet",
+"my health or my body","work, or the career I planned","a relationship",
+"who I used to be","a future I imagined","something hard to name"]},
+{k:"miss",q:"Who or what am I missing today?"},
+{k:"body",q:"Where do I feel it in my body?"},
+{k:"say",q:"What would I say to them — or to it — if I could?"},
+{k:"honor",q:"One small way to honor this today:"}];
+function formRender(sel,Q,kind,thanks){
+  var f=$(sel);if(!f){return;}
+  f.innerHTML="";var A={};
+  Q.forEach(function(x){
+    var h=document.createElement("h3");h.textContent=x.q;f.appendChild(h);
+    if(x.chips){
+      var g=document.createElement("div");g.className="chipgrid";
+      A[x.k]=[];
+      var nt=null;
+      x.chips.forEach(function(c){
+        var b=document.createElement("button");b.className="ghost";
+        b.textContent=c;
+        b.onclick=function(){
+          var a=A[x.k],i=a.indexOf(c);
+          if(!x.multi&&i<0){a.length=0;}
+          if(i>-1){a.splice(i,1);}else{a.push(c);}
+          Array.prototype.forEach.call(g.children,function(y){
+            y.className=a.indexOf(y.textContent)>-1?"on":"ghost";
+          });
+          if(nt){nt.style.display=a.indexOf("something else")>-1?"block":"none";}
+        };
+        g.appendChild(b);
+      });
+      f.appendChild(g);
+      if(x.note){
+        nt=document.createElement("p");nt.className="small";
+        nt.style.display="none";nt.textContent=x.note;f.appendChild(nt);
+      }
+    }else if(x.range){
+      var rg=document.createElement("input");rg.type="range";
+      rg.min=x.range[0];rg.max=x.range[1];rg.value=x.range[2];
+      var rv=document.createElement("span");rv.className="small";
+      rv.textContent=x.range[2]+(x.unit||"");
+      rg.oninput=function(){
+        A[x.k]=rg.value+(x.unit||"");rv.textContent=rg.value+(x.unit||"");
+      };
+      f.appendChild(rg);f.appendChild(rv);
+    }else{
+      var t=document.createElement(x.ph?"input":"textarea");
+      if(x.ph){t.type="text";t.placeholder=x.ph;}else{t.rows=2;}
+      t.oninput=function(){A[x.k]=t.value;};
+      f.appendChild(t);
+    }
+  });
+  var sv=document.createElement("button");
+  sv.textContent="Save";sv.style.marginTop="10px";
+  sv.onclick=function(){
+    var bits=[];
+    Q.forEach(function(x){
+      var v=A[x.k];
+      if(Array.isArray(v)){v=v.join(", ");}
+      if(v&&String(v).trim()){bits.push(x.k+": "+String(v).trim());}
+    });
+    if(!bits.length){toast("answer one question — one is enough");return;}
+    plogAdd(kind,bits.join(" · "));
+    toast(thanks);
+    formRender(sel,Q,kind,thanks);
+  };
+  f.appendChild(sv);
+}
+function partsRender(){
+  formRender("#parts-flow",PQ,"parts","saved. thank you for listening to it.");
+  formRender("#grief-flow",GQ,"grief","saved. may your heart be comforted.");
+}
+$("#grief-pray").onclick=function(){STARTERS.griefp();};
+
+/* ---------- brachot ---------- */
+function bcToday(){
+  var d=new Date().toDateString();
+  return plog.filter(function(e){
+    return e.k==="bracha"&&new Date(e.t).toDateString()===d;
+  }).length;
+}
+function bcCount(){
+  var n=bcToday();
+  $("#bc-count").textContent=n?("Today: "+n+" blessing"+(n===1?"":"s")+
+    " — toward Rabbi Meir's hundred."):"Today: none yet. One is plenty.";
+  $("#bc-bar").style.width=Math.min(100,n)+"%";
+}
+function bcLines(box,rows,typed){
+  box.innerHTML="";
+  rows.forEach(function(l){
+    var d=document.createElement("div");d.className="pline";
+    [["he","he"],["tl","tl"],["en","tr"]].forEach(function(x){
+      if(!l[x[0]]){return;}
+      var sp=document.createElement("span");sp.className=x[1];
+      sp.textContent=l[x[0]];
+      if(x[0]==="he"){sp.lang="he";sp.dir="rtl";}
+      d.appendChild(sp);
+    });
+    box.appendChild(d);
+  });
+  if(typed){
+    var f=document.createElement("span");f.className="flag";
+    f.textContent="⚑ Hebrew typed by hand — check against your siddur.";
+    box.appendChild(f);
+  }
+}
+function bcShow(label,rows,typed,tag){
+  var s=$("#bc-show");s.innerHTML="";
+  var h=document.createElement("h3");h.textContent=label;s.appendChild(h);
+  var p=document.createElement("p");p.className="small";
+  p.textContent="One breath with it first. Then:";s.appendChild(p);
+  var box=document.createElement("div");s.appendChild(box);
+  bcLines(box,rows,typed);
+  var ok=document.createElement("button");ok.textContent="I said it";
+  ok.onclick=function(){
+    plogAdd("bracha",label+(tag?" — "+tag:""));
+    buzz(20);toast("Amen.");s.innerHTML="";bcCount();
+  };
+  s.appendChild(ok);
+  s.scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+function bcRender(){
+  var B=window.PRAYERS&&PRAYERS.brachot;if(!B){return;}
+  var g=$("#bc-seen");g.innerHTML="";
+  B.seen.forEach(function(x){
+    var b=document.createElement("button");b.className="ghost";
+    b.textContent=x[0];
+    b.onclick=function(){
+      var e=B.end[x[1]];
+      bcShow(x[0],[{he:B.pre.he+" "+e.he,tl:B.pre.tl+" "+e.tl,
+        en:B.pre.en+" "+e.en}],e.typed,e.tl);
+    };
+    g.appendChild(b);
+  });
+  $("#bc-own-go").onclick=function(){
+    var v=$("#bc-own").value.trim();
+    if(!v){toast("type what you noticed");return;}
+    bcShow(v,[{tl:"Baruch atah — thank You for "+v+".",
+      en:"Your own words are a blessing, too."}],false,"own words");
+    $("#bc-own").value="";
+  };
+  bcCount();
+}
+
+/* ---------- Shabbat ---------- */
+var SB_LAT=34.42,SB_LNG=-119.70;
+function sunset(d){
+  var rad=Math.PI/180,start=new Date(d.getFullYear(),0,0);
+  var n=Math.floor((d-start)/864e5),lh=SB_LNG/15,t=n+((18-lh)/24);
+  var M=0.9856*t-3.289;
+  var L=(M+1.916*Math.sin(M*rad)+0.020*Math.sin(2*M*rad)+282.634+360)%360;
+  var RA=Math.atan(0.91764*Math.tan(L*rad))/rad;RA=(RA+360)%360;
+  RA=(RA+(Math.floor(L/90)*90-Math.floor(RA/90)*90))/15;
+  var sd=0.39782*Math.sin(L*rad),cd=Math.cos(Math.asin(sd));
+  var ch=(Math.cos(90.833*rad)-sd*Math.sin(SB_LAT*rad))/(cd*Math.cos(SB_LAT*rad));
+  if(ch<-1||ch>1){return null;}
+  var H=Math.acos(ch)/rad/15,T=H+RA-0.06571*t-6.622;
+  var UT=((T-lh)%24+24)%24;
+  var r=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())+UT*36e5);
+  var day0=new Date(d.getFullYear(),d.getMonth(),d.getDate());
+  for(var i=0;i<2&&r.toDateString()!==d.toDateString();i++){
+    r=new Date(+r+(r<day0?864e5:-864e5));
+  }
+  return r;
+}
+function shabbatRender(){
+  var box=$("#shabbat-ci");if(!box){return;}
+  var d=new Date(),day=d.getDay();box.innerHTML="";
+  var hd=holiday(d);
+  if(hd){
+    var hn=document.createElement("p");hn.style.color="var(--amber)";
+    hn.textContent=hd.n;box.appendChild(hn);
+  }
+  if(day!==5&&day!==6){return;}
+  var h=document.createElement("p");h.style.color="var(--amber)";
+  if(day===6){
+    h.textContent="🕯️ Shabbat shalom. Rest is part of healing.";
+    box.appendChild(h);return;
+  }
+  var ss=sunset(d),cl=ss?new Date(ss-18*6e4):null;
+  h.textContent="🕯️ Shabbat begins tonight"+(cl?" — candles at "+
+    cl.toLocaleTimeString(undefined,{hour:"numeric",minute:"2-digit"})+
+    " (18 minutes before sunset, Santa Barbara)":"")+".";
+  box.appendChild(h);
+  var b=document.createElement("button");b.className="ghost";
+  b.textContent="Light candles ›";box.appendChild(b);
+  var inner=document.createElement("div");inner.style.display="none";
+  box.appendChild(inner);
+  var S=window.PRAYERS&&PRAYERS.shabbat;
+  if(S){
+    var p=document.createElement("p");p.className="small";
+    p.textContent="Light, draw the light toward you three times, cover "+
+      "your eyes, and bless:";
+    inner.appendChild(p);
+    var lb=document.createElement("div");inner.appendChild(lb);
+    bcLines(lb,[S],S.typed);
+    songsFor("shabbat").forEach(function(x){inner.appendChild(songBtn(x));});
+  }
+  var lab=document.createElement("label");lab.className="small";
+  lab.style.display="block";lab.style.marginTop="8px";
+  lab.innerHTML='<input type="checkbox" id="ci-candles"> I lit Shabbat candles';
+  inner.appendChild(lab);
+  b.onclick=function(){
+    var o=inner.style.display==="none";
+    inner.style.display=o?"block":"none";
+    b.textContent=o?"Light candles ⌄":"Light candles ›";
+  };
+}
+
+/* ---------- gentle haptics ---------- */
+var HAP=false;
+try{HAP=localStorage.getItem("neshamah_haptic")==="1";}catch(e){}
+function buzz(p){
+  if(HAP&&navigator.vibrate){try{navigator.vibrate(p);}catch(e){}}
+}
+function hapLbl(){
+  var b=$("#btn-haptic");
+  if(b){b.textContent="Eyes-closed buzz: "+(HAP?"on":"off");}
+}
+$("#btn-haptic").onclick=function(){
+  HAP=!HAP;
+  try{localStorage.setItem("neshamah_haptic",HAP?"1":"0");}catch(e){}
+  hapLbl();if(HAP){buzz(30);toast("a soft pulse at each breath change and practice step");}
+};
+
+/* ---------- daily journal ---------- */
+var EVQ=[
+{k:"day",q:"Today, in one line:"},
+{k:"mind",q:"What's still on my mind?"},
+{k:"todo",q:"Tomorrow's to-do — get it out of your head and onto the page:"},
+{k:"down",q:"What I'm setting down for tonight:"}];
+var SLQ=[
+{k:"quality",q:"How did you sleep?",chips:["rested","okay","rough","barely slept"]},
+{k:"hours",q:"About how many hours?",range:[0,12,7],unit:" h"},
+{k:"woke",q:"Did pain wake you?",chips:["no","once","a few times","most of the night"]},
+{k:"pain",q:"Pain on waking (0–10):",range:[0,10,0]},
+{k:"dreams",q:"Dreams?",chips:["none I remember","ordinary","distressing"]},
+{k:"notes",q:"Anything else about the night?"}];
+var NQ=[{k:"text",q:"Whatever is here right now:"}];
+var DJ={iv:null};
+var DJT=[
+{id:"sleep",l:"Sleep check-in",when:[4,12],
+ why:"How: tracking sleep and pain together helps you and your team see patterns. Why: Modah Ani — you woke up; that comes first.",
+ run:function(b){formRender(b,SLQ,"sleep","noted. be gentle with today.");}},
+{id:"pages",l:"Morning pages · timed",when:[4,12],
+ why:"How: from Julia Cameron's The Artist's Way — not a research method itself, but close kin to free writing, which can clear mental clutter. Keep the pen moving; nothing has to make sense.",
+ run:function(b){timedWrite(b,{kind:"pages",mins:10,
+  prompt:"Write whatever comes, without stopping or fixing. Boring, petty, repetitive — all welcome.",
+  ph:"just start…"});}},
+{id:"note",l:"Quick note",when:null,
+ why:"For anything you want to remember or just put down.",
+ run:function(b){formRender(b,NQ,"note","kept.");}},
+{id:"expressive",l:"Expressive writing · 15 min",when:null,
+ why:"How: James Pennebaker's research — 15–20 minutes of your deepest thoughts and feelings about something hard, over a few days, has modest benefits for mood and health. It can feel worse for an hour before it feels better. Stop if it floods you; switch to grounding. With PTSD, this one is best done with your therapist.",
+ run:function(b){timedWrite(b,{kind:"expressive",mins:15,letgo:true,
+  prompt:"Write about something that's weighing on you — what happened, and how it feels underneath. No one will read this unless you choose.",
+  ph:"what's really going on is…"});}}];
+function djNow(t){
+  if(!t.when){return false;}
+  var h=new Date().getHours();if(h<4){h+=24;}
+  return h>=t.when[0]&&h<t.when[1];
+}
+function djRender(){
+  var l=$("#dj-list");if(!l){return;}
+  l.innerHTML="";
+  DJT.slice().sort(function(a,b){return djNow(b)-djNow(a);}).forEach(function(t){
+    var b=document.createElement("button");
+    b.className="toolbtn"+(djNow(t)?" dj-now":"");
+    b.textContent=t.l;
+    if(djNow(t)){var tg=document.createElement("span");tg.className="dj-tag";
+      tg.textContent="now";b.appendChild(tg);}
+    b.onclick=function(){djOpen(t);};
+    l.appendChild(b);
+  });
+}
+function djOpen(t){
+  if(DJ.iv){clearInterval(DJ.iv);DJ.iv=null;}
+  var box=$("#dj-box");box.innerHTML="";
+  var h=document.createElement("h3");h.textContent=t.l;box.appendChild(h);
+  var w=document.createElement("p");w.className="fa-why";w.textContent=t.why;
+  box.appendChild(w);
+  var inner=document.createElement("div");inner.id="dj-inner";box.appendChild(inner);
+  t.run("#dj-inner");
+  box.scrollIntoView({behavior:"smooth",block:"start"});
+}
+function timedWrite(sel,o){
+  var box=$(sel);box.innerHTML="";var mins=o.mins;
+  var p=document.createElement("p");p.className="small";p.textContent=o.prompt;
+  box.appendChild(p);
+  var lens=document.createElement("div");
+  [5,10,15,20].forEach(function(m){
+    var b=document.createElement("button");b.textContent=m+" min";
+    b.className=m===mins?"on":"ghost";
+    b.onclick=function(){mins=m;Array.prototype.forEach.call(lens.children,
+      function(y){y.className=(y===b)?"on":"ghost";});};
+    lens.appendChild(b);
+  });
+  box.appendChild(lens);
+  var ta=document.createElement("textarea");ta.className="big";
+  ta.placeholder=o.ph;box.appendChild(ta);
+  var bw=document.createElement("div");bw.className="pbarwrap";
+  var bar=document.createElement("div");bar.className="pbar";bw.appendChild(bar);
+  box.appendChild(bw);
+  var st=document.createElement("div");st.className="small";
+  st.textContent="The timer is optional — you can just write.";box.appendChild(st);
+  var go=document.createElement("button");go.textContent="Start timer";
+  go.onclick=function(){
+    if(DJ.iv){clearInterval(DJ.iv);}
+    AE.ensure();var end=Date.now()+mins*6e4,tot=mins*6e4;
+    go.textContent="Restart timer";ta.focus();
+    DJ.iv=setInterval(function(){
+      var left=end-Date.now();
+      if(left<=0){
+        clearInterval(DJ.iv);DJ.iv=null;bar.style.width="100%";
+        AE.bell(0.4);buzz([30,90,30]);
+        st.textContent="Time. Finish your sentence — then save, or let it go.";
+        return;
+      }
+      bar.style.width=((1-left/tot)*100)+"%";
+      st.textContent=mmss(left/1000)+" left · keep the pen moving";
+    },1000);
+  };
+  box.appendChild(go);
+  var sv=document.createElement("button");sv.textContent="Save";
+  sv.onclick=function(){
+    var v=ta.value.trim();if(!v){toast("nothing written yet — that's okay");return;}
+    if(DJ.iv){clearInterval(DJ.iv);DJ.iv=null;}
+    plogAdd(o.kind,v);toast("saved, on this device");timedWrite(sel,o);
+  };
+  box.appendChild(sv);
+  if(o.letgo){
+    var lg=document.createElement("button");lg.className="ghost";
+    lg.textContent="Let it go (don't save)";
+    lg.onclick=function(){
+      if(DJ.iv){clearInterval(DJ.iv);DJ.iv=null;}
+      ta.classList.add("gone");
+      setTimeout(function(){timedWrite(sel,o);toast("let go.");},1300);
+    };
+    box.appendChild(lg);
+  }
+}
+
+/* ---------- opening breath ---------- */
+function welcome(){
+  var last=0;
+  try{last=parseInt(localStorage.getItem("neshamah_welcome")||"0",10);}catch(e){}
+  if(Date.now()-last<3*36e5){return;}
+  try{localStorage.setItem("neshamah_welcome",String(Date.now()));}catch(e){}
+  var w=$("#welcome");w.style.display="flex";
+  var hd=holiday(),dd=new Date().getDay();
+  $("#wl-sub").textContent=hd?hd.g:(dd===5||dd===6)?"Shabbat shalom":"";
+  var tm=[];
+  function done(){
+    tm.forEach(clearTimeout);w.classList.add("out");
+    setTimeout(function(){w.style.display="none";},950);
+  }
+  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var word=$("#wl-word");
+  if(reduce){tm.push(setTimeout(done,2500));}
+  else{
+    tm.push(setTimeout(function(){word.textContent="Breathe in…";},600));
+    tm.push(setTimeout(function(){word.textContent="and slowly out…";},4600));
+    tm.push(setTimeout(function(){word.textContent="Welcome back.";},10600));
+    tm.push(setTimeout(done,12200));
+  }
+  $("#wl-skip").onclick=done;
+  w.onclick=function(e){if(e.target!==$("#wl-skip")){done();}};
+}
+
+/* ---------- monthly backup nudge ---------- */
+function backupNudge(){
+  var slot=$("#backup-slot");if(!slot){return;}
+  var has=log.length||plog.length||readLads().length;if(!has){return;}
+  var last=0,snooze=0;
+  try{
+    last=parseInt(localStorage.getItem("neshamah_lastbackup")||"0",10);
+    snooze=parseInt(localStorage.getItem("neshamah_backup_snooze")||"0",10);
+  }catch(e){}
+  var now=Date.now();
+  if(now-last<30*864e5||now<snooze){return;}
+  if(!last){
+    var first=0;
+    [log,plog].forEach(function(a){
+      if(a.length){var t=Date.parse(a[a.length-1].t);if(!first||t<first){first=t;}}
+    });
+    if(first&&now-first<7*864e5){return;}
+  }
+  slot.innerHTML='<div class="card" id="backup-nudge"><p class="small">'+
+    'Your journal lives only on this phone. It has been a while — save '+
+    'a backup copy?</p><button id="bn-save">Save a backup</button>'+
+    '<button id="bn-later" class="ghost">Later</button></div>';
+  $("#bn-save").onclick=function(){$("#btn-backup").click();};
+  $("#bn-later").onclick=function(){
+    try{localStorage.setItem("neshamah_backup_snooze",String(now+7*864e5));}catch(e){}
+    slot.innerHTML="";
+  };
+}
+
+/* ---------- sky: time of day + Shabbat ---------- */
+var SKYC={dawn:"#1b2446",day:"#1c2a4c",dusk:"#241a4d",night:"#0b0918",shabbat:"#26203c"};
+function isShabbatNow(d){
+  var day=d.getDay(),ss=sunset(d);if(!ss){return day===6;}
+  if(day===5){return d>=new Date(ss-18*6e4);}
+  if(day===6){return d<new Date(+ss+42*6e4);}
+  return false;
+}
+function skyUpdate(){
+  var d=new Date(),h=d.getHours()+d.getMinutes()/60,k;
+  if(isShabbatNow(d)){k="shabbat";}
+  else if(h>=5&&h<9.5){k="dawn";}
+  else if(h>=9.5&&h<16.5){k="day";}
+  else if(h>=16.5&&h<21){k="dusk";}
+  else{k="night";}
+  if(document.body.dataset.sky!==k){
+    document.body.dataset.sky=k;
+    var m=document.querySelector('meta[name="theme-color"]');
+    if(m){m.setAttribute("content",SKYC[k]);}
+  }
+}
+setInterval(skyUpdate,5*6e4);
+
+/* ---------- greeting + time check ---------- */
+/* High Holy Days, from the browser's Hebrew calendar */
+function hebDate(d){
+  try{
+    var o={};
+    new Intl.DateTimeFormat("en-u-ca-hebrew",{month:"long",day:"numeric"})
+      .formatToParts(d).forEach(function(p){o[p.type]=p.value;});
+    return {m:o.month,d:parseInt(o.day,10)};
+  }catch(e){return null;}
+}
+function holiday(d){
+  var h=hebDate(d||new Date());if(!h){return null;}
+  if(h.m==="Elul"&&h.d===29){return {g:"Shanah tovah 🍎",
+    n:"Rosh Hashanah begins tonight. L'shanah tovah tikateivu — may you be written for a good year."};}
+  if(h.m==="Tishri"&&(h.d===1||h.d===2)){return {g:h.d===1?"Shanah tovah 🍎":
+    "L'shanah tovah tikateivu 🍎",n:"Chag sameach — a sweet new year. Apples and honey count as self-care."};}
+  if(h.m==="Tishri"&&h.d>=3&&h.d<=8){return {g:"Shanah tovah",
+    n:"The Days of Awe. Teshuvah means returning — to yourself too."};}
+  if(h.m==="Tishri"&&h.d===9){return {g:"G'mar chatimah tovah",
+    n:"Yom Kippur begins tonight. If you're fasting: tzom kal, an easy fast. If your body needs food or medication, eating is the mitzvah — protecting life comes first (pikuach nefesh)."};}
+  if(h.m==="Tishri"&&h.d===10){return {g:"G'mar chatimah tovah",
+    n:"Tzom kal, if you're fasting. If your body needs food or medication today, eating is the mitzvah — pikuach nefesh."};}
+  return null;
+}
+function greet(){
+  var hd=holiday();
+  if(hd){return hd.g;}
+  var dd=new Date().getDay();
+  if(dd===5||dd===6){return "Shabbat shalom 🕯️";}
+  var h=new Date().getHours();
+  if(h<12){return "Boker tov ☀️";}
+  if(h<18){return "Tzoharaim tovim 🕐";}
+  return "Erev tov 🌙";
+}
+$("#greeting").textContent=greet()+", Jamie";
+$(".tag").textContent="breath · prayer · rest · pocket "+
+  "sanctuary · v2.20 · script running ✓";
+setInterval(function(){
+  var d=new Date();
+  var ds=d.toLocaleDateString(undefined,
+    {weekday:"long",month:"long",day:"numeric"});
+  var ts=d.toLocaleTimeString(undefined,
+    {hour:"numeric",minute:"2-digit",second:"2-digit"});
+  $("#timecheck").textContent=ds+" · "+ts;
+},1000);
+renderLog();
+renderLads();
+Object.keys(FAST).forEach(function(k){STARTERS[k]=FAST[k];});
+songsRender();
+plMusicLbl();
+hapLbl();
+shabbatRender();
+bcRender();
+djRender();
+backupNudge();
+skyUpdate();
+welcome();
+prRender();
+partsRender();
+emoRender();
+faRender();
+renderPlog();
+gReset();
+function renderPracticeCards(){
+  var P=window.PRACTICES||[];
+  function byId(id){return P.filter(function(x){return x.id===id;})[0];}
+  /* rows: [tab, anchor, heading, intro, showN]. anchor: id (its card) to insert after; "^id" before; "$" or missing = end */
+  [["breathe","breathwrap","Breath practices","Each one is short. Start runs it step by step; you can stop anytime."],
+   ["ground","gflow","Grounding practices","Outward-facing and gentle. Start runs it step by step."],
+   ["pray","^prayers","Guided prayer practices","Short, step-by-step ways into prayer. Your own words always count.",4],
+   ["sleep","$","Evening practices","For the last hour of the day. ✎ Write opens a page here; Start runs the steps on a timer."],
+   ["journal","dj-box","Short writing practices","A few lines is plenty. Write, or tap Start to be walked through it. Saved only on this device."]].forEach(function(c){
+    var sec=document.getElementById(c[0]);if(!sec)return;
+    var list=P.filter(function(p){return p.tab===c[0];});if(!list.length)return;
+    var d=document.createElement("div");d.className="card";d.id="pc-"+c[0];
+    var h="<h2>"+c[2]+"</h2><p class='small'>"+c[3]+"</p>";
+    list.forEach(function(p,i){
+      if(p.writing&&typeof PLBL==="object"&&!PLBL[p.id])PLBL[p.id]=p.title.toLowerCase();
+      if(c[4]&&i===c[4])h+="<details><summary>More practices ("+(list.length-i)+")</summary>";
+      var meta=[p.mins<1?Math.round(p.mins*60)+" sec":p.mins+" min"];if(p.eyesClosed)meta.push("eyes closed ok");if(p.standing)meta.push("standing");
+      h+="<div class='pcard'><div class='ph'><div><h3>"+esc(p.title)+"</h3><span class='small'>"+meta.join(" · ")+"</span></div><div>"+
+        (p.writing?"<button class='on' data-pw='"+esc(p.id)+"'>✎ Write</button> ":"")+
+        "<button class='"+(p.writing?"ghost":"on")+"' data-pc='"+esc(p.id)+"'>▶ Start</button>"+
+        (typeof songsFor==="function"&&songsFor(p.id).length?" <button class='ghost' data-ps='"+esc(p.id)+"'>♪ Sung</button>":"")+"</div></div>"+
+        (p.caution?"<p class='small'>⚠ "+esc(p.caution)+"</p>":"")+
+        "<div class='pw' id='pw-"+esc(p.id)+"'></div>"+
+        "<details><summary>How it works</summary><p class='small'>"+esc(p.how||"")+"</p></details>"+
+        (p.why?"<details><summary>Why it's holy</summary><p class='small'>"+esc(p.why)+"</p></details>":"")+
+        (p.flag?"<details><summary class='src'>For review ⚑</summary><p class='small'>"+esc(p.flag)+"</p></details>":"")+"</div>";
+    });
+    if(c[4]&&list.length>c[4])h+="</details>";
+    d.innerHTML=h;
+    var an=c[1]||"$",el=null;
+    if(an[0]==="^"){el=document.getElementById(an.slice(1));if(el&&el.parentNode===sec)sec.insertBefore(d,el);else sec.appendChild(d);}
+    else{if(an!=="$"){el=document.getElementById(an);if(el&&el.parentNode!==sec)el=el.closest(".card");}
+      if(el&&el.parentNode===sec)el.after(d);else sec.appendChild(d);}
+    d.addEventListener("click",function(e){
+      var b=e.target.closest("[data-pc]");if(b){var p=byId(b.dataset.pc);if(p)runPractice(p);return;}
+      var sb=e.target.closest("[data-ps]");if(sb){var ss=songsFor(sb.dataset.ps);if(ss.length)songPlay(ss[0]);return;}
+      var w=e.target.closest("[data-pw]");if(w){var q=byId(w.dataset.pw);if(q)practiceWriter(q);}
+    });
+  });
+}
+function practiceWriter(p){
+  var box=document.getElementById("pw-"+p.id);if(!box)return;
+  if(box.innerHTML){box.innerHTML="";return;}
+  var ol=document.createElement("ol");ol.className="small";
+  p.steps.forEach(function(x){var li=document.createElement("li");li.textContent=x[0];ol.appendChild(li);});
+  box.appendChild(ol);
+  var ta=document.createElement("textarea");ta.rows=5;ta.style.width="100%";ta.placeholder="a few lines is plenty…";box.appendChild(ta);
+  var sv=document.createElement("button");sv.textContent="Save";
+  sv.onclick=function(){var v=ta.value.trim();if(!v){toast("nothing written yet — that's okay");return;}
+    plogAdd(p.id,v);toast("saved, on this device");box.innerHTML="";};
+  var lg=document.createElement("button");lg.className="ghost";lg.textContent="Let it go (don't save)";
+  lg.onclick=function(){box.innerHTML="";toast("let go.");};
+  box.appendChild(sv);box.appendChild(lg);ta.focus();
+}
+renderPracticeCards();
+
+/* ---------- breath-first + people (v2.18) ---------- */
+$("#btn-onebreath").onclick=function(){
+  switchTab("breathe");
+  var pb=document.querySelector('.patbtn[data-p="slow"]');if(pb)pb.click();
+  var lb=document.querySelector('.lenbtn[data-m="1"]');if(lb)lb.click();
+  startBreath();
+};
+function ppGet(){var a=null;try{a=JSON.parse(localStorage.getItem("neshamah_people")||"null");}catch(e){}
+  if(!a){a=[{name:"Kyle",n:""}];ppSet(a);}return a;}
+function ppSet(a){try{localStorage.setItem("neshamah_people",JSON.stringify(a));}catch(e){}}
+function ppRender(){
+  var a=ppGet(),h="";
+  a.forEach(function(p,i){h+="<div>"+(p.n?"<a class='btnlink' href='sms:"+esc(p.n)+"'>💬 Text "+esc(p.name)+"</a>":"<button class='ghost' data-fill='"+i+"'>💬 "+esc(p.name)+" · add number</button>")+"<button class='ghost' data-rm='"+i+"'>remove</button></div>";});
+  $("#people-list").innerHTML=h;
+  $$("#people-list [data-rm]").forEach(function(b){b.onclick=function(){var a=ppGet();a.splice(+b.dataset.rm,1);ppSet(a);ppRender();};});
+  $$("#people-list [data-fill]").forEach(function(b){b.onclick=function(){var a=ppGet(),p=a[+b.dataset.fill];a.splice(+b.dataset.fill,1);ppSet(a);$("#pp-name").value=p.name;$("#people-card details").open=true;$("#pp-num").focus();ppRender();};});
+}
+$("#pp-add").onclick=function(){
+  var name=$("#pp-name").value.trim(),n=$("#pp-num").value.replace(/[^0-9+]/g,"");
+  if(!name||!n){toast("add a name and number");return;}
+  var a=ppGet();a.push({name:name,n:n});ppSet(a);$("#pp-name").value="";$("#pp-num").value="";ppRender();
+};
+ppRender();
+</script>
+</body>
+</html>

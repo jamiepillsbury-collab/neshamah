@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Neshamah icon maker</title>
+<style>body{font-family:sans-serif;background:#241a4d;color:#f3eefa;text-align:center;padding:40px}
+button{font-size:18px;padding:14px 22px;margin:10px;border-radius:12px;border:none;background:#f2c9a0;color:#3a2140;cursor:pointer}
+canvas{display:none} p{color:#bfb3d9}</style></head>
+<body>
+<h1>Neshamah icon maker</h1>
+<p>Click each button once. The two PNG files will land in your Downloads folder.<br>
+Then move both into your <b>neshamah-site</b> folder.</p>
+<button onclick="dl(512)">Download icon-512.png</button>
+<button onclick="dl(192)">Download icon-192.png</button>
+<canvas id="cv"></canvas>
+<script>
+function dl(size){
+ var cv=document.getElementById('cv');cv.width=size;cv.height=size;
+ var x=cv.getContext('2d');
+ var g=x.createLinearGradient(0,0,0,size);
+ g.addColorStop(0,'#191238');g.addColorStop(0.55,'#3d2358');g.addColorStop(1,'#6b3155');
+ x.fillStyle=g;x.fillRect(0,0,size,size);
+ var stars=[[0.215,0.244,0.008,'rgba(201,184,242,0.8)'],[0.771,0.293,0.006,'rgba(201,184,242,0.7)'],[0.762,0.742,0.006,'rgba(255,255,255,0.55)'],[0.234,0.762,0.006,'rgba(242,201,160,0.5)']];
+ stars.forEach(function(s){x.fillStyle=s[3];x.beginPath();x.arc(s[0]*size,s[1]*size,s[2]*size,0,7);x.fill();});
+ var rg=x.createRadialGradient(size/2,size/2,size*0.04,size/2,size/2,size*0.3);
+ rg.addColorStop(0,'#ffe9c9');rg.addColorStop(0.5,'rgba(242,201,160,0.85)');rg.addColorStop(1,'rgba(242,201,160,0)');
+ x.fillStyle=rg;x.beginPath();x.arc(size/2,size/2,size*0.3,0,7);x.fill();
+ x.fillStyle='#f2c9a0';x.beginPath();x.arc(size/2,size/2,size*0.14,0,7);x.fill();
+ var a=document.createElement('a');a.download='icon-'+size+'.png';a.href=cv.toDataURL('image/png');a.click();
+}
+</script></body></html>
