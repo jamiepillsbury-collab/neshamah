@@ -173,4 +173,6 @@ Open question: Jamie's phone may be running an older deployed copy. Confirm the 
 - Rule calls of mine (Jamie to confirm): you can't leave a location with an active Complication; clearing Fatigue clears yours first, then the familiar's; "Ask a Question" Darkness = "No, and…" exactly as printed.
 - Wandering Library.pdf is a separate game (Abi Pullen, © 2023, not CC). Not built.
 - Kindle games still pending: The Road Notices You (C. H. Blackwell), Should I Tame the Ghost?. Not found online; need Jamie's rules summary.
-- Backups *.v2.24.bak. Deploy: index.html, library.js, sw.js, PROGRESS.md.
+- Her Odyssey (S. Kaiya J., no license in PDF, so treated as copyrighted): odyssey.js, third entry on the Journaling games card. Original wording; book prompts cited by page (3, 7, 14, 18-19). Stats 11 pts, Nd4 highest, Omen Score, Auspicious/Inauspicious stat drift, jokers = False/True Homecoming, Hope (+Doom), 4 variations as checkboxes with my own labels (book's names not mapped). Storage neshamah_odyssey; Backup/Restore; plog k:"odyssey". Tested all endings headless, no errors.
+- Open: if a wanderer reaches the False Homecoming with 0 Auspicious days, Hope starts at 0 and the journey doesn't end (rule unclear).
+- Backups *.v2.24.bak. Deploy: index.html, library.js, odyssey.js, sw.js, PROGRESS.md.
