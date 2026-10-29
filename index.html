@@ -832,6 +832,8 @@ margin:8px 0 4px}
     <button class="on" onclick="libraryOpen()">Open the Library</button>
     <p class="small" style="margin-top:12px"><b>Her Odyssey</b>: a wanderer's road home, one Hazard a day. Draw in the morning, meet it in the evening.</p>
     <button class="on" onclick="odysseyOpen()">Open Her Odyssey</button>
+    <p class="small" style="margin-top:12px"><b>The Ghost</b>: cozy-spooky. Learn what you can about a restless ghost, then choose: harsh, or kind? One sitting.</p>
+    <button class="on" onclick="ghostOpen()">Open The Ghost</button>
   </div>
   <div class="card">
     <h2>Daily journal</h2>
@@ -999,6 +1001,7 @@ margin:8px 0 4px}
 <script src="oracle.js"></script>
 <script src="library.js"></script>
 <script src="odyssey.js"></script>
+<script src="ghost.js"></script>
 <script>
 "use strict";
 var $=function(s){return document.querySelector(s)};
@@ -2911,7 +2914,8 @@ $("#btn-backup").onclick=function(){
       log:log,ladders:lads,practice:plog,
       oracle:(function(){try{return JSON.parse(localStorage.getItem("neshamah_oracle")||"null");}catch(e){return null;}})(),
       library:(function(){try{return JSON.parse(localStorage.getItem("neshamah_library")||"null");}catch(e){return null;}})(),
-      odyssey:(function(){try{return JSON.parse(localStorage.getItem("neshamah_odyssey")||"null");}catch(e){return null;}})()};
+      odyssey:(function(){try{return JSON.parse(localStorage.getItem("neshamah_odyssey")||"null");}catch(e){return null;}})(),
+      ghost:(function(){try{return JSON.parse(localStorage.getItem("neshamah_ghost")||"null");}catch(e){return null;}})()};
     var a=document.createElement("a");
     a.href=URL.createObjectURL(new Blob([JSON.stringify(data)],
       {type:"application/json"}));
@@ -2932,6 +2936,7 @@ $("#restorefile").onchange=function(){
     if(d.oracle&&!localStorage.getItem("neshamah_oracle")){try{localStorage.setItem("neshamah_oracle",JSON.stringify(d.oracle));}catch(e){}}
     if(d.library&&!localStorage.getItem("neshamah_library")){try{localStorage.setItem("neshamah_library",JSON.stringify(d.library));}catch(e){}}
     if(d.odyssey&&!localStorage.getItem("neshamah_odyssey")){try{localStorage.setItem("neshamah_odyssey",JSON.stringify(d.odyssey));}catch(e){}}
+    if(d.ghost&&!localStorage.getItem("neshamah_ghost")){try{localStorage.setItem("neshamah_ghost",JSON.stringify(d.ghost));}catch(e){}}
     if(d.app!=="neshamah"){throw new Error("not ours");}
     if(!confirm("Restore this backup? It merges with what is "+
       "here — nothing gets deleted.")){return;}
