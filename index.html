@@ -265,7 +265,7 @@ margin:8px 0 4px}
 <header>
   <h1><span class="he">נְשָׁמָה</span> Neshamah</h1>
   <div class="tag">breath · prayer · rest · pocket sanctuary
-  · v2.23</div>
+  · v2.24</div>
 </header>
 
 <main>
@@ -3033,8 +3033,8 @@ var SONGS=[
 {src:"shore",u:"shabbat-candles.mp3",t:"Candle blessing",c:"",g:"Shabbat",p:["shabbat","bc-ner"]},
 {s:"candle-blessing-binder-13",t:"Candle Blessing",c:"Binder",g:"Shabbat",p:["shabbat"]},
 {src:"shore",u:"Shabbat+Kiddush+(chanted%2C+complete).mp3",t:"Kiddush, chanted",c:"",g:"Shabbat",p:["bc-gafen"]},
-{s:"oseh-shalom-klepper",t:"Oseh Shalom",c:"Klepper",g:"Peace",p:["oseh","silent-personal-prayer"]},
-{src:"mrj",i:22,t:"Oseh Shalom",c:"Spanish & Portuguese, choir",g:"Peace",p:["oseh"]},
+{s:"oseh-shalom-klepper",t:"Oseh Shalom",c:"Klepper",g:"Peace",p:["oseh","silent-personal-prayer","oseh-breath"]},
+{src:"mrj",i:22,t:"Oseh Shalom",c:"Spanish & Portuguese, choir",g:"Peace",p:["oseh","oseh-breath"]},
 {s:"shalom-rav-steinberg",t:"Shalom Rav",c:"Steinberg",g:"Peace"},
 {s:"niggun-medley-1",t:"Niggun medley",c:"",g:"Wordless, for meditation",p:["niggun","hum-niggun"]},
 {s:"niggun-chassidic-14",t:"Niggun",c:"Chassidic",g:"Wordless, for meditation",p:["niggun","hum-niggun"]}];
@@ -3839,7 +3839,7 @@ function greet(){
 }
 $("#greeting").textContent=greet()+", Jamie";
 $(".tag").textContent="breath · prayer · rest · pocket "+
-  "sanctuary · v2.23 · script running ✓";
+  "sanctuary · v2.24 · script running ✓";
 setInterval(function(){
   var d=new Date();
   var ds=d.toLocaleDateString(undefined,

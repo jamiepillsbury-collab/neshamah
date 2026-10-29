@@ -1,5 +1,5 @@
 /* Neshamah offline cache. Bump CACHE when shipping a new version. */
-const CACHE = "neshamah-v2.23";
+const CACHE = "neshamah-v2.24";
 const CORE = ["./", "index.html", "prayers.js", "practices.js", "oracle.js", "manifest.webmanifest",
   "icon-192.png", "icon-512.png", "icon.svg"];
 self.addEventListener("install", e => {

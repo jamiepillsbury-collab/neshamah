@@ -159,3 +159,9 @@ Open question: Jamie's phone may be running an older deployed copy. Confirm the 
 - oracle.js (new, cached in sw): full-screen page opened from a card at the top of Journal. Name + own-words promise; d6 roll (d8 from week 9, choose from week 17); "insists" on repeat cabinet; "stirs" = choose; deeper rooms weeks 5+; one image/day; 7th day read-back + Synthesis prompt; month/season/year pauses every 4/13/52 weeks; "Nothing surfacing?" helpers; archive. Storage neshamah_oracle; included in Backup/Restore; plog entries k:"oracle".
 - Wording is original; the book's own prompts are referenced by page (9, 19, 28, 30, 32), not copied (book is copyrighted; repo is public).
 - NEXT: digest new resources (mental health resources/, Jewish resources/) -> integrate. Text extracted to neshamah/_claude_text/ (can delete after).
+
+## 2026-10-29 — v2.24: resources integrated (from claude/neshamah-resources-digest-2026-10-29.md), tested headless, no JS errors
+- New practices (practices.js, cards render automatically, Today suggestions use their tags): Held on four sides (sleep; angel names optional, ⚑ Reform check), Oseh Shalom on the out-breath (pray; Reform line optional; songs linked), Outside or inside (ground), Two-minute sensory circuit (ground), Hands over your face (ground, ACT), Two true things (journal, DBT), Let one kind thing in (journal).
+- Improved: Name on the exhale (+Shaddai "enough"), Here and now (+orienting steps from Jamie's cheat sheet), I believe (+"willing to consider"), Pleasure list (+permission line), New moon (mourner caution), Mi Sheberach (+small act of giving), Psalms (+4 sleep, +42 sadness).
+- Skipped on purpose: "view from above" (unreality risk), reference-only handouts. Unreadable: CPT ABC worksheet (upside-down scan), Tefillat HaDerech (empty).
+- Backups *.v2.23.bak. sw cache neshamah-v2.24. Deploy index.html, practices.js, sw.js, PROGRESS.md.
