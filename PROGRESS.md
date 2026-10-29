@@ -136,3 +136,26 @@ Open question: Jamie's phone may be running an older deployed copy. Confirm the 
 - Player's background-niggun button hidden on the two silent Name practices; relabeled "soft niggun in the background". Songs unlinked from those cards.
 - Backups: *.v2.19.bak. sw cache neshamah-v2.20. Deploy index.html, practices.js, sw.js.
 - Next: Jamie's feedback on Pray, Ground, Rest, Journal (apply writing rules + em-dash sweep per tab). Offered: PaRDeS research doc.
+
+## 2026-10-24 — v2.21 (Jamie's Pray feedback, part 1), tested headless, no JS errors
+- About these texts: collapsed card. Display default = Phonetic only (key neshamah_prview3); Hebrew/English off, shown layers interleave per line, hidden ones are tap rows. Brachot follow the same setting.
+- Brachot: new "Shabbat and the table" row (candles, wine, challah), with "first" instructions; Hebrew endings typed ⚑. Science How replaced with Menachot 43b.
+- Songs: card is now "Sung prayers" (Childs + Shore mp3 + MRJ SoundCloud set via Widget API skip(i)). Cut English/modern: Raede, Sher, Friedman. Added MRJ: Mi Shebeirach (Taubman), Elohai N'shamah (Gold), V'al Kulam, Mah Gadlu (⚑ MRJ lists it as "Mali Gadlu"), Oseh Shalom (S&P). Shore: Sh'ma (first), Nishmat, Shehecheyanu, Kaddish, Candles, Kiddush. Practice song buttons now show the song title.
+- Pray-tab practices: How/Why rewritten from Jewish sources only (handbook, Green, Talmud refs); empty How is hidden. Prayer titles: em dashes removed.
+- OPEN (Jamie): Sefaria has no transliterations for these prayers (only Mourner's Kaddish). English options on Sefaria: Metsudah (Orthodox, CC-BY), Singer 1915, Sefaria Community (CC0), Sim Shalom (Conservative, partial); Tanakh: Contemporary Torah/JPS. Decide phonetic source, then swap.
+- OPEN: unheard Childs tracks kept: Psalm 23, Ray Mi Shebeirach, Taubman Hashkiveinu. Prayer "note" lines are still drafted text (next: replace with sourced lines).
+- Backups: *.v2.20.bak. sw cache neshamah-v2.21. Deploy index.html, prayers.js, practices.js, sw.js.
+
+## 2026-10-26 — v2.22, tested headless, no JS errors
+- Phonetic is now script-generated from the Sefaria Hebrew (cloud: /home/claude/scripts/translit.py + apply_tl.py; MT-style: tsere=ei, sheva na=', small exceptions dict for kol/Yisrael/Adonai etc.). Applied to prayers, grief, brachot, shabbat. 5 prayer lines flagged tlf (⚑ kamatz katan / sheva). Each prayer gets a "tl" change note.
+- Berakhot card reordered: own words + Bless this, Shabbat and the table, Awe, Gratitude (body, good news, first time), then counter + How/Why.
+- OPEN: English source choice still pending.
+- Backups: *.v2.21.bak. sw cache neshamah-v2.22. Deploy index.html, prayers.js, sw.js.
+- (same v2.22) English now from Sefaria per Jamie: Torah = Contemporary Torah (JPS 2006), Psalms/Job = JPS Gender-Sensitive; siddur = Sim Shalom > Sefaria Community > Birnbaum > Metsudah. Fetched via the desktop app's built-in browser (Sefaria CORS from the Netlify page). יהוה shown as Adonai. Lines inside one Sefaria segment share one English (on the first line). Reform-only lines have no English (noted in Sources & notes). Each prayer has a k:"en" change note naming the version.
+- OPEN: brachot/Shabbat blessing English is still drafted text.
+
+## 2026-10-29 — v2.23: Small Things (Oracle of Small Things game), tested headless (5 simulated weeks), no JS errors
+- NOTE: code now deploys from D:\Claude Files\neshamah-site (GitHub repo "neshamah", GitHub Pages). That folder had v2.20; v2.21-v2.22 work (Pray tab, Sefaria English, script phonetics) is included here.
+- oracle.js (new, cached in sw): full-screen page opened from a card at the top of Journal. Name + own-words promise; d6 roll (d8 from week 9, choose from week 17); "insists" on repeat cabinet; "stirs" = choose; deeper rooms weeks 5+; one image/day; 7th day read-back + Synthesis prompt; month/season/year pauses every 4/13/52 weeks; "Nothing surfacing?" helpers; archive. Storage neshamah_oracle; included in Backup/Restore; plog entries k:"oracle".
+- Wording is original; the book's own prompts are referenced by page (9, 19, 28, 30, 32), not copied (book is copyrighted; repo is public).
+- NEXT: digest new resources (mental health resources/, Jewish resources/) -> integrate. Text extracted to neshamah/_claude_text/ (can delete after).

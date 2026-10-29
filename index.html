@@ -11,6 +11,9 @@
 <!-- This site is hosted on Netlify. Anyone can build and deploy a site
      like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=966c3f03-5798-49ef-85a0-f61f3d33d70d
      Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=966c3f03-5798-49ef-85a0-f61f3d33d70d
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
 <meta name="viewport"
   content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -207,6 +210,7 @@ color:var(--amber);max-width:640px;margin:0 auto}
 #nowbar button{padding:2px 9px;margin:0;font-size:12px}
 #nb-frame{max-width:640px;margin:4px auto 0}
 #nb-frame iframe{display:block;width:100%;height:20px;border:0}
+#nb-frame audio{display:block;width:100%;height:32px}
 body.nowplaying{padding-bottom:160px}
 body.nowplaying #player{padding-bottom:calc(120px + env(safe-area-inset-bottom))}
 .songbtn{font-size:14px;padding:8px 12px}
@@ -261,7 +265,7 @@ margin:8px 0 4px}
 <header>
   <h1><span class="he">נְשָׁמָה</span> Neshamah</h1>
   <div class="tag">breath · prayer · rest · pocket sanctuary
-  · v2.20</div>
+  · v2.23</div>
 </header>
 
 <main>
@@ -489,54 +493,61 @@ margin:8px 0 4px}
 <!-- ============ PRAY ============ -->
 <section id="pray">
   <div class="card">
-    <h2>About these texts</h2>
-    <p class="small">The Hebrew is the liturgical text. The
-    transliterations and English translations were written
-    for this app — they are not copied from any siddur or
-    commentary. The books listed under each prayer are where
-    to compare and verify. <span style="color:var(--amber)">⚑</span>
+  <details id="prv-about"><summary><b>About these texts</b> · display settings</summary>
+    <p class="small">The Hebrew comes from Sefaria. The phonetic
+    lines are generated from that Hebrew by fixed rules, so
+    nothing is reworded; ⚑ after a line means a vowel the rules
+    can't settle. The English comes from Sefaria: the JPS
+    gender-sensitive translations for Torah and Psalms; for the
+    siddur, Sim Shalom where Sefaria has it, then the Sefaria
+    Community Translation, then older siddurs. Each prayer's
+    Sources &amp; notes names its translation. <span style="color:var(--amber)">⚑</span>
     marks wording still waiting for your check against
     Mishkan T'filah.</p>
     <div style="margin-top:6px">
-      <button class="prvbtn" data-k="he">Hebrew</button>
       <button class="prvbtn" data-k="tl">Phonetic</button>
+      <button class="prvbtn" data-k="he">Hebrew</button>
       <button class="prvbtn" data-k="en">English</button>
     </div>
-    <p class="small">Choose which rows open by themselves on each prayer
-    (Hebrew can be hidden). You can always open any row by tapping
-    it. Your choice is remembered. Any prayer can be prayed one line
-    per breath.</p>
+    <p class="small">Lit buttons show on every prayer. Anything
+    off can still be opened under each prayer with a tap. Your
+    choice is remembered.</p>
+  </details>
   </div>
   <div class="card" id="brachot-card">
-    <h2>Brachot — bless what you notice</h2>
-    <p class="small">Something stopped you — a butterfly, a rainbow,
+    <h2>Berakhot</h2>
+    <input type="text" id="bc-own"
+      placeholder="what you want to bless, in your own words">
+    <button id="bc-own-go" class="ghost">Bless this</button>
+    <h3>Shabbat and the table</h3>
+    <div id="bc-table" class="chipgrid"></div>
+    <h3>Awe</h3>
+    <p class="small">Something stopped you: a butterfly, a rainbow,
     the wind? Tap it and its blessing appears. Pause one breath with
     the moment first.</p>
-    <p class="fa-why"><b>How:</b> gratitude practice. In studies
-    (Emmons &amp; McCullough, 2003, and later reviews) noticing and
-    naming good moments modestly improves well-being; effects on
-    anxiety and depression are small but real. Lingering a breath
-    on the moment — savoring — helps it land. <b>Why:</b> Rabbi Meir
-    taught saying a hundred blessings a day (Menachot 43b). A bracha
-    turns noticing into relationship.</p>
+    <div id="bc-seen" class="chipgrid"></div>
+    <h3>Gratitude</h3>
+    <div id="bc-grat" class="chipgrid"></div>
+    <div id="bc-show"></div>
     <div id="bc-count" class="small"></div>
     <div class="pbarwrap"><div class="pbar" id="bc-bar"></div></div>
-    <div id="bc-seen" class="chipgrid"></div>
-    <input type="text" id="bc-own"
-      placeholder="something else — in your own words">
-    <button id="bc-own-go" class="ghost">Bless this</button>
-    <div id="bc-show"></div>
+    <p class="fa-why"><b>How:</b> pause at what stopped you, say
+    the opening, then the ending for it. Bless first, then enjoy.
+    <b>Why:</b> Rabbi Meir taught saying a hundred blessings a day
+    (Menachot 43b).</p>
   </div>
 
   <div class="card">
-    <h2>Sung by Cantor Mark Childs</h2>
-    <p class="small">From the cantor of Congregation B'nai B'rith,
-    Santa Barbara, shared freely on his SoundCloud. Tap a song and it
-    keeps playing while you move around the app or start a practice.
-    Songs stream, so they need internet.</p>
+    <h2>Sung prayers</h2>
+    <p class="small">Chosen for healing, breath, gratitude, rest
+    and grief. Tap a song and it keeps playing while you move
+    around the app or start a practice. Songs stream, so they
+    need internet.</p>
     <div id="songlist"></div>
-    <a class="src" href="https://soundcloud.com/cantor-mark-childs"
-      target="_blank" rel="noopener">All of his recordings on SoundCloud ›</a>
+    <p class="src">Cantor Mark Childs, Congregation B'nai B'rith,
+    Santa Barbara (<a href="https://soundcloud.com/cantor-mark-childs" target="_blank" rel="noopener">SoundCloud</a>)
+    · Rabbi Cantor Stephanie Shore (<a href="https://stephanieshore.com/prayers-and-blessings/" target="_blank" rel="noopener">her site</a>)
+    · Movement for Reform Judaism, UK, Shirei Ha-T'fillot (<a href="https://www.reformjudaism.org.uk/resources/shirei-ha-tfillot-music/" target="_blank" rel="noopener">MRJ</a>)</p>
   </div>
 
   <div id="prayers"></div>
@@ -813,6 +824,13 @@ margin:8px 0 4px}
 <!-- ============ JOURNAL ============ -->
 <section id="journal">
   <div class="card">
+    <h2>Small Things</h2>
+    <p class="small">A solo journaling game: one small image a day,
+    chosen by a roll of the die, and a look back on the seventh day.
+    About three minutes. It opens on its own page.</p>
+    <button class="on" onclick="oracleOpen()">Open Small Things</button>
+  </div>
+  <div class="card">
     <h2>Daily journal</h2>
     <p class="small">Small, honest pages. The one that fits this time
     of day is marked. Everything saves to your history on this
@@ -975,6 +993,7 @@ margin:8px 0 4px}
 
 <script src="prayers.js"></script>
 <script src="practices.js"></script>
+<script src="oracle.js"></script>
 <script>
 "use strict";
 var $=function(s){return document.querySelector(s)};
@@ -2884,7 +2903,8 @@ $("#btn-backup").onclick=function(){
   });
   Promise.all(jobs).then(function(){
     var data={app:"neshamah",v:1,saved:new Date().toISOString(),
-      log:log,ladders:lads,practice:plog};
+      log:log,ladders:lads,practice:plog,
+      oracle:(function(){try{return JSON.parse(localStorage.getItem("neshamah_oracle")||"null");}catch(e){return null;}})()};
     var a=document.createElement("a");
     a.href=URL.createObjectURL(new Blob([JSON.stringify(data)],
       {type:"application/json"}));
@@ -2902,6 +2922,7 @@ $("#restorefile").onchange=function(){
   if(!f){return;}
   f.text().then(function(t){
     var d=JSON.parse(t);
+    if(d.oracle&&!localStorage.getItem("neshamah_oracle")){try{localStorage.setItem("neshamah_oracle",JSON.stringify(d.oracle));}catch(e){}}
     if(d.app!=="neshamah"){throw new Error("not ours");}
     if(!confirm("Restore this backup? It merges with what is "+
       "here — nothing gets deleted.")){return;}
@@ -2972,54 +2993,90 @@ if("serviceWorker" in navigator&&location.protocol==="https:"){
   navigator.serviceWorker.register("sw.js").catch(function(){});
 }
 
-/* ---------- songs: Cantor Mark Childs (SoundCloud embeds) ---------- */
-var SC="https://soundcloud.com/cantor-mark-childs/";
+/* ---------- songs: Childs (SoundCloud), Shore (mp3), MRJ (SoundCloud set) ---------- */
+var SCB="https://soundcloud.com/cantor-mark-childs/";
+var MRJ="https://api.soundcloud.com/playlists/1527191581?secret_token=s-I2cDwf4ud9o";
+var MRJPG="https://www.reformjudaism.org.uk/resources/shirei-ha-tfillot-music/";
+var SH="https://prayers-and-blessings.s3.amazonaws.com/";
+var SHPG="https://stephanieshore.com/prayers-and-blessings/";
+var WHO={childs:"Cantor Mark Childs",shore:"Rabbi Cantor Stephanie Shore",mrj:"MRJ (UK)"};
 var SONGS=[
 {s:"3-refaeinu-by-bob-remstein",t:"R'fa-einu",c:"Remstein",g:"Healing",p:["refaeinu","uplifting-pain"]},
-{s:"heal-us-now-sher-3",t:"Heal Us Now",c:"Sher",g:"Healing",p:["refaeinu"]},
-{s:"mi-shebeirach-friedman-3",t:"Mi Shebeirach",c:"Friedman",g:"Healing",
- n:"The prayer for healing of body and spirit.",p:["mi-sheberach-self"]},
+{src:"mrj",i:23,t:"Mi Shebeirach for Healing",c:"Taubman",g:"Healing",p:["mi-sheberach-self"],
+ n:"The prayer for healing of spirit and body."},
 {s:"mi-shebeirach-ray-2",t:"Mi Shebeirach",c:"Ray",g:"Healing",p:["mi-sheberach-self"]},
 {s:"yedid-nefesh-zweig-1",t:"Yedid Nefesh",c:"Zweig",g:"Healing",p:["elna"],
  n:"A love song of the soul by the 16th-century Safed kabbalist "+
  "Elazar Azikri. Its verse \"El na r'fa na lah\" borrows Moses' "+
  "prayer for Miriam."},
-{s:"elohai-neshama-sanger-2",t:"Elohai N'shamah",c:"Sanger",g:"Breath & soul",p:["elohai","modeh-ani-handwash"]},
-{s:"the-soul-that-you-have-given-me-by-rob-raede",t:"The Soul That You Have Given Me",c:"Raede",
- g:"Breath & soul",p:["elohai"],n:"Elohai N'shamah, in English."},
+{s:"elohai-neshama-sanger-2",t:"Elohai N'shamah",c:"Sanger",g:"Breath & soul",p:["elohai","modeh-ani-handwash"],
+ n:"Said on waking (Berakhot 60b): the soul You gave me is pure."},
+{src:"mrj",i:6,t:"Elohai N'shamah",c:"Shefa Gold, choir",g:"Breath & soul",p:["elohai"]},
+{src:"shore",u:"nishmat.mp3",t:"Nishmat",c:"",g:"Breath & soul",p:["kolhan"],
+ n:"Its first words, nishmat kol chai, are the breath of all life."},
 {s:"hallelujah-lewandowski-1",t:"Halleluyah",c:"Lewandowski",g:"Breath & soul",p:["kolhan"],
- n:"Psalm 150 — it ends with kol han'shamah, every breath."},
+ n:"Psalm 150. It ends with kol han'shamah, every breath."},
+{src:"shore",u:"shema.mp3",t:"Sh'ma",c:"",g:"Breath & soul",p:["shema","bedtime","bedtime-shema"]},
 {s:"shema-sulzer-2",t:"Sh'ma",c:"Sulzer",g:"Breath & soul",p:["shema","bedtime","bedtime-shema"]},
 {s:"ana-bcho-ach-hamama-11",t:"Ana B'choach",c:"Hamama",g:"Breath & soul",p:["sef"],
  n:"A kabbalistic prayer of seven lines, traditionally linked to "+
  "the seven lower sefirot."},
+{src:"shore",u:"shechechiyanu.mp3",t:"Shehecheyanu",c:"",g:"Gratitude & awe",p:["shehecheyanu-sensory"]},
+{src:"mrj",i:20,t:"V'al Kulam",c:"Finkelstein",g:"Gratitude & awe",
+ n:"From Modim, the Amidah's blessing of thanks."},
+{src:"mrj",i:9,t:"Mah Gadlu",c:"Shefa Gold, choir",g:"Gratitude & awe",p:["new-moon"]},
 {s:"4-hashkiveinu-by-craig-taubman",t:"Hashkiveinu",c:"Taubman",g:"Night",p:["hashkiveinu","sleep","bedtime-shema","calm-place"]},
 {s:"adon-olam-sephardic",t:"Adon Olam",c:"Sephardic melody",g:"Night",p:["bedtime","sleep"],
- n:"Ends with b'yado afkid ruchi — into God's hand I entrust my spirit."},
+ n:"Ends with b'yado afkid ruchi: into God's hand I entrust my spirit."},
 {s:"psalm-23-1",t:"Psalm 23",c:"",g:"Night",p:["ps23","psalms-moment"]},
+{src:"shore",u:"kaddish.mp3",t:"Mourner's Kaddish",c:"",g:"Grief",p:["kaddish","memorial-candle"]},
+{src:"shore",u:"shabbat-candles.mp3",t:"Candle blessing",c:"",g:"Shabbat",p:["shabbat","bc-ner"]},
 {s:"candle-blessing-binder-13",t:"Candle Blessing",c:"Binder",g:"Shabbat",p:["shabbat"]},
+{src:"shore",u:"Shabbat+Kiddush+(chanted%2C+complete).mp3",t:"Kiddush, chanted",c:"",g:"Shabbat",p:["bc-gafen"]},
 {s:"oseh-shalom-klepper",t:"Oseh Shalom",c:"Klepper",g:"Peace",p:["oseh","silent-personal-prayer"]},
+{src:"mrj",i:22,t:"Oseh Shalom",c:"Spanish & Portuguese, choir",g:"Peace",p:["oseh"]},
 {s:"shalom-rav-steinberg",t:"Shalom Rav",c:"Steinberg",g:"Peace"},
-{s:"niggun-medley-1",t:"Niggun medley",c:"",g:"Wordless — for meditation",p:["niggun","hum-niggun"]},
-{s:"niggun-chassidic-14",t:"Niggun",c:"Chassidic",g:"Wordless — for meditation",p:["niggun","hum-niggun"]}];
+{s:"niggun-medley-1",t:"Niggun medley",c:"",g:"Wordless, for meditation",p:["niggun","hum-niggun"]},
+{s:"niggun-chassidic-14",t:"Niggun",c:"Chassidic",g:"Wordless, for meditation",p:["niggun","hum-niggun"]}];
 var NOW=null;
-function songName(x){return x.t+(x.c?" — "+x.c:"");}
+function songName(x){return x.t+(x.c?" · "+x.c:"");}
+function songWho(x){return WHO[x.src||"childs"];}
 function songPlay(x){
-  NOW=x;
-  $("#nb-title").textContent="♪ "+songName(x)+" · Cantor Mark Childs";
-  $("#nb-link").href=SC+x.s;
+  NOW=x;var src=x.src||"childs";
+  $("#nb-title").textContent="♪ "+songName(x)+" · "+songWho(x);
+  $("#nb-link").href=src==="shore"?SHPG:src==="mrj"?MRJPG:SCB+x.s;
   var f=$("#nb-frame");f.innerHTML="";
-  var fr=document.createElement("iframe");
-  fr.allow="autoplay";fr.title=songName(x);
-  fr.src="https://w.soundcloud.com/player/?url="+
-    encodeURIComponent(SC+x.s)+"&color=%23f2c9a0&auto_play=true"+
-    "&hide_related=true&show_comments=false&show_user=false"+
-    "&show_reposts=false&show_teaser=false&visual=false";
-  f.appendChild(fr);
+  if(src==="shore"){
+    var au=document.createElement("audio");
+    au.controls=true;au.autoplay=true;au.preload="none";
+    au.src=SH+x.u;f.appendChild(au);
+    au.play().catch(function(){});
+  }else{
+    var fr=document.createElement("iframe");
+    fr.allow="autoplay";fr.title=songName(x);
+    fr.src="https://w.soundcloud.com/player/?url="+
+      encodeURIComponent(src==="mrj"?MRJ:SCB+x.s)+"&color=%23f2c9a0&auto_play=true"+
+      "&hide_related=true&show_comments=false&show_user=false"+
+      "&show_reposts=false&show_teaser=false&visual=false";
+    f.appendChild(fr);
+    if(src==="mrj"){mrjSkip(fr,x.i);}
+  }
   $("#nowbar").classList.add("on");
   document.body.classList.add("nowplaying");
   plMusicLbl();
-  if(navigator.onLine===false){toast("songs need internet — you seem offline");}
+  if(navigator.onLine===false){toast("songs need internet; you seem offline");}
+}
+function mrjSkip(fr,i){
+  function go(){
+    var w=SC_W(fr);
+    w.bind(SC.Widget?SC.Widget.Events.READY:"ready",function(){w.skip(i);w.play();});
+  }
+  function SC_W(f){return window.SC&&window.SC.Widget?window.SC.Widget(f):null;}
+  if(window.SC&&window.SC.Widget){go();return;}
+  var sc=document.createElement("script");
+  sc.src="https://w.soundcloud.com/player/api.js";
+  sc.onload=function(){var w=SC_W(fr);if(w){w.bind(window.SC.Widget.Events.READY,function(){w.skip(i);w.play();});}};
+  document.head.appendChild(sc);
 }
 function songStop(){
   NOW=null;$("#nb-frame").innerHTML="";
@@ -3062,7 +3119,7 @@ function songsRender(){
   var sw=$("#pain-sef");
   if(sw&&sw.nextElementSibling){
     songsFor("sef").forEach(function(x){
-      var b=songBtn(x,"Ana B'choach in the background, Cantor Childs");
+      var b=songBtn(x,"Ana B'choach in the background, "+songWho(x));
       sw.nextElementSibling.insertAdjacentElement("afterend",b);
     });
   }
@@ -3073,30 +3130,27 @@ $("#pl-music").onclick=function(){
 };
 
 /* ---------- prayers (data in prayers.js) ---------- */
-var PRV={he:1,tl:0,en:0};
+var PRV={he:0,tl:1,en:0};
 try{
-  var pv=JSON.parse(localStorage.getItem("neshamah_prview2")||"null");
+  var pv=JSON.parse(localStorage.getItem("neshamah_prview3")||"null");
   if(pv){PRV=pv;}
 }catch(e){}
 /* he = show Hebrew; tl / en = open that row by default */
 function prViewApply(){
   var w=$("#pray");if(!w){return;}
-  w.classList.toggle("no-he",!PRV.he);
   $$(".prvbtn").forEach(function(b){
     b.classList.toggle("on",!!PRV[b.dataset.k]);
   });
-  $$("#pray details.prd").forEach(function(d){
-    d.open=!!PRV[d.dataset.k];
-  });
+
 }
 $$(".prvbtn").forEach(function(b){
   b.onclick=function(){
     var k=b.dataset.k;
     PRV[k]=PRV[k]?0:1;
-    if(!PRV.he&&k==="he"){PRV.he=1;}
-    try{localStorage.setItem("neshamah_prview2",JSON.stringify(PRV));}
+    if(!PRV.he&&!PRV.tl&&!PRV.en){PRV.tl=1;}
+    try{localStorage.setItem("neshamah_prview3",JSON.stringify(PRV));}
     catch(e){}
-    prViewApply();
+    prRender();bcRender();prViewApply();
   };
 });
 function prLines(box,lines,keys){
@@ -3107,7 +3161,7 @@ function prLines(box,lines,keys){
     [["he","he"],["tl","tl"],["en","tr"]].forEach(function(x){
       if(keys.indexOf(x[0])<0){return;}
       var sp=document.createElement("span");
-      sp.className=x[1];sp.textContent=l[x[0]];
+      sp.className=x[1];sp.textContent=l[x[0]]+(x[0]==="tl"&&l.tlf?" ⚑":"");
       if(x[0]==="he"){sp.lang="he";sp.dir="rtl";}
       d.appendChild(sp);
     });
@@ -3118,11 +3172,9 @@ function prBreath(p,lines){
   SEQTITLE.pray=p.title;
   SEQWHY.pray="One line per slow breath — read it as you breathe "+
     "in, let it settle as you breathe out. Skip ahead or end any time.";
-  var wantEn=PRV.en||!PRV.tl;
   seqStart("pray",lines.map(function(l){
-    var t=[l.he];
-    if(PRV.tl){t.push(l.tl);}
-    if(wantEn){t.push(l.en);}
+    var t=[];
+    ["he","tl","en"].forEach(function(k){if(PRV[k]&&l[k]){t.push(l[k]);}});
     return [t.join("\n"),10];
   }),null,null,"Amen.");
 }
@@ -3163,12 +3215,13 @@ function prRender(){
     var one=document.createElement("p");
     one.className="small pone";one.textContent=prOne(p.note);
     c.appendChild(one);
-    var dT=prRow("Transliteration","tl"),dE=prRow("English","en");
+    var SHOW=["he","tl","en"].filter(function(k){return PRV[k];});
+    var HID=[["tl","Phonetic"],["he","Hebrew"],["en","English"]].filter(function(z){return !PRV[z[0]];})
+      .map(function(z){return prRow(z[1],z[0]);});
     var alt=false;
     function fill(lines){
-      prLines(box,lines,["he"]);
-      prLines(dT._box,lines,["tl"]);
-      prLines(dE._box,lines,["en"]);
+      prLines(box,lines,SHOW);
+      HID.forEach(function(d){prLines(d._box,lines,[d.dataset.k]);});
     }
     fill(p.lines);
     var pb=document.createElement("button");
@@ -3176,7 +3229,7 @@ function prRender(){
     pb.onclick=function(){prBreath(p,alt?p.alt.lines:p.lines);};
     c.appendChild(pb);
     songsFor(p.id).forEach(function(x){
-      c.appendChild(songBtn(x,"Listen"+(x.c?" — "+x.c:"")));
+      c.appendChild(songBtn(x,"Listen"+(x.c?" · "+x.c:"")+(x.src?" · "+songWho(x):"")));
     });
     if(p.alt){
       var ab=document.createElement("button");
@@ -3189,7 +3242,7 @@ function prRender(){
       };
       c.appendChild(ab);
     }
-    c.appendChild(dT);c.appendChild(dE);
+    HID.forEach(function(d){c.appendChild(d);});
     var ds=document.createElement("details");
     var ss=document.createElement("summary");
     ss.textContent="Sources & notes ⚑";ds.appendChild(ss);
@@ -3406,7 +3459,7 @@ function bcToday(){
 function bcCount(){
   var n=bcToday();
   $("#bc-count").textContent=n?("Today: "+n+" blessing"+(n===1?"":"s")+
-    " — toward Rabbi Meir's hundred."):"Today: none yet. One is plenty.";
+    ", toward Rabbi Meir's hundred."):"Today: none yet. One is plenty.";
   $("#bc-bar").style.width=Math.min(100,n)+"%";
 }
 function bcLines(box,rows,typed){
@@ -3415,6 +3468,7 @@ function bcLines(box,rows,typed){
     var d=document.createElement("div");d.className="pline";
     [["he","he"],["tl","tl"],["en","tr"]].forEach(function(x){
       if(!l[x[0]]){return;}
+      if(!PRV[x[0]]&&(PRV.tl&&l.tl||PRV.he&&l.he||PRV.en&&l.en)){return;}
       var sp=document.createElement("span");sp.className=x[1];
       sp.textContent=l[x[0]];
       if(x[0]==="he"){sp.lang="he";sp.dir="rtl";}
@@ -3424,17 +3478,18 @@ function bcLines(box,rows,typed){
   });
   if(typed){
     var f=document.createElement("span");f.className="flag";
-    f.textContent="⚑ Hebrew typed by hand — check against your siddur.";
+    f.textContent="⚑ Hebrew typed by hand. Check it against your siddur.";
     box.appendChild(f);
   }
 }
-function bcShow(label,rows,typed,tag){
+function bcShow(label,rows,typed,tag,first,key){
   var s=$("#bc-show");s.innerHTML="";
   var h=document.createElement("h3");h.textContent=label;s.appendChild(h);
   var p=document.createElement("p");p.className="small";
-  p.textContent="One breath with it first. Then:";s.appendChild(p);
+  p.textContent=first||"One breath with it first. Then:";s.appendChild(p);
   var box=document.createElement("div");s.appendChild(box);
   bcLines(box,rows,typed);
+  if(key){songsFor("bc-"+key).forEach(function(x){s.appendChild(songBtn(x,"Listen · "+songWho(x)));});}
   var ok=document.createElement("button");ok.textContent="I said it";
   ok.onclick=function(){
     plogAdd("bracha",label+(tag?" — "+tag:""));
@@ -3443,18 +3498,23 @@ function bcShow(label,rows,typed,tag){
   s.appendChild(ok);
   s.scrollIntoView({behavior:"smooth",block:"nearest"});
 }
+var GRAT=["asher","tov","shehe"];
 function bcRender(){
   var B=window.PRAYERS&&PRAYERS.brachot;if(!B){return;}
-  var g=$("#bc-seen");g.innerHTML="";
-  B.seen.forEach(function(x){
+  [["#bc-table",B.table||[]],
+   ["#bc-seen",B.seen.filter(function(x){return GRAT.indexOf(x[1])<0;})],
+   ["#bc-grat",B.seen.filter(function(x){return GRAT.indexOf(x[1])>-1;}).sort(function(p,q){return GRAT.indexOf(p[1])-GRAT.indexOf(q[1]);})]].forEach(function(z){
+  var g=$(z[0]);if(!g){return;}g.innerHTML="";
+  z[1].forEach(function(x){
     var b=document.createElement("button");b.className="ghost";
     b.textContent=x[0];
     b.onclick=function(){
       var e=B.end[x[1]];
       bcShow(x[0],[{he:B.pre.he+" "+e.he,tl:B.pre.tl+" "+e.tl,
-        en:B.pre.en+" "+e.en}],e.typed,e.tl);
+        en:B.pre.en+" "+e.en}],e.typed,e.tl,e.first,x[1]);
     };
     g.appendChild(b);
+  });
   });
   $("#bc-own-go").onclick=function(){
     var v=$("#bc-own").value.trim();
@@ -3779,7 +3839,7 @@ function greet(){
 }
 $("#greeting").textContent=greet()+", Jamie";
 $(".tag").textContent="breath · prayer · rest · pocket "+
-  "sanctuary · v2.20 · script running ✓";
+  "sanctuary · v2.23 · script running ✓";
 setInterval(function(){
   var d=new Date();
   var ds=d.toLocaleDateString(undefined,
@@ -3826,10 +3886,10 @@ function renderPracticeCards(){
       h+="<div class='pcard'><div class='ph'><div><h3>"+esc(p.title)+"</h3><span class='small'>"+meta.join(" · ")+"</span></div><div>"+
         (p.writing?"<button class='on' data-pw='"+esc(p.id)+"'>✎ Write</button> ":"")+
         "<button class='"+(p.writing?"ghost":"on")+"' data-pc='"+esc(p.id)+"'>▶ Start</button>"+
-        (typeof songsFor==="function"&&songsFor(p.id).length?" <button class='ghost' data-ps='"+esc(p.id)+"'>♪ Sung</button>":"")+"</div></div>"+
+        (typeof songsFor==="function"&&songsFor(p.id).length?" <button class='ghost' data-ps='"+esc(p.id)+"'>♪ "+esc(songsFor(p.id)[0].t)+"</button>":"")+"</div></div>"+
         (p.caution?"<p class='small'>⚠ "+esc(p.caution)+"</p>":"")+
         "<div class='pw' id='pw-"+esc(p.id)+"'></div>"+
-        "<details><summary>How it works</summary><p class='small'>"+esc(p.how||"")+"</p></details>"+
+        (p.how?"<details><summary>How it works</summary><p class='small'>"+esc(p.how)+"</p></details>":"")+
         (p.why?"<details><summary>Why it's holy</summary><p class='small'>"+esc(p.why)+"</p></details>":"")+
         (p.flag?"<details><summary class='src'>For review ⚑</summary><p class='small'>"+esc(p.flag)+"</p></details>":"")+"</div>";
     });
