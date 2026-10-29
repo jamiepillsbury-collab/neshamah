@@ -265,7 +265,7 @@ margin:8px 0 4px}
 <header>
   <h1><span class="he">נְשָׁמָה</span> Neshamah</h1>
   <div class="tag">breath · prayer · rest · pocket sanctuary
-  · v2.24</div>
+  · v2.25</div>
 </header>
 
 <main>
@@ -824,11 +824,12 @@ margin:8px 0 4px}
 <!-- ============ JOURNAL ============ -->
 <section id="journal">
   <div class="card">
-    <h2>Small Things</h2>
-    <p class="small">A solo journaling game: one small image a day,
-    chosen by a roll of the die, and a look back on the seventh day.
-    About three minutes. It opens on its own page.</p>
+    <h2>Journaling games</h2>
+    <p class="small">Solo games that open on their own page.</p>
+    <p class="small"><b>Small Things</b>: one small image a day, chosen by a roll of the die. About three minutes.</p>
     <button class="on" onclick="oracleOpen()">Open Small Things</button>
+    <p class="small" style="margin-top:12px"><b>The Librarian's Apprentice</b>: cards, dice and a growing map of the Great Library. Find six documents in a day.</p>
+    <button class="on" onclick="libraryOpen()">Open the Library</button>
   </div>
   <div class="card">
     <h2>Daily journal</h2>
@@ -994,6 +995,7 @@ margin:8px 0 4px}
 <script src="prayers.js"></script>
 <script src="practices.js"></script>
 <script src="oracle.js"></script>
+<script src="library.js"></script>
 <script>
 "use strict";
 var $=function(s){return document.querySelector(s)};
@@ -2904,7 +2906,8 @@ $("#btn-backup").onclick=function(){
   Promise.all(jobs).then(function(){
     var data={app:"neshamah",v:1,saved:new Date().toISOString(),
       log:log,ladders:lads,practice:plog,
-      oracle:(function(){try{return JSON.parse(localStorage.getItem("neshamah_oracle")||"null");}catch(e){return null;}})()};
+      oracle:(function(){try{return JSON.parse(localStorage.getItem("neshamah_oracle")||"null");}catch(e){return null;}})(),
+      library:(function(){try{return JSON.parse(localStorage.getItem("neshamah_library")||"null");}catch(e){return null;}})()};
     var a=document.createElement("a");
     a.href=URL.createObjectURL(new Blob([JSON.stringify(data)],
       {type:"application/json"}));
@@ -2923,6 +2926,7 @@ $("#restorefile").onchange=function(){
   f.text().then(function(t){
     var d=JSON.parse(t);
     if(d.oracle&&!localStorage.getItem("neshamah_oracle")){try{localStorage.setItem("neshamah_oracle",JSON.stringify(d.oracle));}catch(e){}}
+    if(d.library&&!localStorage.getItem("neshamah_library")){try{localStorage.setItem("neshamah_library",JSON.stringify(d.library));}catch(e){}}
     if(d.app!=="neshamah"){throw new Error("not ours");}
     if(!confirm("Restore this backup? It merges with what is "+
       "here — nothing gets deleted.")){return;}
@@ -3839,7 +3843,7 @@ function greet(){
 }
 $("#greeting").textContent=greet()+", Jamie";
 $(".tag").textContent="breath · prayer · rest · pocket "+
-  "sanctuary · v2.24 · script running ✓";
+  "sanctuary · v2.25 · script running ✓";
 setInterval(function(){
   var d=new Date();
   var ds=d.toLocaleDateString(undefined,

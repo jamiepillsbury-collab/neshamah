@@ -165,3 +165,12 @@ Open question: Jamie's phone may be running an older deployed copy. Confirm the 
 - Improved: Name on the exhale (+Shaddai "enough"), Here and now (+orienting steps from Jamie's cheat sheet), I believe (+"willing to consider"), Pleasure list (+permission line), New moon (mourner caution), Mi Sheberach (+small act of giving), Psalms (+4 sleep, +42 sadness).
 - Skipped on purpose: "view from above" (unreality risk), reference-only handouts. Unreadable: CPT ABC worksheet (upside-down scan), Tefillat HaDerech (empty).
 - Backups *.v2.23.bak. sw cache neshamah-v2.24. Deploy index.html, practices.js, sw.js, PROGRESS.md.
+
+## 2026-10-29 — v2.25: The Librarian's Apprentice, tested headless (6 simulated days, 52-card check), no JS errors
+- library.js (new, cached in sw): full-screen page; the Journal card is now "Journaling games" (Small Things + the Library). Storage neshamah_library; in Backup/Restore; plog k:"library".
+- Game is CC BY 4.0 (Dan Bronson-Lowe; based on Firelights, CC BY 4.0), so tables are used as published with a credit and license link. Tables were extracted by script (source: neshamah/_claude_text/la-tables.json).
+- Has: character setup (skills, familiar, truths), digital deck + 2d6, Light/Shadow/Darkness, auto map, documents on face cards, complications + suit-match doubling, resources (+1, rest, find doc), saved hearts/diamonds, familiar absorbs Fatigue, event buttons (nook, directions, fog, keys, reference desk), document formats, "Meet someone" NPC generator, per-location journaling, archive, field guide.
+- Rule calls of mine (Jamie to confirm): you can't leave a location with an active Complication; clearing Fatigue clears yours first, then the familiar's; "Ask a Question" Darkness = "No, and…" exactly as printed.
+- Wandering Library.pdf is a separate game (Abi Pullen, © 2023, not CC). Not built.
+- Kindle games still pending: The Road Notices You (C. H. Blackwell), Should I Tame the Ghost?. Not found online; need Jamie's rules summary.
+- Backups *.v2.24.bak. Deploy: index.html, library.js, sw.js, PROGRESS.md.
