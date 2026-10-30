@@ -178,3 +178,9 @@ Open question: Jamie's phone may be running an older deployed copy. Confirm the 
 - The Ghost (Should I Tame the Ghost?, Kindle; Jamie's screenshots OCR'd to neshamah/_claude_text/Ghost-RPG.txt; spec in claude outputs spec-ghost.md): ghost.js, 4th entry on the card. All roles/tables/approaches/outcomes ORIGINAL (no license). Role d6 + free truth, Ability d6 (1,2,3,4,5,5) + carried mod, 8 truths (1-18 via 2d6, Secret d6 costs 2), Harsh/Kind (pick or roll 1-12), outcome 1-12 with carry-over (-1/+1 ability, free Secret), recurring ghosts ("Return to"). Reroll/leave-unknown on any truth. Two-ghost and friend variants not built. Storage neshamah_ghost. Tested 8 runs headless, no errors.
 - The Road Notices You: Jamie's screenshots (29) end at p29 (The Turning table). Missing: 52-card encounter tables, second Joker, Kings/endings, Parts V-VII. OCR text in _claude_text/The-Road-Notices-You.txt. NOT built yet — needs the remaining pages (screenshot 30+, same folder).
 - Backups *.v2.24.bak. Deploy: index.html, library.js, odyssey.js, ghost.js, sw.js, PROGRESS.md.
+
+## 2026-10-30 — v2.26: rabbi's resources screened (IJS, Hadar); At The Well pending
+- Added "Mercy on the breath" (pray; rachum / rav chesed on the breath, Ex. 34:6-7; source Rebecca Schisler, IJS). IJS guided MP3 noted in flag, not linked until Jamie listens.
+- IJS: mostly essays/events/courses; starter kit is email-gated. Hadar: no short practices; niggun albums (Joey Weisenberg, Rising Song) listed UNVERIFIED in neshamah/Jewish resources/Hadar/_songs.md for Jamie to preview.
+- Copies: neshamah/Jewish resources/IJS/, /Hadar/ (summaries; fetch tool gives summaries, not verbatim pages).
+- OPEN: At The Well ritual library needs Jamie's login in desktop Chrome. Not yet tested headless. Backups *.v2.25.bak. Deploy practices.js, sw.js, PROGRESS.md.

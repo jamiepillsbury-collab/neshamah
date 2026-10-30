@@ -497,5 +497,20 @@ window.PRACTICES=[
  why:"",
  caution:"You choose who to let in, and how much.",
  avoid:[],eyesClosed:false,standing:false,writing:true,
- flag:""}
+ flag:""},
+
+{id:"thirteen-attributes",title:"Mercy on the breath",tab:"pray",
+ tags:["grief","anx","pain"],mins:8,
+ steps:[
+  ["Sit or lie down. Eyes open or closed. Let your attention rest on your breath.",60],
+  ["Notice what you feel without fixing it. A hand on your heart is optional.",60],
+  ["If something strong is here, find where it sits in your body. Just notice it, gently.",60],
+  ["Choose one word: rachum (tender mercy) or rav chesed (abundant kindness). Breathe it in to your heart, and breathe it out toward whatever hurts.",120],
+  ["Offer yourself a kind phrase, like \"may I be held gently.\" If it feels right, offer it to one other person too.",90],
+  ["Let the word go. A few easy breaths, then stop.",40]],
+ how:"Repeating a word on a slow breath and turning kind attention toward yourself (Rebecca Schisler, Institute for Jewish Spirituality, 2026).",
+ why:"Rachum and rav chesed are two of the Thirteen Attributes of Mercy (Exodus 34:6-7), said in Selichot and on the holidays.",
+ caution:"Stay with yourself only if thinking of others brings up grief or self-criticism. Stop any time.",
+ avoid:[],eyesClosed:false,standing:false,writing:false,
+ flag:"Guided IJS audio (10 min) to review before linking: jewishspirituality.org/wp-content/uploads/2026/08/TSP.2025.Cultivating-a-Heart-of-Compassion.Wk3_.mp3"}
 ];
