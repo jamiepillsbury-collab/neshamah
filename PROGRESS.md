@@ -184,3 +184,9 @@ Open question: Jamie's phone may be running an older deployed copy. Confirm the 
 - IJS: mostly essays/events/courses; starter kit is email-gated. Hadar: no short practices; niggun albums (Joey Weisenberg, Rising Song) listed UNVERIFIED in neshamah/Jewish resources/Hadar/_songs.md for Jamie to preview.
 - Copies: neshamah/Jewish resources/IJS/, /Hadar/ (summaries; fetch tool gives summaries, not verbatim pages).
 - OPEN: At The Well ritual library needs Jamie's login in desktop Chrome. Not yet tested headless. Backups *.v2.25.bak. Deploy practices.js, sw.js, PROGRESS.md.
+
+## 2026-10-31 — v2.27: Bandcamp streaming (Joey Weisenberg / Rising Song), not yet tested on phone
+- songs src:"bc" plays the Bandcamp small embed (album id + t=track#) in the now-playing bar; link opens the album page. Albums: Nigunim Vol. II (1565128316), Vol. VII Songs of Ascent (745562084).
+- Added: Heart Opener, Yearning, Tishrei Nigun (wordless); Gam Ki Eilech (Ps 23), Shir HaMa'alot acoustic, Modeh Ani, Mima'amakim (Ps 130). Jamie previewed albums ("gorgeous").
+- CHECK: Bandcamp embed t= param picks the track; confirm right track plays. Vol III / Joey's Nigunim pages wouldn't load for id lookup.
+- Backups index.html.v2.25.bak. Deploy index.html, practices.js, sw.js, PROGRESS.md.

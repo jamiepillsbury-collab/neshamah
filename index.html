@@ -211,6 +211,7 @@ color:var(--amber);max-width:640px;margin:0 auto}
 #nb-frame{max-width:640px;margin:4px auto 0}
 #nb-frame iframe{display:block;width:100%;height:20px;border:0}
 #nb-frame audio{display:block;width:100%;height:32px}
+#nb-frame iframe.bcf{height:42px}
 body.nowplaying{padding-bottom:160px}
 body.nowplaying #player{padding-bottom:calc(120px + env(safe-area-inset-bottom))}
 .songbtn{font-size:14px;padding:8px 12px}
@@ -3013,7 +3014,8 @@ var MRJ="https://api.soundcloud.com/playlists/1527191581?secret_token=s-I2cDwf4u
 var MRJPG="https://www.reformjudaism.org.uk/resources/shirei-ha-tfillot-music/";
 var SH="https://prayers-and-blessings.s3.amazonaws.com/";
 var SHPG="https://stephanieshore.com/prayers-and-blessings/";
-var WHO={childs:"Cantor Mark Childs",shore:"Rabbi Cantor Stephanie Shore",mrj:"MRJ (UK)"};
+var WHO={childs:"Cantor Mark Childs",shore:"Rabbi Cantor Stephanie Shore",mrj:"MRJ (UK)",bc:"Joey Weisenberg, Rising Song"};
+var BC={2:{id:"1565128316",pg:"https://joeyweisenberg.bandcamp.com/album/nigunim-vol-ii-transformation-of-a-nigun"},7:{id:"745562084",pg:"https://joeyweisenberg.bandcamp.com/album/nigunim-vol-vii-songs-of-ascent"}};
 var SONGS=[
 {s:"3-refaeinu-by-bob-remstein",t:"R'fa-einu",c:"Remstein",g:"Healing",p:["refaeinu","uplifting-pain"]},
 {src:"mrj",i:23,t:"Mi Shebeirach for Healing",c:"Taubman",g:"Healing",p:["mi-sheberach-self"],
@@ -3051,20 +3053,31 @@ var SONGS=[
 {src:"mrj",i:22,t:"Oseh Shalom",c:"Spanish & Portuguese, choir",g:"Peace",p:["oseh","oseh-breath"]},
 {s:"shalom-rav-steinberg",t:"Shalom Rav",c:"Steinberg",g:"Peace"},
 {s:"niggun-medley-1",t:"Niggun medley",c:"",g:"Wordless, for meditation",p:["niggun","hum-niggun"]},
-{s:"niggun-chassidic-14",t:"Niggun",c:"Chassidic",g:"Wordless, for meditation",p:["niggun","hum-niggun"]}];
+{s:"niggun-chassidic-14",t:"Niggun",c:"Chassidic",g:"Wordless, for meditation",p:["niggun","hum-niggun"]},
+{src:"bc",a:2,i:3,t:"Heart Opener Nigun",c:"",g:"Wordless, for meditation",p:["niggun","hum-niggun"]},
+{src:"bc",a:2,i:9,t:"Yearning Nigun",c:"",g:"Wordless, for meditation",p:["niggun","hum-niggun"]},
+{src:"bc",a:2,i:6,t:"Tishrei Nigun",c:"",g:"Wordless, for meditation",p:["niggun","hum-niggun"]},
+{src:"bc",a:7,i:1,t:"Gam Ki Eilech",c:"",g:"Night",p:["ps23","psalms-moment"],n:"Psalm 23:4: though I walk through the valley of deep darkness, I fear no harm, for You are with me."},
+{src:"bc",a:7,i:10,t:"Shir HaMa'alot",c:"acoustic",g:"Night",p:["psalms-moment","sleep"]},
+{src:"bc",a:7,i:5,t:"Modeh Ani",c:"",g:"Breath & soul",p:["modeh-ani-handwash"]},
+{src:"bc",a:7,i:7,t:"Mima'amakim",c:"",g:"Grief",p:["psalms-moment"],n:"Psalm 130: out of the depths I call to You."}];
 var NOW=null;
 function songName(x){return x.t+(x.c?" · "+x.c:"");}
 function songWho(x){return WHO[x.src||"childs"];}
 function songPlay(x){
   NOW=x;var src=x.src||"childs";
   $("#nb-title").textContent="♪ "+songName(x)+" · "+songWho(x);
-  $("#nb-link").href=src==="shore"?SHPG:src==="mrj"?MRJPG:SCB+x.s;
+  $("#nb-link").href=src==="shore"?SHPG:src==="mrj"?MRJPG:src==="bc"?BC[x.a].pg:SCB+x.s;
   var f=$("#nb-frame");f.innerHTML="";
   if(src==="shore"){
     var au=document.createElement("audio");
     au.controls=true;au.autoplay=true;au.preload="none";
     au.src=SH+x.u;f.appendChild(au);
     au.play().catch(function(){});
+  }else if(src==="bc"){
+    var fb=document.createElement("iframe");fb.title=songName(x);fb.className="bcf";
+    fb.src="https://bandcamp.com/EmbeddedPlayer/album="+BC[x.a].id+"/size=small/bgcol=ffffff/linkcol=c8865a/t="+x.i+"/transparent=true/";
+    f.appendChild(fb);
   }else{
     var fr=document.createElement("iframe");
     fr.allow="autoplay";fr.title=songName(x);
