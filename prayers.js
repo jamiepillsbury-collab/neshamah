@@ -724,8 +724,8 @@ var PRAYERS={
   },
   "end": {
    "vereishit": {
-    "he": "עוֹשֵׂה מַעֲשֵׂה בְרֵאשִׁית",
-    "tl": "osei ma-asei v'reishit",
+    "he": "עוֹשֶׂה מַעֲשֵׂה בְרֵאשִׁית",
+    "tl": "oseh ma-asei v'reishit",
     "en": "who does the work of creation.",
     "typed": true
    },
@@ -738,7 +738,7 @@ var PRAYERS={
    "brit": {
     "he": "זוֹכֵר הַבְּרִית וְנֶאֱמָן בִּבְרִיתוֹ וְקַיָּם בְּמַאֲמָרוֹ",
     "tl": "zocheir hab'rit v'ne-eman bivrito v'kayam b'ma-amaro",
-    "en": "who remembers the covenant, keeps faith with it, and keeps Your word.",
+    "en": "who remembers the covenant, keeps faith with it, and keeps the promise.",
     "typed": true
    },
    "yam": {
@@ -821,7 +821,7 @@ var PRAYERS={
     "vereishit"
    ],
    [
-    "the stars",
+    "a shooting star",
     "vereishit"
    ],
    [

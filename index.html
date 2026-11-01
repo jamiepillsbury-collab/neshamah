@@ -266,7 +266,7 @@ margin:8px 0 4px}
 <header>
   <h1><span class="he">נְשָׁמָה</span> Neshamah</h1>
   <div class="tag">breath · prayer · rest · pocket sanctuary
-  · v2.25</div>
+  · v2.29</div>
 </header>
 
 <main>
@@ -368,8 +368,7 @@ margin:8px 0 4px}
     <input type="file" id="restorefile" accept="application/json,.json"
       style="display:none">
     <button id="btn-clear" class="ghost">Clear check-ins</button>
-    <p class="small">Everything stays on this device (browser
-    storage). Nothing syncs, nothing uploads. A backup file holds
+    <p class="small">Everything stays on this device. Nothing syncs or uploads. A backup file holds
     check-ins, ladders and voice memos. Save one now and then.</p>
   </div>
   <div class="card">
@@ -451,19 +450,19 @@ margin:8px 0 4px}
     himself" (Berakhot 5b). These are hands to hold. Your care
     team's plan comes first.</p>
     <button class="fa-tool" id="pain-sef">▶  Sefirot body scan · 11 min</button>
-    <p class="fa-why"><b>How:</b> a slow-exhale body scan, from
+    <details class="hw"><summary>How and why</summary><p class="fa-why"><b>How:</b> a slow-exhale body scan, from
     MBSR, which has good research support for chronic pain.
     <b>Why:</b> the Zohar maps the ten sefirot onto the body:
-    your body as a map of the Divine.</p>
+    your body as a map of the Divine.</p></details>
     <button class="fa-tool" id="pain-track">▶  Somatic tracking · 5 min</button>
-    <p class="fa-why"><b>How:</b> meeting pain with curiosity and
+    <details class="hw"><summary>How and why</summary><p class="fa-why"><b>How:</b> meeting pain with curiosity and
     safety instead of alarm, from Pain Reprocessing Therapy. Best
     for pain your doctors don't link to tissue damage, so ask your
-    team whether it fits you.</p>
+    team whether it fits you.</p></details>
     <button class="fa-tool" id="pain-pend">▶  Pendulation · 4 min</button>
-    <p class="fa-why"><b>How:</b> moving attention between a place
+    <details class="hw"><summary>How and why</summary><p class="fa-why"><b>How:</b> moving attention between a place
     that feels okay and the edge of the pain, from Somatic
-    Experiencing. You choose how close to go, every time.</p>
+    Experiencing. You choose how close to go, every time.</p></details>
     <details><summary>About the sefirot map: what's old, what's new</summary>
       <p class="small"><b>Old and Jewish:</b> the body map comes from
       <em>Tikkunei Zohar</em> (Castile, c. 1300), in the passage
@@ -520,71 +519,53 @@ margin:8px 0 4px}
     <input type="text" id="bc-own"
       placeholder="what you want to bless, in your own words">
     <button id="bc-own-go" class="ghost">Bless this</button>
-    <h3>Shabbat and the table</h3>
-    <div id="bc-table" class="chipgrid"></div>
-    <h3>Awe</h3>
-    <p class="small">Something stopped you: a butterfly, a rainbow,
-    the wind? Tap it and its blessing appears. Pause one breath with
-    the moment first.</p>
-    <div id="bc-seen" class="chipgrid"></div>
-    <h3>Gratitude</h3>
-    <div id="bc-grat" class="chipgrid"></div>
+    <details><summary>Shabbat and the table</summary>
+    <div id="bc-table" class="chipgrid"></div></details>
+    <details><summary>Awe</summary>
+    <p class="small">Pause one breath with what stopped you, then tap it.</p>
+    <div id="bc-seen" class="chipgrid"></div></details>
+    <details><summary>Gratitude</summary>
+    <div id="bc-grat" class="chipgrid"></div></details>
     <div id="bc-show"></div>
     <div id="bc-count" class="small"></div>
     <div class="pbarwrap"><div class="pbar" id="bc-bar"></div></div>
-    <p class="fa-why"><b>How:</b> pause at what stopped you, say
+    <details class="hw"><summary>How and why</summary><p class="fa-why"><b>How:</b> pause at what stopped you, say
     the opening, then the ending for it. Bless first, then enjoy.
     <b>Why:</b> Rabbi Meir taught saying a hundred blessings a day
-    (Menachot 43b).</p>
+    (Menachot 43b).</p></details>
   </div>
 
   <div class="card">
     <h2>Sung prayers</h2>
-    <p class="small">Chosen for healing, breath, gratitude, rest
-    and grief. Tap a song and it keeps playing while you move
-    around the app or start a practice. Songs stream, so they
-    need internet.</p>
+    <p class="small">Tap a song. It keeps playing while you move around the app. Needs internet.</p>
     <div id="songlist"></div>
-    <p class="src">Cantor Mark Childs, Congregation B'nai B'rith,
+    <details><summary>Singers</summary><p class="src">Cantor Mark Childs, Congregation B'nai B'rith,
     Santa Barbara (<a href="https://soundcloud.com/cantor-mark-childs" target="_blank" rel="noopener">SoundCloud</a>)
     · Rabbi Cantor Stephanie Shore (<a href="https://stephanieshore.com/prayers-and-blessings/" target="_blank" rel="noopener">her site</a>)
-    · Movement for Reform Judaism, UK, Shirei Ha-T'fillot (<a href="https://www.reformjudaism.org.uk/resources/shirei-ha-tfillot-music/" target="_blank" rel="noopener">MRJ</a>)</p>
+    · Movement for Reform Judaism, UK, Shirei Ha-T'fillot (<a href="https://www.reformjudaism.org.uk/resources/shirei-ha-tfillot-music/" target="_blank" rel="noopener">MRJ</a>)</p></details>
   </div>
 
   <div id="prayers"></div>
 
   <div class="card">
-    <h2>Niggun — hum a wordless melody</h2>
-    <p class="small">A niggun is a melody without words — built,
-    on purpose, to get past the thinking mind. Humming is also
-    the body's own settling instrument: a soft sound on a long
-    out-breath.</p>
-    <p>Hum anything — a melody you love, or just one warm note,
-    out as long as it wants to go. Or hum along with the
-    drone:</p>
+    <h2>Niggun: a wordless melody</h2>
+    <p class="small">Hum any tune, or one warm note, on a long out-breath. Or hum with the drone:</p>
     <button id="btn-drone">▶ drone</button>
     <span class="small" id="drone-status"></span>
     <div id="niggun-songs"></div>
-    <span class="src">Hasidic practice, not liturgy — kept
-    here as a body-settling tool</span>
+    <span class="src">Hasidic practice, not liturgy</span>
   </div>
 
   <div class="card">
-    <h2>Hitbodedut — your own words</h2>
-    <p class="small">The Hasidic practice of speaking to God
-    out loud, unscripted, in your own language. The tradition
-    calls the right mindset <em>kavanah</em> — and teaches
-    that the heart of prayer is the introspection it provides.
-    Any language you understand counts. Move if it helps;
-    people have always swayed while praying. Your own words
-    are liturgy too.</p>
+    <h2>Hitbodedut: your own words</h2>
+    <p class="small">Speak to God in your own words, out loud or silently, in any language. Swaying is fine.</p>
     <p class="small"><em>What is true for me right now is… ·
     I am carrying… · What I need is… · I am grateful for… ·
     Please…</em></p>
     <button id="btn-hit">3 quiet minutes</button>
     <span class="small" id="hit-status"></span>
     <span class="src">Hasidic practice (Reb Nachman of
-    Bratslav) — your own words as liturgy</span>
+    Bratslav), your own words as liturgy</span>
   </div>
 </section>
 
@@ -605,7 +586,7 @@ margin:8px 0 4px}
 
   <div class="card">
     <h2>Somatic first aid</h2>
-    <p class="small">What's happening right now? Tap it — the
+    <p class="small">What's happening right now? Tap it, the
     tools appear, best first. Tap a tool and it starts.</p>
     <div id="fa-states"></div>
     <div id="fa-tools"></div>
@@ -613,10 +594,7 @@ margin:8px 0 4px}
 
   <div class="card">
     <h2>Name it to tame it</h2>
-    <p class="small">Sometimes the only word you can find is the
-    precise one — start there and the wheel shows what it
-    funnels down to. Or start from the big feeling and narrow.
-    Pick as many as are true.</p>
+    <p class="small">Start from the exact word, or from the big feeling and narrow. Pick all that are true.</p>
     <div id="emo-modes"></div>
     <input type="text" id="emo-q" autocomplete="off"
       placeholder="type a feeling, or browse the words below">
@@ -636,18 +614,15 @@ margin:8px 0 4px}
         <button id="btn-emo-clear" class="ghost">Clear</button>
       </div>
     </div>
-    <p class="small" style="margin-top:8px">Wheel from your
+    <details><summary>About the wheel</summary><p class="small" style="margin-top:8px">Wheel from your
     program's handout: six core feelings, 36 middle, 72 outer.
     Naming a feeling (affect labeling) has been shown to quiet
-    the brain's alarm response.</p>
+    the brain's alarm response.</p></details>
   </div>
 
   <div class="card">
     <h2>Where your eyes go</h2>
-    <p class="small">A gentle visual-field practice, inspired
-    by brainspotting — the pocket version; the full thing
-    happens in the room with your therapist. You set the pace
-    with the button; the dots show where you are.</p>
+    <p class="small">Let your eyes find one spot in the room that feels a little more okay. You set the pace.</p>
     <div class="dots" id="eyes-dots"></div>
     <p id="eyes-text"
     style="min-height:76px;margin:10px 0;font-size:16.5px">
@@ -655,33 +630,30 @@ margin:8px 0 4px}
     <div class="small" id="eyes-prog"></div>
     <button id="btn-eyes-next">Begin</button>
     <button id="btn-eyes-restart" class="ghost">Restart</button>
-    <p class="small" style="margin-top:8px">If looking around
-    increases unreality, stop and use temperature or feet
-    instead. That's not quitting — that's knowing your nervous
-    system.</p>
+    <p class="small" style="margin-top:8px">If looking around makes things feel more unreal, stop and use temperature or your feet instead.</p>
   </div>
 
   <div class="card">
-    <h2>Reference — the map and the full framework</h2>
+    <h2>Reference, the map and the full framework</h2>
     <p class="small">For reading when you're steady. The tools
     above are for using.</p>
-    <details><summary>The map — three states, plus blended</summary>
-    <p>🌿 <strong>Settled</strong> (ventral vagal) — emotions
+    <details><summary>The map, three states, plus blended</summary>
+    <p>🌿 <strong>Settled</strong> (ventral vagal), emotions
     can be tolerated, learning possible, can ride the wave.</p>
-    <p>⚡ <strong>Wired</strong> (sympathetic) — anxiety, panic,
+    <p>⚡ <strong>Wired</strong> (sympathetic), anxiety, panic,
     flooding, hypervigilance, pain louder, racing thoughts,
     can't sleep.</p>
-    <p>🌗 <strong>Both at once</strong> (blended freeze) —
+    <p>🌗 <strong>Both at once</strong> (blended freeze),
     trapped charge: high arousal and shutdown in the same body.
     Wired and heavy together.</p>
-    <p>🌑 <strong>Heavy</strong> (dorsal vagal) — numb, far
+    <p>🌑 <strong>Heavy</strong> (dorsal vagal), numb, far
     away, "I feel nothing," can't think or feel, memory
     fuzzy.</p>
     <p class="small">None of these is a failure. Each one is
     your system protecting you. The map just helps you choose
     what helps.</p>
     </details>
-    <details><summary>1 · ORIENT — where am I?</summary>
+    <details><summary>1 · ORIENT, where am I?</summary>
       <p>Look around and remind yourself: Where am I? What day
       is it? What time is it? What am I doing right now? What
       do I see around me? What is different about here and now
@@ -689,7 +661,7 @@ margin:8px 0 4px}
       <p class="small">Be as descriptive as you can, and gently
       remind yourself: you are here, right now.</p>
     </details>
-    <details><summary>2 · GROUND — connect with what's around
+    <details><summary>2 · GROUND, connect with what's around
     you</summary>
       <h3>Look</h3>
       <p>· Name 5 things you can see. · Describe one object in
@@ -710,14 +682,14 @@ margin:8px 0 4px}
       disconnected or anxious, return your attention to the
       environment around you.</p>
     </details>
-    <details><summary>3 · DIFFERENTIATE — what is happening
+    <details><summary>3 · DIFFERENTIATE, what is happening
     now?</summary>
       <p>Ask: <em>"Is this something happening right now,
       something that happened before, or something I'm afraid
       could happen?"</em></p>
       <p>Then: What do I actually know right now? What am I
       worried might happen? Is there something I need to do
-      medically — or do I need to regulate while I figure out
+      medically, or do I need to regulate while I figure out
       the next step?</p>
       <p><strong>A physical symptom can be real AND my nervous
       system can also be reacting to what I've experienced
@@ -727,7 +699,7 @@ margin:8px 0 4px}
       your body seriously and taking care of your nervous
       system.</p>
     </details>
-    <details><summary>4 · CHOOSE — what can I do next?</summary>
+    <details><summary>4 · CHOOSE, what can I do next?</summary>
       <p>What is within my control right now? What is the next
       appropriate step? Do I need to contact my medical provider
       or follow my existing medical plan? Would grounding,
@@ -739,28 +711,28 @@ margin:8px 0 4px}
     reflex)</summary>
       <p>Hard-wired survival reflex: cold on the face drops
       the heart rate and shifts the body into a mode
-      physiologically incompatible with panic. Not a metaphor —
+      physiologically incompatible with panic. Not a metaphor,
       a direct parasympathetic override.</p>
       <p>· Fill a bowl with cold water (ice if available), or
       run cold tap water.</p>
-      <p>· Submerge your face — forehead, eyes, cheeks — for
+      <p>· Submerge your face, forehead, eyes, cheeks, for
       15–30 seconds. Or hold a cold cloth firmly over eyes
       and cheeks.</p>
       <p>· Come up, breathe normally, notice the shift.</p>
-      <p class="small">This is the emergency brake — for when
+      <p class="small">This is the emergency brake, for when
       anxiety has escalated to panic and other tools feel
       inaccessible. Home use, not public. And as always with
       your chest symptoms: your care team's plan comes first,
       always.</p>
     </details>
     <details><summary>Slow intentional movement</summary>
-      <p>Anxiety fixes the body — held breath, braced
+      <p>Anxiety fixes the body, held breath, braced
       shoulders, rigid jaw. Slow movement reintroduces flow.</p>
       <p>· Find where you feel the most tension. Move that
       area at <strong>half</strong> the speed you think you
-      should — slower is more regulating.</p>
+      should, slower is more regulating.</p>
       <p>· Breathe into the sensation. Let the movement spread
-      to neighboring areas — neck, spine, hips.</p>
+      to neighboring areas, neck, spine, hips.</p>
       <p>· After 3–5 minutes, pause and notice the difference
       between where you started and where you are now.</p>
     </details>
@@ -781,9 +753,7 @@ margin:8px 0 4px}
     </div>
     <h3>Volume</h3>
     <input type="range" id="vol" min="0" max="100" value="60">
-    <p class="small">The crickets are synthesized live
-    (simulated, not sampled — impressionist crickets). For the
-    real thing, load any audio file you own:</p>
+    <p class="small">The crickets are made live in the app. To use your own recording, load an audio file:</p>
     <input type="file" id="customfile" accept="audio/*">
   </div>
   <div class="card">
@@ -801,7 +771,7 @@ margin:8px 0 4px}
     <h2>Gentle body scan</h2>
     <p class="small">About 8 minutes. Nothing is tensed,
     nothing is required. The bar and countdown show it's
-    moving — you never have to wonder.</p>
+    moving, you never have to wonder.</p>
     <p id="scan-text"
     style="min-height:48px;margin:10px 0;font-size:16.5px">
     Press begin when you're settled.</p>
@@ -816,7 +786,7 @@ margin:8px 0 4px}
   <div class="card">
     <h2>Before sleep</h2>
     <p>The Bedtime Shema and Hashkiveinu live in the Pray
-    tab — they were designed for exactly this hour. Crickets
+    tab, they were designed for exactly this hour. Crickets
     on, canopy of peace over you, spirit entrusted.</p>
     <div id="sleep-songs"></div>
   </div>
@@ -845,12 +815,8 @@ margin:8px 0 4px}
     <div id="dj-box"></div>
   </div>
   <div class="card">
-    <h2>The needs ladder — a journaling walk</h2>
-    <p class="small">Five rungs. Type, record a voice memo, or
-    both — whatever the rung asks for. Nothing is required:
-    one honest line on one rung is a complete practice. Saved
-    on this device, like your check-ins. Voice memos need the
-    live site and mic permission.</p>
+    <h2>The needs ladder</h2>
+    <p class="small">Five rungs. Type, record, or both. One honest line on one rung is enough.</p>
   </div>
   <div class="card">
     <h3>1 · Body</h3>
@@ -864,7 +830,7 @@ margin:8px 0 4px}
   </div>
   <div class="card">
     <h3>2 · Safety</h3>
-    <p>Where do I feel safe — and where unsettled?</p>
+    <p>Where do I feel safe, and where unsettled?</p>
     <p class="small">A routine, a corner, a grounding that
     works.</p>
     <textarea id="lad-t-1" rows="2"
@@ -895,7 +861,7 @@ margin:8px 0 4px}
   <div class="card">
     <h3>5 · Meaning</h3>
     <p>What matters most to me right now?</p>
-    <p class="small">One small action toward it — tiny counts.
+    <p class="small">One small action toward it, tiny counts.
     Tiny is the point.</p>
     <textarea id="lad-t-4" rows="2"
       placeholder="one small step toward what matters…"></textarea>
@@ -905,35 +871,33 @@ margin:8px 0 4px}
   <div class="card">
     <button id="btn-lad-save">Save this ladder</button>
     <p class="small">There is no "right" rung to be on. Run it
-    bottom to top — the bottom rungs are cheap to check and
+    bottom to top, the bottom rungs are cheap to check and
     easy to forget.</p>
   </div>
   <div class="card" id="grief-card">
     <h2>Grief</h2>
     <p class="small">Grief isn't only for death. A body, health, work,
-    a future you planned, who you used to be — those losses are real,
+    a future you planned, who you used to be, those losses are real,
     even when no one sits shiva for them.</p>
-    <p class="fa-why"><b>How:</b> writing about loss (Pennebaker's
-    expressive writing) helps many people a little — stop if it
+    <details class="hw"><summary>How and why</summary><p class="fa-why"><b>How:</b> writing about loss (Pennebaker's
+    expressive writing) helps many people a little, stop if it
     floods you. Grief comes in waves; turning toward it and turning
     back toward life are both healthy (the dual process model).
-    <b>Why:</b> Judaism gives mourning a shape and time — shiva,
+    <b>Why:</b> Judaism gives mourning a shape and time, shiva,
     sh'loshim, Kaddish, Yizkor. Mourning is a mitzvah, not a
-    weakness.</p>
+    weakness.</p></details>
     <button id="grief-pray" class="ghost">Psalm 23 · Kaddish ›</button>
     <div id="grief-flow"></div>
   </div>
 
   <div class="card">
     <h2>Parts &amp; modes check-in</h2>
-    <p class="small">Following your IFS worksheet and your Negative
-    Core Beliefs group (schema modes). Use whichever words fit.
-    Answer what you can; skip the rest.</p>
-    <p class="fa-why"><b>How:</b> Internal Family Systems (Richard
+    <p class="small">First check: do you feel even a little calm and curious? If not, ground first and come back. Answer what you can.</p>
+    <details class="hw"><summary>How and why</summary><p class="fa-why"><b>How:</b> Internal Family Systems (Richard
     Schwartz). Research is early; one trial in rheumatoid arthritis
     found less pain and depression. <b>Why:</b> "the soul You placed
-    within me is pure" (Elohai N'shamah). IFS calls it Self — the
-    part of you that was never damaged.</p>
+    within me is pure" (Elohai N'shamah). IFS calls it Self, the
+    part of you that was never damaged.</p></details>
     <div id="parts-flow"></div>
   </div>
   <div class="card">
@@ -966,7 +930,7 @@ margin:8px 0 4px}
     <div id="pl-orb"></div>
     <div id="pl-left" aria-live="off"></div>
   </div>
-  <div id="pl-hint">the light keeps breathing while it runs — follow it if you like</div>
+  <div id="pl-hint">the light keeps breathing while it runs, follow it if you like</div>
   <div id="pl-steps"></div>
   <div id="pl-step"></div>
   <div id="pl-text" aria-live="polite"></div>
@@ -1204,7 +1168,7 @@ $("#customfile").onchange=function(){
   customAudio.loop=true;
   customAudio.volume=$("#vol").value/100;
   customAudio.play();
-  toast("playing your file — loops until stopped");
+  toast("playing your file, loops until stopped");
 };
 
 /* drone + hitbodedut */
@@ -1230,7 +1194,7 @@ function droneToggle(){
     o.start();droneNodes.push(o);
   });
   $("#drone-status").textContent=
-    "humming with you — tap again to stop";
+    "humming with you, tap again to stop";
   $("#btn-drone").textContent="■ stop drone";
 }
 $("#btn-drone").onclick=droneToggle;
@@ -1239,7 +1203,7 @@ $("#btn-hit").onclick=function(){
   AE.ensure();
   if(hitIv){clearInterval(hitIv);hitIv=null;}
   var left=180;
-  $("#hit-status").textContent="3:00 — say what's true";
+  $("#hit-status").textContent="3:00, say what's true";
   hitIv=setInterval(function(){
     left--;
     var m=Math.floor(left/60),s=("0"+(left%60)).slice(-2);
@@ -1296,7 +1260,7 @@ $("#sleeptimer").onchange=function(){
 var PATTERNS={
 slow:{name:"Slow exhale 4–6",
   desc:"The out-breath longer than the in-breath. "+
-  "The gentlest pattern — a good default.",
+  "The gentlest pattern, a good default.",
   ph:[{w:"Breathe in",s:4,a:0.34,b:1},
       {w:"Breathe out",s:6,a:1,b:0.34}]},
 sigh:{name:"Physiological sigh",
@@ -1317,12 +1281,12 @@ shema:{name:"Shema breath",
       {w:"Echad, One",s:6,a:1,b:0.34,he:"אֶחָד"}]},
 box:{name:"Box 4·4·4·4",
   desc:"Includes short holds. If holds ever feel like "+
-  "the chest episodes, skip this one — it's optional "+
+  "the chest episodes, skip this one, it's optional "+
   "on purpose.",
   ph:[{w:"In",s:4,a:0.34,b:1},
-      {w:"Hold — soft",s:4,a:1,b:1},
+      {w:"Hold, soft",s:4,a:1,b:1},
       {w:"Out",s:4,a:1,b:0.34},
-      {w:"Hold — empty",s:4,a:0.34,b:0.34}]}};
+      {w:"Hold, empty",s:4,a:0.34,b:0.34}]}};
 var br={pat:null,idx:0,t0:0,cycles:0,running:false,paused:false,
 raf:null,len:3,s0:0,pT:0,lastSec:-1};
 function selectPattern(p){
@@ -1406,7 +1370,7 @@ function brDone(){
   var n=br.cycles;
   stopBreath(true);
   AE.bell(0.45);
-  $("#breath-word").textContent="Complete — "+n+
+  $("#breath-word").textContent="Complete, "+n+
     " breaths. Notice how you are now.";
 }
 $("#btn-br-start").onclick=startBreath;
@@ -1415,7 +1379,7 @@ $("#btn-br-pause").onclick=function(){
   br.running=false;br.paused=true;br.pT=performance.now();
   cancelAnimationFrame(br.raf);
   $("#btn-br-start").textContent="Resume";
-  $("#breath-word").textContent="paused — tap Resume";
+  $("#breath-word").textContent="paused, tap Resume";
   wakeOff("br");
 };
 $("#btn-br-stop").onclick=function(){stopBreath(false);};
@@ -1473,11 +1437,11 @@ scan:"Body scans come from Mindfulness-Based Stress Reduction, "+
 reset:"Orienting to the room tells the brain: I am here, it is "+
 "now. From your care team's derealization plan.",
 shake:"Shaking aims to discharge the muscle bracing of a stress "+
-"response. Research is early (small TRE studies) — stop if it "+
+"response. Research is early (small TRE studies), stop if it "+
 "feels like too much.",
 bfly:"Slow left-right tapping, from EMDR self-care. Evidence for "+
 "tapping alone is modest; it is gentle and quiet.",
-feet:"Moving attention outward to the floor and the room — useful "+
+feet:"Moving attention outward to the floor and the room, useful "+
 "when looking inward makes things feel less real."};
 var SEQ={tag:null,seq:null,i:-1,stepEnd:0,stepDur:0,paused:false,
 pLeft:0,tick:null,txt:null,prog:null,done:"",barSel:null,
@@ -1628,7 +1592,7 @@ $("#pl-end").onclick=function(){
 
 /* body scan */
 var SCAN=[
-"Settle in. Eyes open or closed — either is right.",
+"Settle in. Eyes open or closed, either is right.",
 "Feel the weight of your body being held. "+
 "Chair, bed, floor. Held is the whole job.",
 "Let your breath do whatever it is doing. "+
@@ -1636,15 +1600,15 @@ var SCAN=[
 "Forehead and eyes. Let them be heavy.",
 "Jaw. Lips parted, teeth apart. Let the tongue rest loose.",
 "Shoulders. Let them drop a fraction. That's enough.",
-"Arms and hands. Warm or cool — just notice, "+
+"Arms and hands. Warm or cool, just notice, "+
 "don't change.",
 "Chest. If feelings live here, let them ride the "+
 "breath like boats.",
-"Belly. Softening — if softening is possible today. "+
+"Belly. Softening, if softening is possible today. "+
 "If not, leave it be.",
 "Hips and legs. Heavy. Held.",
 "Feet. Their contact with whatever is underneath you.",
-"If pain is loud somewhere — you may skip it. "+
+"If pain is loud somewhere, you may skip it. "+
 "Find one spot that is neutral, even small, and rest "+
 "your attention there.",
 "You are allowed to be exactly as you are. Rest."];
@@ -1660,33 +1624,33 @@ $("#btn-scan-stop").onclick=function(){
 
 /* 60-second reset */
 var RESET=[
-["LOOK — name 3 things you can see.",15],
-["LISTEN — name 2 things you can hear.",10],
-["FEEL — press your feet into the floor. "+
+["LOOK, name 3 things you can see.",15],
+["LISTEN, name 2 things you can hear.",10],
+["FEEL, press your feet into the floor. "+
 "Feel it press back.",10],
-["ORIENT — say it out loud: my name is Jamie. "+
+["ORIENT, say it out loud: my name is Jamie. "+
 "I am here. It is today.",15],
-["CHOOSE — one small next thing. Just one.",10]];
+["CHOOSE, one small next thing. Just one.",10]];
 
 /* shaking practice */
 var SHAKE=[
 ["Stand. Feet hip-width, knees soft. "+
-"Start with your hands — let them shake.",45],
-["Let it travel — hands, arms, shoulders.",60],
-["Whole body. Loose, involuntary — "+
+"Start with your hands, let them shake.",45],
+["Let it travel, hands, arms, shoulders.",60],
+["Whole body. Loose, involuntary, "+
 "release, not effort.",75],
-["Stop. Stand still. Feel the aftermath — "+
+["Stop. Stand still. Feel the aftermath, "+
 "the hum, the warmth.",45],
 ["Notice what changed.",6]];
 
 /* butterfly hug */
 var BFLY=[
-["Cross your arms over your chest — hands rest on "+
+["Cross your arms over your chest, hands rest on "+
 "your shoulders.",20],
-["Begin tapping — left, right, left, right. Slow as "+
+["Begin tapping, left, right, left, right. Slow as "+
 "a heartbeat, about one tap per second.",60],
 ["Keep tapping. One tap per second. Nothing else to "+
-"do — the tapping is the whole job.",45],
+"do, the tapping is the whole job.",45],
 ["Stop tapping. Rest your hands. Let whatever "+
 "shifted be there.",20],
 ["Notice: what is even 5% different from when you "+
@@ -1694,20 +1658,11 @@ var BFLY=[
 
 /* visual field explorer */
 var EYES=[
-"ORIENT — Notice the room around you. "+
-"Take one slow breath. You are here.",
-"EXPLORE — Slowly let your eyes wander the whole "+
-"visual field: up… down… left… right… There is no "+
-"right direction. Up may brush thoughts and activation; "+
-"down may bring settling and body-awareness; the sides "+
-"may touch memory or emotion. Your experience is the map.",
-"NOTICE — Find one spot that feels interesting, "+
-"activating, neutral, or calming. Any spot at all.",
-"RESOURCE — Now find a spot that feels 5% more okay. "+
-"Five percent is a win. Let your eyes rest there and "+
-"take two slow breaths.",
-"INTEGRATE — Come back to center. One more breath. "+
-"Curiosity. Compassion. Choice."];
+"ORIENT: Notice the room around you. Take one slow breath. You are here.",
+"LOOK: Slowly let your eyes wander the room, up, down, and to each side. There is no right direction.",
+"NOTICE: Let your eyes stop on anything at all: a color, a shape, a patch of light.",
+"RESOURCE: Now find a spot that feels 5% more okay. Five percent is enough. Rest your eyes there for two slow breaths.",
+"RETURN: Look around the whole room once more. One more breath."];
 var eyesI=-1;
 function eyesDots(){
   var d=$("#eyes-dots");d.innerHTML="";
@@ -1730,7 +1685,7 @@ $("#btn-eyes-next").onclick=function(){
   eyesI++;
   if(eyesI>=EYES.length){
     $("#eyes-text").textContent=
-      "Curiosity. Compassion. Choice. — that's the whole "+
+      "Curiosity. Compassion. Choice., that's the whole "+
       "practice. Come back any time.";
     $("#eyes-prog").textContent="";
     $("#btn-eyes-next").textContent="Begin";
@@ -1792,35 +1747,35 @@ garden:["leaves","the smell of soil","a flower","bees or birds","the sky",
 other:["a door","a window","a light","the floor","a wall",
 "my own hands","one thing I love"]};
 var GFLOW=[
-{k:"where",t:"Orient — where are you?",multi:false,
+{k:"where",t:"Orient, where are you?",multi:false,
  chips:["couch","desk","bed","kitchen","car","out for a walk",
  "sitting outside","patio","deck","temple","doctor's waiting room"],
  more:["bathroom","shower or bath","on the floor","beach","garden",
  "therapy or group","hospital or infusion chair","a store or a line",
  "someone else's home"],
- custom:"somewhere else — where?"},
-{k:"look",t:"Look — what's around you?",multi:true,min:3,
+ custom:"somewhere else, where?"},
+{k:"look",t:"Look, what's around you?",multi:true,min:3,
  dyn:true,custom:"something else you can see"},
-{k:"listen",t:"Listen — what can you hear?",multi:true,
+{k:"listen",t:"Listen, what can you hear?",multi:true,
  min:2,
  chips:["a hum (fridge, fan, computer)","traffic",
  "birds","voices nearby","music or tv","a clock",
  "the quiet itself"],
  custom:"another sound"},
-{k:"feel",t:"Feel — what's touching you?",multi:true,
+{k:"feel",t:"Feel, what's touching you?",multi:true,
  min:2,
  chips:["feet on the floor","the chair holding me",
  "fabric on my skin","phone in my hand",
  "warmth somewhere","cool air somewhere"],
  custom:"another feeling"},
-{k:"diff",t:"Differentiate — is this…",multi:false,
+{k:"diff",t:"Differentiate, is this…",multi:false,
  chips:["happening right now","something from before",
  "something I'm afraid could happen"],
  note:"A symptom can be real AND your nervous system can "+
  "be reacting to the past. You don't have to choose "+ 
  "between taking your body seriously and taking care of "+
  "your nerves.",custom:"or in your own words"},
-{k:"choose",t:"Choose — one small next thing",multi:false,
+{k:"choose",t:"Choose, one small next thing",multi:false,
  chips:["use a tool in this app","reach out to someone",
  "rest and regather","contact my care team"],
  custom:"your own next step"}];
@@ -1873,8 +1828,8 @@ function gCount(st){
   if(!el){return;}
   if(st.min){
     el.textContent=(n>=st.min)?
-      n+" noticed — that's enough. Continue when ready.":
-      n+" noticed · gentle, no rush — "+st.min+
+      n+" noticed, that's enough. Continue when ready.":
+      n+" noticed · gentle, no rush, "+st.min+
       " is plenty.";
   }else{
     el.textContent=n?"chosen":"";
@@ -1898,7 +1853,7 @@ function gRenderStep(){
   if(st.k==="where"){
     var tl=document.createElement("p");
     tl.className="small";
-    tl.textContent=nowLine()+" Nothing to fix — just say.";
+    tl.textContent=nowLine()+" Nothing to fix, just say.";
     f.appendChild(tl);
   }
   if(st.note){
@@ -2028,7 +1983,7 @@ function gDone(){
 }
 
 /* ---------- somatic first aid ---------- */
-SEQTITLE.cold="Cold water — dive reflex";
+SEQTITLE.cold="Cold water, dive reflex";
 SEQTITLE.slow="Slow movement";
 SEQWHY.cold="Cold on the face triggers the dive reflex, which slows "+
 "the heart. Home use. Your care team's plan for chest symptoms "+
@@ -2038,43 +1993,43 @@ SEQWHY.slow="Anxiety and pain both brace the body. Moving at half "+
 var FAST={};
 var COLD=[
 ["Cold water or a cold cloth ready. Not home? Hold something "+
-"cool — or skip this one.",15],
-["Cold on your face — forehead, eyes, cheeks. Hold it there.",20],
+"cool, or skip this one.",15],
+["Cold on your face, forehead, eyes, cheeks. Hold it there.",20],
 ["Come up. Breathe normally. Notice the shift.",15]];
 var SLOW=[
 ["Find where you feel the most tension.",20],
 ["Move that area at half the speed you think you should.",50],
-["Breathe into the sensation. Let the movement spread — neck, "+
+["Breathe into the sensation. Let the movement spread, neck, "+
 "spine, hips.",60],
 ["Even slower. Slower is more regulating.",40],
 ["Pause. Notice the difference from where you started.",15]];
 var WHY={
-sigh:"Double inhale, long exhale — the out-breath is the brake. "+
+sigh:"Double inhale, long exhale, the out-breath is the brake. "+
 "Cyclic sighing eased anxiety more than mindfulness in a 2023 "+
 "Stanford trial.",
 slowbr:"Exhale longer than inhale. Slow breathing (about six "+
 "breaths a minute) reliably lowers arousal.",
 emo:"Putting a feeling into words quiets the alarm response.",
-ground:"Questions instead of instructions — just tap what's true.",
+ground:"Questions instead of instructions, just tap what's true.",
 eyes:"Orienting with your eyes, at your own pace."};
 var FA=[
-{l:"⚡ Panic — heart racing, spiraling",t:[
+{l:"⚡ Panic, heart racing, spiraling",t:[
  ["Physiological sigh · 1 min","sigh"],
  ["Cold water on the face · 50 sec","cold"],
  ["60-second reset","reset"]]},
-{l:"🌪️ Chronic stress — tension that's settled in",t:[
+{l:"🌪️ Chronic stress, tension that's settled in",t:[
  ["Guided shaking · 4 min","shake"],
  ["Slow movement · 3 min","slow"],
  ["Gentle body scan · 8 min","scan"]]},
-{l:"🌊 Dysregulated — a 7 that needs to be a 4",t:[
+{l:"🌊 Dysregulated, a 7 that needs to be a 4",t:[
  ["Butterfly hug · 2 min","bfly"],
  ["Slow exhale breathing · 3 min","slowbr"],
  ["Name it to tame it","emo"]]},
-{l:"🌑 Shut down — numb, far away, foggy",t:[
+{l:"🌑 Shut down, numb, far away, foggy",t:[
  ["Ground with me","ground"],
  ["Feet grounding · 80 sec","feet"],
  ["Where your eyes go","eyes"]]},
-{l:"🏢 In public — needs to be subtle",t:[
+{l:"🏢 In public, needs to be subtle",t:[
  ["Feet grounding · 80 sec","feet"],
  ["Physiological sigh · 1 min","sigh"],
  ["Butterfly hug · 2 min","bfly"]]}];
@@ -2193,7 +2148,7 @@ function emoGrid(){
     var list=WORDS.filter(function(w){return !q||w.indexOf(q)>-1;});
     list.forEach(function(w){g.appendChild(emoChip(w));});
     if(!list.length){
-      g.innerHTML='<p class="small">Not on this wheel — that\'s '+
+      g.innerHTML='<p class="small">Not on this wheel, that\'s '+
         'okay. Try a nearby word, or browse by big feeling.</p>';
     }
     return;
@@ -2320,7 +2275,7 @@ function renderPlog(){
   plog.slice(0,30).forEach(function(e){
     var d=document.createElement("div");
     d.className="logline";
-    d.textContent=fmt(e.t)+" — "+
+    d.textContent=fmt(e.t)+", "+
       (PLBL[e.k]||e.k)+": "+(e.txt.length>240?e.txt.slice(0,240)+"…":e.txt);
     l.appendChild(d);
   });
@@ -2408,7 +2363,7 @@ function runCombo(list){
   var steps=[];
   list.forEach(function(p){
     p.steps.forEach(function(x,j){
-      steps.push([(j===0?p.title+" — ":"")+x[0],x[1]]);});
+      steps.push([(j===0?p.title+", ":"")+x[0],x[1]]);});
   });
   SEQTITLE.combo=list.map(function(p){return p.title;}).join(" → ");
   SEQWHY.combo="Body first, then meaning. You can end at any step.";
@@ -2417,42 +2372,42 @@ function runCombo(list){
 }
 var RECS={
 grief:[
-  {l:"Grief journal — a few gentle questions",t:"journal",s:"griefj"},
+  {l:"Grief journal, a few gentle questions",t:"journal",s:"griefj"},
   {l:"Psalm 23 and the Mourner's Kaddish",t:"pray",s:"griefp"},
-  {l:"♪ Psalm 23 — Cantor Childs",t:"pray",s:"ps23song"},
-  {l:"Sefirot body scan — Binah, the heart, has room for grief",
+  {l:"♪ Psalm 23, Cantor Childs",t:"pray",s:"ps23song"},
+  {l:"Sefirot body scan, Binah, the heart, has room for grief",
    t:"breathe",s:"sef"}],
 wired:[
   {l:"Physiological sigh",t:"breathe",p:"sigh"},
   {l:"60-second reset",t:"ground",s:"reset"},
-  {l:"Cold water on the face — if you're home",
+  {l:"Cold water on the face, if you're home",
    t:"ground"},
   {l:"Slow exhale 4–6",t:"breathe",p:"slow"}],
 heavy:[
-  {l:"Gentle up-regulation — warmth, sway, voice",
+  {l:"Gentle up-regulation, warmth, sway, voice",
    t:"ground"},
-  {l:"Somatic shaking — if your body wants to",
+  {l:"Somatic shaking, if your body wants to",
    t:"ground",s:"shake"},
   {l:"Hum a niggun",t:"pray"},
-  {l:"Coherent breathing — only if it feels like relief",
+  {l:"Coherent breathing, only if it feels like relief",
    t:"breathe",p:"coherent"}],
 mixed:[
-  {l:"60-second reset — your team's sequence",
+  {l:"60-second reset, your team's sequence",
    t:"ground",s:"reset"},
   {l:"Then: slow exhale 4–6",t:"breathe",p:"slow"},
   {l:"Differentiate: now, before, or afraid?",
    t:"ground",s:"ground"}],
 settled:[
-  {l:"Shema — breath & line",t:"pray"},
-  {l:"Where your eyes go — find the 5% spot",
+  {l:"Shema, breath & line",t:"pray"},
+  {l:"Where your eyes go, find the 5% spot",
    t:"ground",s:"eyes"},
-  {l:"Shema breath — in on Adonai, out on Echad",
+  {l:"Shema breath, in on Adonai, out on Echad",
    t:"breathe",p:"shema"},
-  {l:"Niggun — hum along with the drone",t:"pray"}],
+  {l:"Niggun, hum along with the drone",t:"pray"}],
 feelings:[
-  {l:"Name it to tame it — the wheel",t:"ground",s:"emo"},
+  {l:"Name it to tame it, the wheel",t:"ground",s:"emo"},
   {l:"Physiological sigh",t:"breathe",p:"sigh"},
-  {l:"Priestly Blessing — self-blessing",t:"pray"},
+  {l:"Priestly Blessing, self-blessing",t:"pray"},
   {l:"Hitbodedut: your own words",t:"pray"}]};
 
 var STARTERS={
@@ -2468,7 +2423,7 @@ shake:function(){
 },
 bfly:function(){
   seqStart("bfly",BFLY,"#bfly-text","#bfly-prog",
-    "That's the hug. It works below words — come "+
+    "That's the hug. It works below words, come "+
     "back any time.");
 },
 ground:function(){
@@ -2489,7 +2444,7 @@ emo:function(){
 }};
 $("#ci-save").onclick=function(){
   if(!curState&&!flagList().length){
-    toast("pick a state or something you're noticing — any is fine");
+    toast("pick a state or something you're noticing, any is fine");
     return;
   }
   log.unshift({
@@ -2577,7 +2532,7 @@ function renderLog(){
   log.slice(0,30).forEach(function(e){
     var d=document.createElement("div");
     d.className="logline";
-    d.textContent=fmt(e.t)+" — "+ciLbl(e)+
+    d.textContent=fmt(e.t)+", "+ciLbl(e)+
       " · pain "+e.p+" · anxiety "+e.a+
       (e.u?" · unreal":"")+(e.c?" · 🕯️ candles":"")+(e.n?" · "+e.n:"");
     list.appendChild(d);
@@ -2596,7 +2551,7 @@ function renderLog(){
   var last=$("#ci-last");
   if(log.length){
     last.textContent="Last check-in: "+fmt(log[0].t)+
-      " — "+ciLbl(log[0])+
+      ", "+ciLbl(log[0])+
       (log[0].u?", felt unreal":"")+".";
   }else{
     last.textContent="No check-ins yet. The first one "+
@@ -2604,7 +2559,7 @@ function renderLog(){
   }
 }
 $("#btn-copy").onclick=function(){
-  var lines=["Neshamah check-in summary — last "+
+  var lines=["Neshamah check-in summary, last "+
     Math.min(14,log.length)+" entries:"];
   log.slice(0,14).forEach(function(e){
     lines.push(fmt(e.t)+" | "+ciLbl(e)+
@@ -2615,7 +2570,7 @@ $("#btn-copy").onclick=function(){
   if(log.length===0){lines.push("(no check-ins yet)");}
   if(plog.length){
     lines.push("");
-    lines.push("Grounding and feelings named — last "+
+    lines.push("Grounding and feelings named, last "+
       Math.min(14,plog.length)+":");
     plog.slice(0,14).forEach(function(e){
       lines.push(fmt(e.t)+" | "+(PLBL[e.k]||e.k)+
@@ -2625,7 +2580,7 @@ $("#btn-copy").onclick=function(){
   var txt=lines.join("\n");
   if(navigator.clipboard&&navigator.clipboard.writeText){
     navigator.clipboard.writeText(txt).then(function(){
-      toast("copied — paste it into the visit");
+      toast("copied, paste it into the visit");
     },function(){fallback(txt);});
   }else{fallback(txt);}
   function fallback(t){
@@ -2635,7 +2590,7 @@ $("#btn-copy").onclick=function(){
     ta.select();
     try{
       document.execCommand("copy");
-      toast("copied — paste it into the visit");
+      toast("copied, paste it into the visit");
     }catch(e){toast("couldn't copy automatically");}
     document.body.removeChild(ta);
   }
@@ -2748,7 +2703,7 @@ function recToggle(i){
   if(REC.i!==null){stopRec();}
   if(!navigator.mediaDevices||!window.MediaRecorder){
     $("#lad-s-"+i).textContent=
-      "voice needs the live site — type instead";
+      "voice needs the live site, type instead";
     return;
   }
   navigator.mediaDevices.getUserMedia({audio:true})
@@ -2785,10 +2740,10 @@ function recToggle(i){
       updRecBtns();
     };
     var st=$("#lad-s-"+i);
-    st.textContent="● recording — 90s left";
+    st.textContent="● recording, 90s left";
     REC.iv=setInterval(function(){
       left--;
-      st.textContent="● recording — "+left+"s left";
+      st.textContent="● recording, "+left+"s left";
       if(left<=0){stopRec();}
     },1000);
     mr.start();
@@ -2796,7 +2751,7 @@ function recToggle(i){
   })
   .catch(function(){
     $("#lad-s-"+i).textContent=
-      "mic unavailable — just type instead";
+      "mic unavailable, just type instead";
   });
 }
 RUNGS.forEach(function(r,i){
@@ -2813,20 +2768,20 @@ function renderLads(){
     lads=JSON.parse(localStorage.getItem(LADKEY)||"[]");
   }catch(e){lads=[];}
   if(!lads.length){
-    list.innerHTML="<p class=\"small\">Nothing saved yet — "+
+    list.innerHTML="<p class=\"small\">Nothing saved yet, "+
       "the first ladder can be one line on one rung.</p>";
     return;
   }
   lads.forEach(function(e,idx){
     var d=document.createElement("details");
     var s=document.createElement("summary");
-    s.textContent=fmt(e.t)+" — "+e.r.length+" rung"+
+    s.textContent=fmt(e.t)+", "+e.r.length+" rung"+
       (e.r.length===1?"":"s");
     d.appendChild(s);
     e.r.forEach(function(x){
       var p=document.createElement("p");
       p.innerHTML="<strong>"+x.k+"</strong>"+
-        (x.txt?" — "+esc(x.txt):" — (voice memo)");
+        (x.txt?", "+esc(x.txt):", (voice memo)");
       d.appendChild(p);
       if(x.aud){d.appendChild(memoAudio(x.aud));}
     });
@@ -2857,7 +2812,7 @@ $("#btn-lad-save").onclick=function(){
     }
   });
   if(!any){
-    toast("write or record one rung — one line counts");
+    toast("write or record one rung, one line counts");
     return;
   }
   var lads=[];
@@ -2874,10 +2829,10 @@ $("#btn-lad-save").onclick=function(){
     lads[0]=entry;
     try{
       localStorage.setItem(LADKEY,JSON.stringify(lads));
-      toast("memos too big to store — kept your words");
-    }catch(e2){toast("storage full — clear some in Log");}
+      toast("memos too big to store, kept your words");
+    }catch(e2){toast("storage full, clear some in Log");}
   }
-  if(ok){toast("ladder saved — on this device");}
+  if(ok){toast("ladder saved, on this device");}
   RUNGS.forEach(function(r,i){
     LAD.draft[i]={txt:"",aud:null};
     $("#lad-t-"+i).value="";
@@ -2940,7 +2895,7 @@ $("#restorefile").onchange=function(){
     if(d.ghost&&!localStorage.getItem("neshamah_ghost")){try{localStorage.setItem("neshamah_ghost",JSON.stringify(d.ghost));}catch(e){}}
     if(d.app!=="neshamah"){throw new Error("not ours");}
     if(!confirm("Restore this backup? It merges with what is "+
-      "here — nothing gets deleted.")){return;}
+      "here, nothing gets deleted.")){return;}
     var seen={};
     log.forEach(function(e){seen[e.t]=1;});
     (d.log||[]).forEach(function(e){if(!seen[e.t]){log.push(e);}});
@@ -2978,7 +2933,7 @@ $("#restorefile").onchange=function(){
 var FEET=[
 ["Press both feet into the floor. Feel it press back.",15],
 ["Notice your heels… the balls of your feet… your toes.",20],
-["Shift your weight slowly — a little left… a little right.",20],
+["Shift your weight slowly, a little left… a little right.",20],
 ["Look up. Name one thing you can see.",15],
 ["Feet still pressing. You are here. It is now.",10]];
 STARTERS.feet=function(){
@@ -3060,7 +3015,12 @@ var SONGS=[
 {src:"bc",a:7,i:1,t:"Gam Ki Eilech",c:"",g:"Night",p:["ps23","psalms-moment"],n:"Psalm 23:4: though I walk through the valley of deep darkness, I fear no harm, for You are with me."},
 {src:"bc",a:7,i:10,t:"Shir HaMa'alot",c:"acoustic",g:"Night",p:["psalms-moment","sleep"]},
 {src:"bc",a:7,i:5,t:"Modeh Ani",c:"",g:"Breath & soul",p:["modeh-ani-handwash"]},
-{src:"bc",a:7,i:7,t:"Mima'amakim",c:"",g:"Grief",p:["psalms-moment"],n:"Psalm 130: out of the depths I call to You."}];
+{src:"bc",a:7,i:7,t:"Mima'amakim",c:"",g:"Grief",p:["psalms-moment"],n:"Psalm 130: out of the depths I call to You."},
+{src:"bc",a:2,i:2,t:"Gowanus Nigun",c:"",g:"Wordless, for meditation",p:["niggun","hum-niggun"]},
+{src:"bc",a:7,i:8,t:"Yedid Nefesh",c:"Milt's Nign",g:"Healing",p:["elna"]},
+{src:"bc",a:2,i:1,t:"Min HaMeitzar",c:"",g:"Hope",p:["uplifting-pain","psalms-moment"],n:"Psalm 118:5: from the narrow place I called to God, who answered me with wide open space."},
+{src:"bc",a:7,i:3,t:"Od Yishama",c:"",g:"Hope",n:"Jeremiah 33:10-11: in places that now seem empty, the sound of joy will be heard again."},
+{src:"bc",a:7,i:4,t:"Simeini",c:"",g:"Grief",p:["memorial-candle"],n:"Song of Songs 8:6: set me as a seal upon your heart, for love is as strong as death."}];
 var NOW=null;
 function songName(x){return x.t+(x.c?" · "+x.c:"");}
 function songWho(x){return WHO[x.src||"childs"];}
@@ -3130,12 +3090,13 @@ function songsRender(){
   var gs=[];
   SONGS.forEach(function(x){if(gs.indexOf(x.g)<0){gs.push(x.g);}});
   gs.forEach(function(g){
-    var h=document.createElement("h3");h.textContent=g;w.appendChild(h);
+    var d=document.createElement("details"),h=document.createElement("summary");
+    h.textContent=g;d.appendChild(h);w.appendChild(d);
     SONGS.filter(function(x){return x.g===g;}).forEach(function(x){
-      w.appendChild(songBtn(x));
+      d.appendChild(songBtn(x));
       if(x.n){
         var p=document.createElement("p");p.className="fa-why";
-        p.textContent=x.n;w.appendChild(p);
+        p.textContent=x.n;d.appendChild(p);
       }
     });
   });
@@ -3197,7 +3158,7 @@ function prLines(box,lines,keys){
 }
 function prBreath(p,lines){
   SEQTITLE.pray=p.title;
-  SEQWHY.pray="One line per slow breath — read it as you breathe "+
+  SEQWHY.pray="One line per slow breath, read it as you breathe "+
     "in, let it settle as you breathe out. Skip ahead or end any time.";
   seqStart("pray",lines.map(function(l){
     var t=[];
@@ -3222,7 +3183,7 @@ function prRender(){
   var w=$("#prayers");if(!w){return;}
   if(!window.PRAYERS){
     w.innerHTML='<div class="card"><p class="small">The prayer '+
-      'texts did not load — check that prayers.js is next to '+
+      'texts did not load, check that prayers.js is next to '+
       'index.html.</p></div>';
     return;
   }
@@ -3304,56 +3265,56 @@ function sef(he,name,aram,how,why,sec){
   return [he+" · "+name+"\n"+aram+"\n\nHow: "+how+"\nWhy: "+why,sec];
 }
 var SEF=[
-["Arrive. Let the out-breath be a little longer than the in-breath — "+
+["Arrive. Let the out-breath be a little longer than the in-breath, "+
 "about four in, six out.\n\nHow: a longer exhale slows the heart.\n"+
 "Why: n'shamah, breath, is the soul's own word.",40],
-sef("כֶּתֶר","Keter — the crown","קרקפתא דתפלי",
+sef("כֶּתֶר","Keter, the crown","קרקפתא דתפלי",
 "notice the top of your head: warmth, tingling, or nothing at all.",
 "Keter is the will before thought. Nothing to do here.",50),
-sef("חָכְמָה","Chochmah — the brain","מוחא חכמה",
+sef("חָכְמָה","Chochmah, the brain","מוחא חכמה",
 "soften the forehead and the eyes. Let thoughts pass like weather.",
 "wisdom as the first spark, before it becomes words.",60),
-sef("בִּינָה","Binah — the heart","בינה לבא ובה הלב מבין",
+sef("בִּינָה","Binah, the heart","בינה לבא ובה הלב מבין",
 "a hand on your heart, if you like. Feel the chest rise under it.",
 "the Zohar puts understanding in the heart. If grief is here, it is "+
 "allowed to be here. Binah is called the mother: she holds what we "+
 "cannot.",90),
-sef("חֶסֶד","Chesed — the right arm","חסד דרועא ימינא",
+sef("חֶסֶד","Chesed, the right arm","חסד דרועא ימינא",
 "feel the right arm from shoulder to fingertips. Let the hand open.",
 "love that flows outward without measuring.",60),
-sef("גְּבוּרָה","Gevurah — the left arm","גבורה דרועא שמאלא",
+sef("גְּבוּרָה","Gevurah, the left arm","גבורה דרועא שמאלא",
 "feel the left arm. Close the hand gently, then release.",
 "strength and limits. Boundaries are holy too.",60),
-sef("תִּפְאֶרֶת","Tiferet — the torso","תפארת גופא",
+sef("תִּפְאֶרֶת","Tiferet, the torso","תפארת גופא",
 "feel breath move the ribs and belly. If pain lives here, rest at its "+
-"edge, not in it.","where love and limits meet — compassion, at the "+
+"edge, not in it.","where love and limits meet, compassion, at the "+
 "center, where ruach moves.",75),
-sef("נֶצַח · הוֹד","Netzach & Hod — the legs","נצח והוד תרין שוקין",
+sef("נֶצַח · הוֹד","Netzach & Hod, the legs","נצח והוד תרין שוקין",
 "feel the weight of both legs, the backs of the thighs, the feet.",
 "endurance and gratitude: the two that carry you.",60),
-sef("יְסוֹד","Yesod — the base","יסוד סיומא דגופא",
+sef("יְסוֹד","Yesod, the base","יסוד סיומא דגופא",
 "feel the pelvis and whatever is under you. Let it hold you.",
 "the foundation that gathers everything above it.",50),
-sef("מַלְכוּת","Malchut — the mouth","מלכות פה",
+sef("מַלְכוּת","Malchut, the mouth","מלכות פה",
 "let the breath leave as a soft hum, or the word shalom, three times.",
 "Malchut is the Shechinah, the Presence that rests beside the sick. "+
 "Your voice is how the inside reaches the world.",60),
-["Whatever came, came — pain, grief, God close or far. All of it "+
+["Whatever came, came, pain, grief, God close or far. All of it "+
 "allowed. Rest here as long as you like.",40]];
 var TRACK=[
 ["Get comfortable. Breathe out a little longer than you breathe in.",30],
-["Find the pain — not to fix it, just to locate it.",30],
+["Find the pain, not to fix it, just to locate it.",30],
 ["Look at it with curiosity, like a scientist. Tight, warm, buzzing, "+
 "sharp, dull? Does it have edges?",60],
 ["Notice it change, even slightly. Sensations shift moment to moment.",45],
 ["A message of safety: this is a sensation. My brain is on alert, "+
 "and I am safe right now.",45],
-["If fear or frustration rises, notice that too — then come back to "+
+["If fear or frustration rises, notice that too, then come back to "+
 "curiosity.",45],
 ["Widen your attention to the whole body, and the room around you.",40],
 ["Done. Nothing had to change for this to count.",15]];
 var PEND=[
-["Find a place in your body that feels neutral or okay — hands, "+
+["Find a place in your body that feels neutral or okay, hands, "+
 "earlobes, the back of the head. Anywhere.",40],
 ["Rest your attention there. Let it be ordinary.",40],
 ["Now briefly touch the edge of the pain. Just the edge, a few "+
@@ -3375,7 +3336,7 @@ SEQWHY.pend="From Somatic Experiencing (Peter Levine). Research is "+
 "early; it is gentle, and you are always in charge of how close.";
 STARTERS.sef=function(){seqStart("sef",SEF,null,null,"Amen. Selah.");};
 STARTERS.track=function(){seqStart("track",TRACK,null,null,
-  "Curiosity instead of alarm — that is the practice.");};
+  "Curiosity instead of alarm, that is the practice.");};
 STARTERS.pend=function(){seqStart("pend",PEND,null,null,
   "You went to the edge and came back. That is a skill.");};
 $("#pain-sef").onclick=STARTERS.sef;
@@ -3385,12 +3346,12 @@ $("#pain-pend").onclick=STARTERS.pend;
 /* ---------- journaling forms (parts/modes, grief) ---------- */
 var PQ=[
 {k:"kind",q:"What kind of part or mode is here?",chips:[
-"exile — carries hurt","manager — tries to prevent hurt",
-"firefighter — puts out the fire","vulnerable child","angry child",
+"exile, carries hurt","manager, tries to prevent hurt",
+"firefighter, puts out the fire","vulnerable child","angry child",
 "detached protector","compliant surrenderer","perfectionist overachiever",
 "punitive or demanding parent","not sure"]},
 {k:"name",q:"What would you call it?",ph:"a name or label"},
-{k:"shows",q:"How does it show up — thoughts, feelings, body, actions?"},
+{k:"shows",q:"How does it show up, thoughts, feelings, body, actions?"},
 {k:"trig",q:"What tends to bring it out?"},
 {k:"job",q:"What is it trying to do for you, or protect you from?"},
 {k:"belief",q:"What core belief does it carry? (\"I'm too much,\" \"I have to earn love\"…)"},
@@ -3399,8 +3360,8 @@ var PQ=[
  chips:["curious","compassionate","calm","courageous","clear",
  "confident","creative","connected","something else"],
  note:"That feeling may be another part. You can ask it, kindly, to "+
- "step back a little — only if it's willing."},
-{k:"adult",q:"What might your Healthy Adult — your wisest, kindest self — say to it?"},
+ "step back a little, only if it's willing."},
+{k:"adult",q:"What might your Healthy Adult, your wisest, kindest self, say to it?"},
 {k:"need",q:"What does it need from you right now?"}];
 var GQ=[
 {k:"loss",q:"What is this grief for?",multi:true,chips:["a person","a pet",
@@ -3408,7 +3369,7 @@ var GQ=[
 "who I used to be","a future I imagined","something hard to name"]},
 {k:"miss",q:"Who or what am I missing today?"},
 {k:"body",q:"Where do I feel it in my body?"},
-{k:"say",q:"What would I say to them — or to it — if I could?"},
+{k:"say",q:"What would I say to them, or to it, if I could?"},
 {k:"honor",q:"One small way to honor this today:"}];
 function formRender(sel,Q,kind,thanks){
   var f=$(sel);if(!f){return;}
@@ -3463,7 +3424,7 @@ function formRender(sel,Q,kind,thanks){
       if(Array.isArray(v)){v=v.join(", ");}
       if(v&&String(v).trim()){bits.push(x.k+": "+String(v).trim());}
     });
-    if(!bits.length){toast("answer one question — one is enough");return;}
+    if(!bits.length){toast("answer one question, one is enough");return;}
     plogAdd(kind,bits.join(" · "));
     toast(thanks);
     formRender(sel,Q,kind,thanks);
@@ -3519,7 +3480,7 @@ function bcShow(label,rows,typed,tag,first,key){
   if(key){songsFor("bc-"+key).forEach(function(x){s.appendChild(songBtn(x,"Listen · "+songWho(x)));});}
   var ok=document.createElement("button");ok.textContent="I said it";
   ok.onclick=function(){
-    plogAdd("bracha",label+(tag?" — "+tag:""));
+    plogAdd("bracha",label+(tag?", "+tag:""));
     buzz(20);toast("Amen.");s.innerHTML="";bcCount();
   };
   s.appendChild(ok);
@@ -3546,7 +3507,7 @@ function bcRender(){
   $("#bc-own-go").onclick=function(){
     var v=$("#bc-own").value.trim();
     if(!v){toast("type what you noticed");return;}
-    bcShow(v,[{tl:"Baruch atah — thank You for "+v+".",
+    bcShow(v,[{tl:"Baruch atah, thank You for "+v+".",
       en:"Your own words are a blessing, too."}],false,"own words");
     $("#bc-own").value="";
   };
@@ -3589,7 +3550,7 @@ function shabbatRender(){
     box.appendChild(h);return;
   }
   var ss=sunset(d),cl=ss?new Date(ss-18*6e4):null;
-  h.textContent="🕯️ Shabbat begins tonight"+(cl?" — candles at "+
+  h.textContent="🕯️ Shabbat begins tonight"+(cl?", candles at "+
     cl.toLocaleTimeString(undefined,{hour:"numeric",minute:"2-digit"})+
     " (18 minutes before sunset, Santa Barbara)":"")+".";
   box.appendChild(h);
@@ -3638,7 +3599,7 @@ $("#btn-haptic").onclick=function(){
 var EVQ=[
 {k:"day",q:"Today, in one line:"},
 {k:"mind",q:"What's still on my mind?"},
-{k:"todo",q:"Tomorrow's to-do — get it out of your head and onto the page:"},
+{k:"todo",q:"Tomorrow's to-do, get it out of your head and onto the page:"},
 {k:"down",q:"What I'm setting down for tonight:"}];
 var SLQ=[
 {k:"quality",q:"How did you sleep?",chips:["rested","okay","rough","barely slept"]},
@@ -3651,20 +3612,20 @@ var NQ=[{k:"text",q:"Whatever is here right now:"}];
 var DJ={iv:null};
 var DJT=[
 {id:"sleep",l:"Sleep check-in",when:[4,12],
- why:"How: tracking sleep and pain together helps you and your team see patterns. Why: Modah Ani — you woke up; that comes first.",
+ why:"How: tracking sleep and pain together helps you and your team see patterns. Why: Modah Ani, you woke up; that comes first.",
  run:function(b){formRender(b,SLQ,"sleep","noted. be gentle with today.");}},
 {id:"pages",l:"Morning pages · timed",when:[4,12],
- why:"How: from Julia Cameron's The Artist's Way — not a research method itself, but close kin to free writing, which can clear mental clutter. Keep the pen moving; nothing has to make sense.",
+ why:"How: from Julia Cameron's The Artist's Way, not a research method itself, but close kin to free writing, which can clear mental clutter. Keep the pen moving; nothing has to make sense.",
  run:function(b){timedWrite(b,{kind:"pages",mins:10,
-  prompt:"Write whatever comes, without stopping or fixing. Boring, petty, repetitive — all welcome.",
+  prompt:"Write whatever comes, without stopping or fixing. Boring, petty, repetitive, all welcome.",
   ph:"just start…"});}},
 {id:"note",l:"Quick note",when:null,
  why:"For anything you want to remember or just put down.",
  run:function(b){formRender(b,NQ,"note","kept.");}},
 {id:"expressive",l:"Expressive writing · 15 min",when:null,
- why:"How: James Pennebaker's research — 15–20 minutes of your deepest thoughts and feelings about something hard, over a few days, has modest benefits for mood and health. It can feel worse for an hour before it feels better. Stop if it floods you; switch to grounding. With PTSD, this one is best done with your therapist.",
+ why:"How: James Pennebaker's research, 15–20 minutes of your deepest thoughts and feelings about something hard, over a few days, has modest benefits for mood and health. It can feel worse for an hour before it feels better. Stop if it floods you; switch to grounding. With PTSD, this one is best done with your therapist.",
  run:function(b){timedWrite(b,{kind:"expressive",mins:15,letgo:true,
-  prompt:"Write about something that's weighing on you — what happened, and how it feels underneath. No one will read this unless you choose.",
+  prompt:"Write about something that's weighing on you, what happened, and how it feels underneath. No one will read this unless you choose.",
   ph:"what's really going on is…"});}}];
 function djNow(t){
   if(!t.when){return false;}
@@ -3713,7 +3674,7 @@ function timedWrite(sel,o){
   var bar=document.createElement("div");bar.className="pbar";bw.appendChild(bar);
   box.appendChild(bw);
   var st=document.createElement("div");st.className="small";
-  st.textContent="The timer is optional — you can just write.";box.appendChild(st);
+  st.textContent="The timer is optional, you can just write.";box.appendChild(st);
   var go=document.createElement("button");go.textContent="Start timer";
   go.onclick=function(){
     if(DJ.iv){clearInterval(DJ.iv);}
@@ -3724,7 +3685,7 @@ function timedWrite(sel,o){
       if(left<=0){
         clearInterval(DJ.iv);DJ.iv=null;bar.style.width="100%";
         AE.bell(0.4);buzz([30,90,30]);
-        st.textContent="Time. Finish your sentence — then save, or let it go.";
+        st.textContent="Time. Finish your sentence, then save, or let it go.";
         return;
       }
       bar.style.width=((1-left/tot)*100)+"%";
@@ -3734,7 +3695,7 @@ function timedWrite(sel,o){
   box.appendChild(go);
   var sv=document.createElement("button");sv.textContent="Save";
   sv.onclick=function(){
-    var v=ta.value.trim();if(!v){toast("nothing written yet — that's okay");return;}
+    var v=ta.value.trim();if(!v){toast("nothing written yet, that's okay");return;}
     if(DJ.iv){clearInterval(DJ.iv);DJ.iv=null;}
     plogAdd(o.kind,v);toast("saved, on this device");timedWrite(sel,o);
   };
@@ -3797,7 +3758,7 @@ function backupNudge(){
     if(first&&now-first<7*864e5){return;}
   }
   slot.innerHTML='<div class="card" id="backup-nudge"><p class="small">'+
-    'Your journal lives only on this phone. It has been a while — save '+
+    'Your journal lives only on this phone. It has been a while, save '+
     'a backup copy?</p><button id="bn-save">Save a backup</button>'+
     '<button id="bn-later" class="ghost">Later</button></div>';
   $("#bn-save").onclick=function(){$("#btn-backup").click();};
@@ -3843,15 +3804,15 @@ function hebDate(d){
 function holiday(d){
   var h=hebDate(d||new Date());if(!h){return null;}
   if(h.m==="Elul"&&h.d===29){return {g:"Shanah tovah 🍎",
-    n:"Rosh Hashanah begins tonight. L'shanah tovah tikateivu — may you be written for a good year."};}
+    n:"Rosh Hashanah begins tonight. L'shanah tovah tikateivu, may you be written for a good year."};}
   if(h.m==="Tishri"&&(h.d===1||h.d===2)){return {g:h.d===1?"Shanah tovah 🍎":
-    "L'shanah tovah tikateivu 🍎",n:"Chag sameach — a sweet new year. Apples and honey count as self-care."};}
+    "L'shanah tovah tikateivu 🍎",n:"Chag sameach, a sweet new year. Apples and honey count as self-care."};}
   if(h.m==="Tishri"&&h.d>=3&&h.d<=8){return {g:"Shanah tovah",
-    n:"The Days of Awe. Teshuvah means returning — to yourself too."};}
+    n:"The Days of Awe. Teshuvah means returning, to yourself too."};}
   if(h.m==="Tishri"&&h.d===9){return {g:"G'mar chatimah tovah",
-    n:"Yom Kippur begins tonight. If you're fasting: tzom kal, an easy fast. If your body needs food or medication, eating is the mitzvah — protecting life comes first (pikuach nefesh)."};}
+    n:"Yom Kippur begins tonight. If you're fasting: tzom kal, an easy fast. If your body needs food or medication, eating is the mitzvah, protecting life comes first (pikuach nefesh)."};}
   if(h.m==="Tishri"&&h.d===10){return {g:"G'mar chatimah tovah",
-    n:"Tzom kal, if you're fasting. If your body needs food or medication today, eating is the mitzvah — pikuach nefesh."};}
+    n:"Tzom kal, if you're fasting. If your body needs food or medication today, eating is the mitzvah, pikuach nefesh."};}
   return null;
 }
 function greet(){
@@ -3866,7 +3827,7 @@ function greet(){
 }
 $("#greeting").textContent=greet()+", Jamie";
 $(".tag").textContent="breath · prayer · rest · pocket "+
-  "sanctuary · v2.25 · script running ✓";
+  "sanctuary · v2.29 · script running ✓";
 setInterval(function(){
   var d=new Date();
   var ds=d.toLocaleDateString(undefined,
@@ -3941,7 +3902,7 @@ function practiceWriter(p){
   box.appendChild(ol);
   var ta=document.createElement("textarea");ta.rows=5;ta.style.width="100%";ta.placeholder="a few lines is plenty…";box.appendChild(ta);
   var sv=document.createElement("button");sv.textContent="Save";
-  sv.onclick=function(){var v=ta.value.trim();if(!v){toast("nothing written yet — that's okay");return;}
+  sv.onclick=function(){var v=ta.value.trim();if(!v){toast("nothing written yet, that's okay");return;}
     plogAdd(p.id,v);toast("saved, on this device");box.innerHTML="";};
   var lg=document.createElement("button");lg.className="ghost";lg.textContent="Let it go (don't save)";
   lg.onclick=function(){box.innerHTML="";toast("let go.");};
