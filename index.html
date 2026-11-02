@@ -266,7 +266,7 @@ margin:8px 0 4px}
 <header>
   <h1><span class="he">נְשָׁמָה</span> Neshamah</h1>
   <div class="tag">breath · prayer · rest · pocket sanctuary
-  · v2.29</div>
+  · v2.30</div>
 </header>
 
 <main>
@@ -293,8 +293,7 @@ margin:8px 0 4px}
   <div class="card">
     <div id="shabbat-ci"></div>
     <h2>How is your body and mind right now?</h2>
-    <p class="small">There are no wrong answers. This just
-    routes you to what fits.</p>
+    <p class="small">Tap one and its tools appear, best first.</p>
     <div id="ci-state">
       <button class="statebtn" data-s="wired">⚡ Wired &amp;
       tense</button>
@@ -305,7 +304,9 @@ margin:8px 0 4px}
       <button class="statebtn" data-s="settled">🌿 Settled</button>
       <button class="statebtn" data-s="feelings">🌊 Strong
       feelings</button>
+      <button class="statebtn" data-s="public">🏢 In public</button>
     </div>
+    <div id="ci-statetools"></div>
     <h3>Right now I'm noticing <span class="small">(pick any, or none)</span></h3>
     <div id="ci-flags" class="chipgrid">
       <button class="flagbtn" data-f="grief">🤍 Grief</button>
@@ -582,14 +583,6 @@ margin:8px 0 4px}
     <p class="small">No journal, nothing to memorize. It asks,
     you tap. Skip anything; there are no wrong answers.</p>
     <div id="gflow"></div>
-  </div>
-
-  <div class="card">
-    <h2>Somatic first aid</h2>
-    <p class="small">What's happening right now? Tap it, the
-    tools appear, best first. Tap a tool and it starts.</p>
-    <div id="fa-states"></div>
-    <div id="fa-tools"></div>
   </div>
 
   <div class="card">
@@ -2046,8 +2039,43 @@ FAST.slowbr=function(){
   switchTab("breathe");selectPattern("slow");setLen(3);startBreath();
 };
 var faSel=-1;
+/* one picker (Home): state -> first-aid tools */
+var STATE_TOOLS={
+wired:[["Physiological sigh · 1 min","sigh"],["Cold water on the face · 50 sec","cold"],["60-second reset","reset"],["Guided shaking · 4 min","shake"],["Slow movement · 3 min","slow"]],
+heavy:[["Ground with me","ground"],["Feet grounding · 80 sec","feet"],["Where your eyes go","eyes"],["Guided shaking · 4 min","shake"]],
+mixed:[["60-second reset","reset"],["Ground with me","ground"],["Slow exhale breathing · 3 min","slowbr"]],
+feelings:[["Butterfly hug · 2 min","bfly"],["Name it to tame it","emo"],["Slow exhale breathing · 3 min","slowbr"]],
+settled:[["Shema breath","shemabr"],["Gentle body scan · 8 min","scan"],["Where your eyes go","eyes"]],
+public:[["Feet grounding · 80 sec","feet"],["Physiological sigh · 1 min","sigh"],["Butterfly hug · 2 min","bfly"]]};
+function runTool(k){
+  if(k==="shemabr"){switchTab("breathe");selectPattern("shema");startBreath();return;}
+  if(k==="ground"||k==="eyes"||k==="emo"){switchTab("ground");setTimeout(STARTERS[k],250);return;}
+  if(k==="sef"||k==="track"||k==="pend"){STARTERS[k]();return;}
+  STARTERS[k]();
+}
+function toolBtns(box,list){
+  var whys=[];
+  list.forEach(function(tl){
+    var tb=document.createElement("button");
+    tb.className="fa-tool";tb.textContent="▶  "+tl[0];
+    tb.onclick=function(){runTool(tl[1]);};
+    box.appendChild(tb);
+    var w=WHY[tl[1]]||SEQWHY[tl[1]];if(w){whys.push(tl[0].split(" · ")[0]+": "+w);}
+  });
+  if(whys.length){
+    var d=document.createElement("details"),sm=document.createElement("summary");
+    sm.textContent="How these work";d.appendChild(sm);
+    whys.forEach(function(t){var p=document.createElement("p");p.className="fa-why";p.textContent=t;d.appendChild(p);});
+    box.appendChild(d);
+  }
+}
+function stateTools(){
+  var w=$("#ci-statetools");if(!w){return;}w.innerHTML="";
+  if(curState&&STATE_TOOLS[curState]){toolBtns(w,STATE_TOOLS[curState]);}
+}
+var PAIN_TOOLS=[["Sefirot body scan · 11 min","sef"],["Somatic tracking · 5 min","track"],["Pendulation · 4 min","pend"]];
 function faRender(){
-  var st=$("#fa-states");st.innerHTML="";
+  var st=$("#fa-states");if(!st){return;}st.innerHTML="";
   FA.forEach(function(x,i){
     var b=document.createElement("button");
     b.className="fa-state"+(i===faSel?" on":"");
@@ -2291,10 +2319,11 @@ function saveLog(){
 var curState=null;
 $$(".statebtn").forEach(function(b){
   b.onclick=function(){
-    curState=b.dataset.s;
+    curState=(curState===b.dataset.s)?null:b.dataset.s;
     $$(".statebtn").forEach(function(x){
-      x.classList.toggle("on",x===b);
+      x.classList.toggle("on",x.dataset.s===curState);
     });
+    stateTools();
   };
 });
 $("#ci-pain").oninput=function(){
@@ -2470,7 +2499,13 @@ function renderRecs(){
   box.style.display="block";
   var fl=flagList();
   if(fl.length&&window.PRACTICES){
-    var picks=pickPractices(fl),top=picks.slice(0,3);
+    var painOn=fl.indexOf("pain")>-1&&fl.indexOf("dissoc")<0;
+    if(painOn){
+      var ph=document.createElement("p");ph.className="small";ph.textContent="For pain";btns.appendChild(ph);
+      toolBtns(btns,PAIN_TOOLS);
+      var ph2=document.createElement("p");ph2.className="small";ph2.textContent="Or";btns.appendChild(ph2);
+    }
+    var picks=pickPractices(fl),top=picks.slice(0,painOn?2:3);
     if(top.length>1){
       var mins=top.reduce(function(a,p){return a+(p.mins||0);},0);
       var cb=document.createElement("button");
@@ -2486,18 +2521,17 @@ function renderRecs(){
       return b;
     }
     top.forEach(function(p){btns.appendChild(pbtn(p));});
-    if(picks.length>3){
+    if(picks.length>top.length){
       var more=document.createElement("details");
       var sm=document.createElement("summary");
-      sm.className="small";sm.textContent="more options ("+(picks.length-3)+")";
+      sm.className="small";sm.textContent="more options ("+(picks.length-top.length)+")";
       more.appendChild(sm);
-      picks.slice(3).forEach(function(p){more.appendChild(pbtn(p));});
+      picks.slice(top.length).forEach(function(p){more.appendChild(pbtn(p));});
       btns.appendChild(more);
     }
     return;
   }
-  var recs=(curState&&RECS[curState]?
-    RECS[curState].slice():[]);
+  var recs=[];
   if($("#ci-unreal").checked){
     recs.unshift({l:"Start with the 60-second reset",
       t:"ground",s:"reset"});
@@ -2514,6 +2548,7 @@ function renderRecs(){
     };
     btns.appendChild(b);
   });
+  if(!btns.children.length){box.style.display="none";}
 }
 function fmt(iso){
   var d=new Date(iso);
@@ -2524,7 +2559,7 @@ function fmt(iso){
   return ds+" "+ts;
 }
 var STATELBL={wired:"⚡ wired",heavy:"🌑 heavy",
-  mixed:"🌗 mixed",settled:"🌿 settled",
+  mixed:"🌗 mixed",settled:"🌿 settled",public:"🏢 in public",
   feelings:"🌊 feelings",grief:"🤍 grieving"};
 function renderLog(){
   var list=$("#loglist");
@@ -3477,6 +3512,8 @@ function bcShow(label,rows,typed,tag,first,key){
   p.textContent=first||"One breath with it first. Then:";s.appendChild(p);
   var box=document.createElement("div");s.appendChild(box);
   bcLines(box,rows,typed);
+  var BE=window.PRAYERS&&PRAYERS.brachot&&PRAYERS.brachot.end,ex=key&&BE&&BE[key]&&BE[key].more;
+  if(ex){var d=document.createElement("details"),sm=document.createElement("summary");sm.textContent="About this blessing";d.appendChild(sm);var mp=document.createElement("p");mp.className="small";mp.textContent=ex;d.appendChild(mp);s.appendChild(d);}
   if(key){songsFor("bc-"+key).forEach(function(x){s.appendChild(songBtn(x,"Listen · "+songWho(x)));});}
   var ok=document.createElement("button");ok.textContent="I said it";
   ok.onclick=function(){
@@ -3486,7 +3523,7 @@ function bcShow(label,rows,typed,tag,first,key){
   s.appendChild(ok);
   s.scrollIntoView({behavior:"smooth",block:"nearest"});
 }
-var GRAT=["asher","tov","shehe"];
+var GRAT=["asher","gomel","tov","shehe"];
 function bcRender(){
   var B=window.PRAYERS&&PRAYERS.brachot;if(!B){return;}
   [["#bc-table",B.table||[]],
@@ -3827,7 +3864,7 @@ function greet(){
 }
 $("#greeting").textContent=greet()+", Jamie";
 $(".tag").textContent="breath · prayer · rest · pocket "+
-  "sanctuary · v2.29 · script running ✓";
+  "sanctuary · v2.30 · script running ✓";
 setInterval(function(){
   var d=new Date();
   var ds=d.toLocaleDateString(undefined,

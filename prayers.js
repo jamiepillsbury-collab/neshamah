@@ -765,6 +765,14 @@ var PRAYERS={
     "en": "who is good and does good.",
     "typed": false
    },
+   "gomel": {
+    "he": "הַגּוֹמֵל לְחַיָּבִים טוֹבוֹת שֶׁגְּמָלַנִי כָּל טוֹב",
+    "tl": "hagomeil l'chayavim tovot sheg'malani kol tov",
+    "en": "who does good even to those who fall short, and has done me every good.",
+    "typed": false,
+    "first": "For after you come through danger: an illness, a surgery, an accident, a hard journey. One breath with it first.",
+    "more": "Birkat HaGomel (Berakhot 54b). Traditionally said at the Torah with a minyan; saying it on your own is fine. Others may answer: Mi sheg'malcha kol tov, hu yigmolcha kol tov, selah (to a woman: sheg'maleich, yigm'leich). Hebrew from Sefaria (Metsudah siddur). L'chayavim means those who fall short, or the undeserving: a question for your rabbi."
+   },
    "shehe": {
     "he": "שֶׁהֶחֱיָנוּ וְקִיְּמָנוּ וְהִגִּיעָנוּ לַזְּמַן הַזֶּה",
     "tl": "shehecheyanu v'kiy'manu v'higi-anu laz'man hazeh",
@@ -851,6 +859,10 @@ var PRAYERS={
    [
     "good news",
     "tov"
+   ],
+   [
+    "I came through an illness, surgery or danger",
+    "gomel"
    ],
    [
     "something for the first time this season",

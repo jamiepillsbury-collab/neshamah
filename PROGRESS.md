@@ -200,3 +200,11 @@ Open question: Jamie's phone may be running an older deployed copy. Confirm the 
 - Declutter: all static How/Why lines collapsed; song list grouped in collapsed sections; Berakhot sections collapsed; intros shortened (songs, niggun, hitbodedut, wheel, eyes, crickets, ladder, parts, storage). Em dashes removed from index.html (prayers.js left: Sefaria English).
 - Backups *.v2.28.bak. Deploy index.html, practices.js, prayers.js, sw.js, PROGRESS.md.
 - NEXT (proposed): Birkat HaGomel (resource file; Berakhot 54b) with Hebrew from Sefaria; register Sefirot scan/somatic tracking/pendulation as practices so the Pain chip suggests them; unify Home state buttons with Ground's Somatic first aid (two triage pickers); decide Here and now vs Ground with me; sunrise -> oseh ma'aseh v'reishit is non-traditional (Jamie/rabbi).
+
+## 2026-11-01 — v2.30, tested headless, no JS errors
+- Birkat HaGomel added to Berakhot > Gratitude ("I came through an illness, surgery or danger"). Hebrew from Sefaria (Metsudah siddur, Siddur Ashkenaz Birkat Hagomel 2); tl in app style; English drafted like the other brachot. New optional "more" field on brachot ends shows an "About this blessing" fold. ⚑ l'chayavim: Jamie asking rabbi.
+- One picker: Home state buttons now show first-aid tools at once (STATE_TOOLS; + new "In public" state). Ground's Somatic first aid card removed (FA data kept, unused). runTool() switches tab for ground/eyes/emo.
+- Pain chip: For-pain tools (Sefirot scan, somatic tracking, pendulation) shown first, unless Dissociation is also on (then ground first).
+- Kept both Here and now + Ground with me; sunrise blessing kept (rabbi question).
+- Rabbi questions: Claude Doc "Questions for my rabbi: Neshamah".
+- Deploy index.html, prayers.js, practices.js, sw.js, PROGRESS.md.
